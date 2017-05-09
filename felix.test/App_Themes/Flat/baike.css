@@ -1,0 +1,238 @@
+﻿body, form{margin:0px; padding:0px;}
+
+.BKBody
+{
+	background: url(images/ContentBG.jpg) 0 0 repeat;
+	text-align: center;
+	overflow:auto;
+	font-size:12px;
+}
+
+div{padding:0px; margin:0px;}
+
+.taskTitle
+{
+	background-color:#4a9ad9;
+	color:#fff;
+	border-top:solid 1px #145691;
+	border-bottom:solid 1px #3184c5;
+	padding:12px 7px;
+}
+
+.dkTitle
+{
+	background-color:#4a9ad9;
+	color:#fff;
+	border-top:solid 1px #145691;
+	border-bottom:solid 1px #3184c5;
+	padding:12px 7px;
+}
+
+.pointTitle
+{
+	background-color:#ebebeb;
+	color:#fff;
+	border-bottom:solid 1px #cacaca;
+	border-top:solid 1px #cacaca;
+	padding:4px 7px 4px 14px;
+}
+.pointList
+{
+	padding:10px 5px 0px 20px; 	
+}
+
+.aH3
+{
+	font-size:14px;
+	text-decoration:none;
+	float:left;
+	margin-top:4px;
+	color:#fff;
+	width:180px;
+}
+
+.ah4
+{
+	font-size:13px;
+	text-decoration:none;
+	float:left;
+	margin-top:10px;
+	color:#000;
+}
+
+.ViewTask
+{
+	width: 92px;
+    height: 30px;
+    text-align: right;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #d8d9da;
+    font-size: 12px;
+    letter-spacing:2px;
+    float:right;
+    background:#3d4045 url(images/line.png) 0px 0px no-repeat;
+    padding-right:4px;
+}
+
+.ViewPoint
+{
+	width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing:2px;
+    float:right;
+    margin-right:2px;
+     background:#3d4045 url(images/point.png) 0px 0px no-repeat; 
+	}
+
+.ViewDK
+{
+	width: 30px;
+    height: 30px;   
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing:2px;
+    float:right;   
+    background:#3d4045 url(images/dk.png) 0px 0px no-repeat; 
+	}
+
+
+
+.BKBody .BKCatalogue ul
+{
+    margin-left:2em
+}
+.BKBody h4
+{
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+.BKBody .BKTitle
+{
+	margin-bottom: 20px;
+}
+.BKBody .BKCatalogue
+{
+	margin: 0 auto;
+	width: 98%;
+	text-align: left;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.BKBody .BKCatalogue a
+{
+	text-decoration: underline !important;
+	color: #222;
+}
+.BKBody .BKSectionLv1
+{
+	margin: 0;
+	padding:0;
+	text-align: left;
+	overflow: hidden;
+	display: block;
+	white-space: normal;
+	margin-bottom: 20px;
+}
+.BKBody .BKSectionLv1 p
+{
+	text-indent: 2em;
+}
+.BKBody .BKSectionLv1 h2
+{
+	margin-bottom: 5px;
+}
+.BKBody .BKSectionLv2
+{
+	margin: 0 auto;
+	text-align: left;
+	overflow: hidden;
+	margin-left: 40px;
+	margin-bottom: 25px;
+}
+.BKBody .BKSectionLv2 h3
+{
+	padding-right: 10px;
+}
+.BKBody .BKSectionLv2 table
+{
+	width: 90%;
+	border: solid 1px #638ab7;
+	border-top: 0px;
+	border-right: 0px;
+}
+.BKBody .BKSectionLv2 td
+{
+	border-top: solid 1px #638ab7;
+	border-right: solid 1px #638ab7;
+	text-align: center;
+}
+.BKBody .NewWin
+{
+	display: none;
+	font-size: 14px;
+	float: right;
+	margin-right: 50px;
+}
+.BKBody .ShowTable
+{
+	display: none;
+	font-size: 14px;
+	float: right;
+	margin-right: 450px;
+}
+.BKBody .flashReaderContent
+{
+	display: none;
+	width: 98%;
+	height: 450px;
+	margin-bottom: 10px;
+}
+.BKBody .Assessment
+{
+	margin-bottom: 50px;
+}
+.BKBody .Assessment .AssessmentUnit
+{
+	background-color:Transparent;
+	border:0px;
+	border-bottom: 1px solid #222222;
+}
+.BKBody .Assessment table
+{
+	border: solid 1px #222222;
+	border-top: 0px;
+	border-right: 0px;
+}
+.BKBody .Assessment th
+{
+	border-top: solid 1px #222222;
+	border-right: solid 1px #222222;
+	text-align: center;
+}
+.BKBody .Assessment td
+{
+	border-top: solid 1px #222222;
+	border-right: solid 1px #222222;
+	text-align: left;
+}
+.BKBody .Assessment textarea
+{
+	background-color:Transparent;
+}
+.BKBody .Assessment table textarea
+{
+	border:0px;
+	height: 64px;
+}

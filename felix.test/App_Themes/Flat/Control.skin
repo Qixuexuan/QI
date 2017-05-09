@@ -1,0 +1,284 @@
+<%@ Register Assembly="Anthem" Namespace="Anthem" TagPrefix="anthem" %>
+<%@ Register assembly="Infragistics35.WebUI.WebDateChooser.v9.1, Version=9.1.20091.1015, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" namespace="Infragistics.WebUI.WebSchedule" tagprefix="igsch" %>
+<%@ Register Assembly="Infragistics35.WebUI.WebCombo.v9.1, Version=9.1.20091.1015, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"    Namespace="Infragistics.WebUI.WebCombo" TagPrefix="igcmbo" %>
+<%@ Register assembly="Infragistics35.WebUI.UltraWebGrid.v9.1, Version=9.1.20091.1015, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" namespace="Infragistics.WebUI.UltraWebGrid" tagprefix="igtbl" %>
+<%@ Register Assembly="Infragistics35.WebUI.Shared.v9.1, Version=9.1.20091.1015, Culture=neutral, PublicKeyToken=7DD5C3163F2CD0CB"
+    Namespace="Infragistics.WebUI.Shared" TagPrefix="ignav" %>
+<%@ Register Assembly="HY.Business" Namespace="Business.UserControl" TagPrefix="cc1" %>
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<%--
+<MouseOverRowStyle CssClass="mouseoveritem" />
+<SortedColumnHeaderRowStyle CssClass="headersorted" />
+<SortedColumnRowStyle CssClass="itemsorted" />
+    <AlternatingRowStyle CssClass="alternatingitem" />
+    <SelectedRowStyle CssClass="selecteditem" />
+    <EditRowStyle CssClass="edititem" />
+    <EmptyDataRowStyle CssClass="item" />
+    <PagerStyle CssClass="pager" />
+--%>
+ <igcmbo:WebCombo runat="server" BorderColor="#84b8ff"  Height="20px" BorderStyle="Solid" BorderWidth="1px" SelBackColor="" SelForeColor=""   Version="4.00">
+    <ExpandEffects ShadowColor="LightGray" />
+    <DropDownLayout BorderCollapse="Separate" RowHeightDefault="20px" Version="4.00">
+        <FrameStyle BackColor="Silver" BorderStyle="Ridge" BorderWidth="2px" Cursor="Default"
+            Font-Names="Verdana" Font-Size="14px" Height="300px" Width="150px">
+        </FrameStyle>
+        <HeaderStyle BackColor="LightGray" BorderStyle="Solid">
+            <BorderDetails ColorLeft="White" ColorTop="White" WidthLeft="1px" WidthTop="1px" />
+        </HeaderStyle>
+        <RowStyle BackColor="White" BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px">
+            <BorderDetails WidthLeft="0px" WidthTop="0px" />
+        </RowStyle>
+        <SelectedRowStyle BackColor="DarkBlue" ForeColor="White" />
+    </DropDownLayout>        
+ </igcmbo:WebCombo>
+<%--特殊的控件样式--%>
+<asp:Button runat="server" SkinID="homeSearchBtn" CssClass="bottombtn" />
+<asp:LinkButton runat="server" SkinID="homeSearchBtn" CssClass="bottombtn" />
+
+<asp:TextBox runat="server" SkinID="homeSearchTxt" CssClass="homeSearchTxt" />
+
+<%--普通的控件样式--%>
+<asp:TextBox runat="server" CssClass="styTextBox" />
+
+<asp:DropDownList runat="server" CssClass="styDropDownList" />   
+<anthem:TextBox runat="server" CssClass="styTextBox" />
+<anthem:DropDownList runat="server" CssClass="styDropDownList" />
+<anthem:FileUpload runat="server" CssClass="loadajj_load_text" />
+<anthem:Button runat="server" CssClass="styButton" />
+<%--分配权限按钮--%>
+<anthem:Button runat="server" CssClass="rightqx0" SkinID="rightqx0" />
+<anthem:Button runat="server" CssClass="rightqx1" SkinID="rightqx1" />
+<anthem:Button runat="server" CssClass="rightqx2" SkinID="rightqx2" />
+<anthem:Button runat="server" CssClass="rightqx3" SkinID="rightqx3" />
+
+
+  <asp:Button runat="server" CssClass="searchbnt" SkinId="searchbnt"/>
+<asp:Button runat="server" CssClass="loaddata_an" SkinID="importBtn"/>
+<asp:Button runat="server" CssClass="styButton" />
+<asp:LinkButton runat="server" CssClass="styButton" />
+<asp:FileUpload runat="server" CssClass="loadajj_load_text" />
+<Anthem:LinkButton runat="server"  CssClass="styButton"/>
+
+<Anthem:LinkButton runat="server"  SkinID="lbHome" CssClass="home"/>
+<Anthem:LinkButton runat="server"  SkinID="lbUp" CssClass="up"/>
+<Anthem:LinkButton runat="server"  SkinID="lbNext" CssClass="next"/>
+<Anthem:LinkButton runat="server"  SkinID="lbEnd" CssClass="end"/>
+
+<%--toolBar样式CssClass="bottombtn"--%>
+<asp:LinkButton runat="server" SkinID="Add" CssClass="Add" />
+<asp:LinkButton runat="server" SkinID="Addd" CssClass="toolBarAddd" />
+<asp:LinkButton runat="server" SkinID="Update" CssClass="Update" />
+<asp:LinkButton runat="server" SkinID="Updated" CssClass="toolBarUpdated" />
+<asp:LinkButton runat="server" SkinID="Delete" CssClass="Delete" />
+<asp:LinkButton runat="server" SkinID="Deleted" CssClass="toolBarDeleted" />
+<asp:LinkButton runat="server" SkinID="Export" CssClass="toolBarExport" />
+<asp:LinkButton runat="server" SkinID="Exportd" CssClass="toolBarExportd" />
+<asp:LinkButton runat="server" SkinID="MultiSP" CssClass="toolBarMultiSP" />
+<asp:LinkButton runat="server" SkinID="MultiSQL" CssClass="toolBarMultiSQL" />
+<asp:LinkButton runat="server" SkinID="SingleSP" CssClass="toolBarSingleSP" />
+<asp:LinkButton runat="server" SkinID="SingleSQL" CssClass="toolBarSingleSQL" />
+<asp:LinkButton runat="server" SkinID="FolderModule" CssClass="toolBarFolderModule" />
+<asp:LinkButton runat="server" SkinID="TabModule" CssClass="toolBarTabModule" />
+<asp:LinkButton runat="server" SkinID="DetailModule" CssClass="toolBarTabModule" />
+<asp:LinkButton runat="server" SkinID="SimpleSearch" CssClass="toolBarSimpleSearch" />
+<asp:LinkButton runat="server" SkinID="AdvancedSearch" CssClass="toolBarAdvancedSearch" />
+<asp:LinkButton runat="server" SkinID="Save" CssClass="toolBarSave" />
+<asp:LinkButton runat="server" SkinID="PublicAndSendMail" CssClass="toolBarPublicAndSendMail" />
+<asp:LinkButton runat="server" SkinID="Print" CssClass="toolBarPrint" />
+<asp:LinkButton runat="server" SkinID="PersonInfo" CssClass="toolBarPersonInfo" />
+<asp:LinkButton runat="server" SkinID="Inport" CssClass="toolBarInport" />
+<asp:LinkButton runat="server" SkinID="ExportCSV" CssClass="toolBarExportCSV" />
+<asp:LinkButton runat="server" SkinID="Choose" CssClass="toolBarChoose" />
+<asp:LinkButton runat="server" SkinID="Moveup" CssClass="Moveup" />
+<asp:LinkButton runat="server" SkinID="Movedown" CssClass="Movedown" />
+<asp:LinkButton runat="server" SkinID="Back" CssClass="toolBarBack" />
+<asp:LinkButton runat="server" SkinID="SaveSmall" CssClass="toolBarSaveSmall" />
+<asp:LinkButton runat="server" SkinID="SaveSmallt" CssClass="toolBarSaveSmallt" />
+
+<asp:LinkButton runat="server" SkinID="Next" CssClass="toolBarNext" />
+<asp:LinkButton runat="server" SkinID="Withdraw" CssClass="toolBarwithdraw" />
+<asp:LinkButton runat="server" SkinID="Transmit" CssClass="toolBartransmit" />
+<asp:LinkButton runat="server" SkinID="Send" CssClass="toolBarSend" />
+<asp:LinkButton runat="server" SkinID="Lock" CssClass="toolBarLock" />
+<asp:LinkButton runat="server" SkinID="Active" CssClass="toolBaractive" />
+<asp:LinkButton runat="server" SkinID="ask" CssClass="ask" />
+<asp:LinkButton runat="server" SkinID="ReturnSend" CssClass="ReturnSend" />
+<asp:LinkButton runat="server" SkinID="CancelSend" CssClass="CancelSend" />
+<asp:LinkButton runat="server" SkinID="hasten" CssClass="hasten" />
+<asp:LinkButton runat="server" SkinID="View" CssClass="View" />
+<asp:LinkButton runat="server" SkinID="Copy" CssClass="Copy" />
+<asp:LinkButton runat="server" SkinID="ActiEnd" CssClass="ActiEnd" />
+<asp:LinkButton runat="server" SkinID="Refuse" CssClass="Refuse" />
+<asp:LinkButton runat="server" SkinID="Affirm" CssClass="Affirm" />
+<asp:LinkButton runat="server" SkinID="Set" CssClass="Set" />
+<asp:LinkButton runat="server" SkinID="Count" CssClass="Count" />
+<asp:LinkButton runat="server" SkinID="Invite" CssClass="Invite" />
+<asp:LinkButton runat="server" SkinID="preview" CssClass="preview" />
+<asp:LinkButton runat="server" SkinID="pass" CssClass="pass" />
+
+
+<Anthem:LinkButton runat="server" SkinID="Add" CssClass="Add" />
+<Anthem:LinkButton runat="server" SkinID="Update" CssClass="Update" />
+<Anthem:LinkButton runat="server" SkinID="Delete" CssClass="Delete" />
+<Anthem:LinkButton runat="server" SkinID="Export" CssClass="toolBarExport" />
+<Anthem:LinkButton runat="server" SkinID="Exportd" CssClass="toolBarExportd" />
+<Anthem:LinkButton runat="server" SkinID="MultiSP" CssClass="toolBarMultiSP" />
+<Anthem:LinkButton runat="server" SkinID="MultiSQL" CssClass="toolBarMultiSQL" />
+<Anthem:LinkButton runat="server" SkinID="SingleSP" CssClass="toolBarSingleSP" />
+<Anthem:LinkButton runat="server" SkinID="SingleSQL" CssClass="toolBarSingleSQL" />
+<Anthem:LinkButton runat="server" SkinID="FolderModule" CssClass="toolBarFolderModule" />
+<Anthem:LinkButton runat="server" SkinID="TabModule" CssClass="toolBarTabModule" />
+<Anthem:LinkButton runat="server" SkinID="DetailModule" CssClass="toolBarTabModule" />
+<Anthem:LinkButton runat="server" SkinID="SimpleSearch" CssClass="toolBarSimpleSearch" />
+<Anthem:LinkButton runat="server" SkinID="AdvancedSearch" CssClass="toolBarAdvancedSearch" />
+<Anthem:LinkButton runat="server" SkinID="Save" CssClass="toolBarSave" />
+<Anthem:LinkButton runat="server" SkinID="PublicAndSendMail" CssClass="toolBarPublicAndSendMail" />
+<Anthem:LinkButton runat="server" SkinID="Print" CssClass="toolBarPrint" />
+<Anthem:LinkButton runat="server" SkinID="PersonInfo" CssClass="toolBarPersonInfo" />
+<Anthem:LinkButton runat="server" SkinID="Inport" CssClass="toolBarInport" />
+<Anthem:LinkButton runat="server" SkinID="ExportCSV" CssClass="toolBarExportCSV" />
+<Anthem:LinkButton runat="server" SkinID="Moveup" CssClass="Moveup" />
+<Anthem:LinkButton runat="server" SkinID="Movedown" CssClass="Movedown" />
+<Anthem:LinkButton runat="server" SkinID="Back" CssClass="toolBarBack" />
+<Anthem:LinkButton runat="server" SkinID="Next" CssClass="toolBarNext" />
+<Anthem:LinkButton runat="server" SkinID="Withdraw" CssClass="toolBarwithdraw" />
+<Anthem:LinkButton runat="server" SkinID="Transmit" CssClass="toolBartransmit" />
+<Anthem:LinkButton runat="server" SkinID="Send" CssClass="toolBarSend" />
+<Anthem:LinkButton runat="server" SkinID="Lock" CssClass="toolBarLock" />
+<Anthem:LinkButton runat="server" SkinID="Active" CssClass="toolBaractive" />
+<Anthem:LinkButton runat="server" SkinID="ask" CssClass="ask" />
+<Anthem:LinkButton runat="server" SkinID="ReturnSend" CssClass="ReturnSend" />
+<Anthem:LinkButton runat="server" SkinID="CancelSend" CssClass="CancelSend" />
+<Anthem:LinkButton runat="server" SkinID="hasten" CssClass="hasten" />
+<Anthem:LinkButton runat="server" SkinID="View" CssClass="View" />
+<Anthem:LinkButton runat="server" SkinID="Copy" CssClass="Copy" />
+<Anthem:LinkButton runat="server" SkinID="ActiEnd" CssClass="ActiEnd" />
+<Anthem:LinkButton runat="server" SkinID="Refuse" CssClass="Refuse" />
+<Anthem:LinkButton runat="server" SkinID="Affirm" CssClass="Affirm" />
+<Anthem:LinkButton runat="server" SkinID="Set" CssClass="Set" />
+<Anthem:LinkButton runat="server" SkinID="Count" CssClass="Count" />                
+<Anthem:LinkButton runat="server" SkinID="Invite" CssClass="Invite" />
+<Anthem:LinkButton runat="server" SkinID="preview" CssClass="preview" />
+<Anthem:LinkButton runat="server" SkinID="pass" CssClass="pass" />
+<Anthem:LinkButton runat="server" SkinID="SaveSmall" CssClass="toolBarSaveSmall" />
+<Anthem:LinkButton runat="server" SkinID="SaveSmallt" CssClass="toolBarSaveSmallt" />
+<Anthem:LinkButton runat="server" SkinID="toolBarTopSave" CssClass="toolSave" />
+<asp:TreeView runat="server" ShowLines="True" CssClass="treeView">
+    <LeafNodeStyle ImageUrl="~/App_Themes/Default/images/engine/tree_document.gif" CssClass="leafNodeCss" />
+    <ParentNodeStyle ImageUrl="~/App_Themes/Default/images/engine/tree_close.gif" CssClass="parentNodeCss" />
+    <NodeStyle Font-Size="11px" ForeColor="#2E4752" CssClass="nodeCss" />
+    <SelectedNodeStyle CssClass="selectedNodeCss" BackColor="#E8FDFF" Font-Bold="True" ForeColor="#2E4752" />
+    <HoverNodeStyle Font-Bold="True" ForeColor="#58889D" />
+</asp:TreeView>
+
+
+<asp:GridView runat="server" CssClass="GridView" CellPadding="0" CellSpacing="0" GridLines="None">  
+    <RowStyle CssClass="GridViewRow" />
+    <AlternatingRowStyle  CssClass="AlternatingRow" />
+    <SelectedRowStyle CssClass="GridViewRowSelected" />
+    <HeaderStyle CssClass="GridViewHeader"   HorizontalAlign="Center" VerticalAlign="Middle"/>
+</asp:GridView>
+
+<anthem:GridView runat="server" CssClass="GridView" CellPadding="0" CellSpacing="0" GridLines="None">  
+    <RowStyle CssClass="GridViewRow" />
+    <AlternatingRowStyle  CssClass="AlternatingRow" />
+    <SelectedRowStyle CssClass="GridViewRowSelected" />
+    <HeaderStyle CssClass="GridViewHeader" />
+    <FooterStyle CssClass="GridViewRow" />
+</anthem:GridView>
+
+
+<igsch:WebDateChooser runat="server" >
+ <CalendarLayout>
+    <TitleStyle BackColor="#E3F3FF" />
+    <CalendarStyle BackColor="White">
+    </CalendarStyle>
+    <DayHeaderStyle BackColor="White" />
+    <DayStyle BackColor="White" />
+    <WeekendDayStyle BackColor="White" />
+    <DropDownStyle BackColor="White">
+    </DropDownStyle>
+</CalendarLayout>
+<DropButton>
+    <Style BackColor="#ccffff"></Style>
+</DropButton>
+<DropDownStyle BackColor="White">
+</DropDownStyle>
+</igsch:WebDateChooser>
+<Anthem:ListBox runat="server" SkinID="ListBox" CssClass="listBoxCss" />
+
+
+
+<%--UltraWebGrid样式--%>
+           
+
+<igtbl:UltraWebGrid  runat="server" >
+<DisplayLayout   BorderCollapseDefault="Separate"   HeaderClickActionDefault="SortMulti" LoadOnDemand="Xml"
+                Name="UltraWebGrid1" RowHeightDefault="20px" RowSelectorsDefault="No" SelectTypeRowDefault="Extended"
+                StationaryMargins="Header" StationaryMarginsOutlookGroupBy="False" TableLayout="Fixed"
+                Version="4.00" ViewType="Hierarchical">
+                <FrameStyle BackColor="Window" BorderColor="InactiveCaption" BorderStyle="Solid"
+                    BorderWidth="1px" Font-Names="Microsoft Sans Serif" Font-Size="8.25pt" >
+                </FrameStyle>
+                <Pager AllowPaging="True" MinimumPagesForDisplay="2">
+                    <PagerStyle BackColor="LightGray" BorderStyle="Solid" BorderWidth="1px">
+                        <BorderDetails ColorLeft="White" ColorTop="White" WidthLeft="1px" WidthTop="1px" />
+                    </PagerStyle>
+                </Pager>
+                <EditCellStyleDefault BorderStyle="None" BorderWidth="0px">
+                </EditCellStyleDefault>
+                <FooterStyleDefault BackColor="LightGray" BorderStyle="Solid" BorderWidth="1px">
+                    <BorderDetails ColorLeft="White" ColorTop="White" WidthLeft="1px" WidthTop="1px" />
+                </FooterStyleDefault>
+                <HeaderStyleDefault BackColor="LightGray" BorderStyle="Solid" HorizontalAlign="Left">
+                    <BorderDetails ColorLeft="White" ColorTop="White" WidthLeft="1px" WidthTop="1px" />
+                </HeaderStyleDefault>
+                <RowStyleDefault BackColor="Window" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
+                    Font-Names="Microsoft Sans Serif" Font-Size="8.25pt">
+                    <Padding Left="3px" />
+                    <BorderDetails ColorLeft="Window" ColorTop="Window" />
+                </RowStyleDefault>
+                <GroupByRowStyleDefault BackColor="Control" BorderColor="Window">
+                </GroupByRowStyleDefault>
+                <GroupByBox>
+                    <BoxStyle BackColor="ActiveBorder" BorderColor="Window">
+                    </BoxStyle>
+                </GroupByBox>
+                <AddNewBox Hidden="False">
+                    <BoxStyle BackColor="Window" BorderColor="InactiveCaption" BorderStyle="Solid" BorderWidth="1px">
+                        <BorderDetails ColorLeft="White" ColorTop="White" WidthLeft="1px" WidthTop="1px" />
+                    </BoxStyle>
+                </AddNewBox>
+                <ActivationObject BorderColor="" BorderWidth="">
+                </ActivationObject>
+                <FilterOptionsDefault>
+                    <FilterDropDownStyle BackColor="White" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
+                        CustomRules="overflow:auto;" Font-Names="Verdana,Arial,Helvetica,sans-serif"
+                        Font-Size="11px" Height="300px" Width="200px">
+                        <Padding Left="2px" />
+                    </FilterDropDownStyle>
+                    <FilterHighlightRowStyle BackColor="#151C55" ForeColor="White">
+                    </FilterHighlightRowStyle>
+                    <FilterOperandDropDownStyle BackColor="White" BorderColor="Silver" BorderStyle="Solid"
+                        BorderWidth="1px" CustomRules="overflow:auto;" Font-Names="Verdana,Arial,Helvetica,sans-serif"
+                        Font-Size="11px">
+                        <Padding Left="2px" />
+                    </FilterOperandDropDownStyle>
+                </FilterOptionsDefault>
+            </DisplayLayout>
+
+</igtbl:UltraWebGrid>

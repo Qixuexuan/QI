@@ -1,0 +1,47 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f4
+}
+ .ibox {
+            margin-top: 15px;
+        }
+        
+        .title {
+            height: 48px;
+            width: 100%;
+            background-color: #fff;
+            /*text-align: center;*/
+            border-top: 3px solid #e7eaec;
+        }
+
+            .title > h5 {
+                color: gray;
+                font-family: Î¢ÈíÑÅºÚ;
+                /*line-height: 48px;*/
+                display: inline-block;
+                font-size: 15px;
+                margin-left: 10px;
+                text-overflow: ellipsis;
+            }
+        
+        .title>span {
+            float: right;
+            color: lightgray;
+            line-height: 48px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .content {
+            /*height: 200px;*/
+            width: 100%;
+            border-top: 1px solid #e7eaec;
+            background-color: #fff;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 15px;
+        }

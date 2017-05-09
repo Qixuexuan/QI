@@ -1,0 +1,70 @@
+/* CSS Document */
+body{ margin:0;}
+a img{ border:none}
+.homeindex{ font-size:14px;  margin-top:3px; _width:expression(document.body.clientWidth < 990 ? "990px" : "auto");}
+.homeindex .leftdiv_0{ float:left;padding:0 5px }
+.homeindex .rightdiv_0{ float:left; width:210px; padding:0 5px}
+
+.homeindex .leftdiv_0 .div_00{ width:210px; float:left}
+.homeindex .leftdiv_0 .div_01{}
+.homeindex .leftdiv_0 .div_02{ margin-top:10px}
+.homeindex .leftdiv_0 .div_11{ float:left; padding:5px 5px;}
+.homeindex .leftdiv_0 .div_11 img{ margin:10px 15px 0 15px}
+
+.homeindex .leftdiv_0 .div_00 .span_icon{background:url(images/CustomizeIndex/homeindex_46.png) 0 center no-repeat}
+
+.homeindex .rightdiv_0 .div_00{}
+.homeindex .rightdiv_0 .div_11{ margin-top:10px}
+
+.homeindex .title_0{ height:26px; color:#FFFFFF; font-weight:bold; position:relative; padding:0 7px}
+.homeindex .title_0 span{ height:26px}
+.homeindex .title_0 .span_L{  background:url(images/CustomizeIndex/homeindex_03.png) 0 0 no-repeat; width:7px;  display:block; position:absolute; left:0; top:0}
+.homeindex .title_0 .span_M{  background:url(images/CustomizeIndex/homeindex_05.png) 0 0 repeat-x; display:block; line-height:26px}
+.homeindex .title_0 .span_R{  background:url(images/CustomizeIndex/homeindex_07.png) right 0 no-repeat; display:block; width:7px; position:absolute; right:0; top:0 }
+.homeindex .title_0 .span_icon{ position:absolute; display:inline; height:26px; padding-left:30px}
+.homeindex .title_0 .span_set{ float:right; display:inline; height:26px; color:White; font-size:11px; display:none; margin-right:4px;}
+.homeindex .leftdiv_0  .div_02 .span_icon{ background:url(images/CustomizeIndex/homeindex_26.png) 0 center no-repeat}
+.homeindex .content_0{ background:#FFF; border:2px solid #1668CD; padding:5px; border-top:none }
+
+.homeindex .list_0{ margin:0; padding:0; list-style:none}
+.homeindex .list_0 li{ margin:0; padding:0; list-style:none; background:url(images/CustomizeIndex/homeindex_19.png) 0 4px no-repeat; padding:1px 0 5px 20px}
+.homeindex .list_0 li a{ color:#B45000; text-decoration:underline; padding-left:5px}
+.homeindex .list_0 li a:hover{ color:#F49D57}
+
+.homeindex .list_1{ margin:0; padding:0; list-style:none}
+.homeindex .list_1 li{ margin:0; padding:0; list-style:none; background:url(images/CustomizeIndex/homeindex_47.png) 0 center no-repeat; padding:1px 0 5px 10px}
+.homeindex .list_1 li a{ color:#000; text-decoration:none; padding-left:5px}
+.homeindex .list_1 li a:hover{ color:#B45000}
+.homeindex .list_1 li a .redtxt{ color:#FF0000}
+
+.homeindex .serach_table input,.homeindex .serach_table img{ vertical-align:middle}
+
+
+.homeindex .serach_table td{ padding:3px 2px}
+@media screen and (-webkit-min-device-pixel-ratio:0) 
+{
+       .homeindex .serach_table td{ padding:2px 2px}
+}
+.homeindex .rightdiv_0  .div_00 .span_icon{ background:url(images/CustomizeIndex/homeindex_10.png) 0 center no-repeat}
+.homeindex .rightdiv_0 .div_11 .span_icon{ background:url(images/CustomizeIndex/system_search.png) 0 center no-repeat}
+.homeindex .rightdiv_0 .div_22 .span_icon{ background:url(images/CustomizeIndex/homeindex_46.png) 0 center no-repeat}
+
+.homeindex .rightdiv_0 .div_22 .content_0{ padding:0; text-align:center}
+.homeindex .leftdiv_0 .div_22 .content_0{ padding:0; }
+.tab_ul_0,.tab_ul_0 li{ margin:0; padding:0; list-style:none; float:left; height:22px; padding:0 6px; position:relative}
+.tab_ul_0{ margin-top:4px;height:22px; overflow:hidden}
+.tab_ul_0 li{ cursor:pointer}
+.tab_ul_0 .tab_span_M{ padding:0 3px}
+.tab_ul_0 li.seleted .tab_span_L{ display:block; height:22px; width:6px; position:absolute; left:0; top:0; background:url(images/CustomizeIndex/homeindex_38.png) 0 0 no-repeat}
+.tab_ul_0 li.seleted .tab_span_M{display:block; height:22px; line-height:22px;left:0; top:0; background:url(images/CustomizeIndex/homeindex_28.jpg) 0 0 repeat-x; color:#000000; _float:left}
+.tab_ul_0 li.seleted .tab_span_R{ display:block; height:22px; width:6px; position:absolute; right:0; top:0;background:url(images/CustomizeIndex/homeindex_41.png) right 0 no-repeat}
+
+.grid_0 td{ padding:5px}
+.grid_0 .greybg td{ background:#F0F0F0}
+
+.clearboth{ clear:both; height:5px;}
+
+.contentbg{background:#E6E6E6  url(images/CustomizeIndex/centerbg_03.jpg) 0px 0px repeat-x;}
+
+.span_more{float:right; display:inline; height:26px; color:#FFF; font-size:12px; cursor:pointer;}
+.span_more:hover{color:#EB740B}

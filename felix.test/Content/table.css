@@ -1,0 +1,99 @@
+﻿body {
+}
+
+.table-detail {
+    margin-top: 4px;
+    margin-left: 4px;
+    font-size: 13px;
+    width: 98%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.table-detail-title {
+    width: 70px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.table-detail-content {
+    width: 150px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+ .table-detail td {
+    height:24px;
+    }
+
+.table-edit {
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 98%;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+    .table-edit td {
+    height:24px;
+    }
+.table-edit-title {
+    width: 70px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.table-edit-content {
+    width: 150px; 
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+input, button, select, textarea {
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    margin: 0px auto;
+}
+
+/**********自定义选择框*****************/
+.hover {
+    background-color: #ccc;
+}
+
+.selected {
+    background-color: #0094ff;
+    color: #fff;
+}
+
+.slt-left, .slt-right {
+    /*background-color: #ccc;*/
+    border: 1px solid #ccc;
+    height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dlg-table-row {
+    cursor: pointer;
+    border-bottom: none;
+    outline: 0px;
+    line-height: 15px;
+}
+
+.slt-result {
+    float: left;
+}
+
+    .slt-result > div {
+        float: left;
+    }
+
+.slt-result-desc {
+}
+
+.slt-result-value {
+    display: none;
+}

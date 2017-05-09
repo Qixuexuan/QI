@@ -1,0 +1,32 @@
+﻿.ReportBody
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 10px 0px 0px 0px;
+	text-align: center;
+	background: url(images/ContentBG.jpg) 0px 0px repeat;
+}
+
+.ReportBody table
+{
+	border: 0px;
+}
+.ReportBody tr
+{
+	height: 30px;
+}
+.ReportBody th
+{
+	text-align: right;
+	vertical-align: middle;
+	font-family: "微软雅黑" , "宋体";
+	font-weight: normal;
+	font-size: 14px;
+}
+.ReportBody td
+{
+	text-align: left;
+	vertical-align: middle;
+}

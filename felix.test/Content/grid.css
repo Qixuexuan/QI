@@ -1,0 +1,85 @@
+﻿
+.grid {
+    width: 100%;
+   
+    font-size: 12px;
+}
+
+.table-tr-odd {
+    background-color: #F9F9F9;
+}
+
+.table-tr-even {
+    background-color: #fff;
+}
+
+.grid-row-selected {
+    background-color: #ccc;
+}
+
+/*.grid-more {
+    float: right;
+    font-size: 12px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+    .grid-more:hover {
+        color: blue;
+    }*/
+
+.grid tr td {
+    color: gray;
+    line-height: 28px;
+    font-weight: 400;
+    cursor: pointer;
+
+}
+
+    .grid tr td:first-child {
+        color: #808080;
+        text-align: center;
+    }
+
+    .grid tr td:last-child {
+        text-align: center;
+    }
+
+.grid tr th {
+    background-color: #E9F3F7;
+    color: #0385CE;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+
+    .grid tr th:first-child {
+        width: 60px;
+    }
+
+/*.grid tr th:last-child {
+        width: 60px;
+    }*/
+.grid-page {
+    width: 500px;
+    margin-top: 10px;
+}
+
+    .grid-page > div {
+        float: left;
+        width: 30px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+        .grid-page > div:hover {
+            color: blue;
+            s;
+        }
+
+        .grid-page > div input[type=text] {
+            width: 20px;
+            height: 10px;
+        }

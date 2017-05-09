@@ -1,0 +1,21 @@
+﻿body {
+}
+
+.isneed {
+    color: red;
+    font-size: 12px;
+}
+ 
+.form-slt-btn {
+    float: left;
+    margin-left: 10px;
+    padding: 4px;
+    padding-left: 8px;
+    cursor: pointer;
+    width: 32px;
+    height: 16px;
+    color: red;
+    /*background-color: #20B2AA;*/
+}
+
+  

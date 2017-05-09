@@ -1,0 +1,23 @@
+﻿body.loginbody
+{
+    margin:0;
+    padding:0;
+    background:#F8F8F8 url(images/Login/loginbg.jpg) 0 0 repeat-x;
+    color:#FFF;
+}
+.loginbody .wrapper{ background:url(images/Login/wrapperbg.jpg) center 0 no-repeat; height:100%; }
+.loginbody .div1{ background:url(images/Login/logo_03.png) 20px 10px no-repeat; height:60px; }
+.loginbody .div2{background:url(images/Login/login_05.jpg) 0 0 no-repeat; height:164px;display:none}
+.loginbody .div3{background:url(images/Login/login_06.jpg) 0 0 no-repeat; height:83px;display:none;}
+.loginbody .div4{background:url(images/Login/login_website.jpg) 0 0 no-repeat; height:83px;display:none}
+.loginbody .div5{ height:212px}
+.loginbody .div5 .div_1{background:url(images/Login/login_07.jpg) 0 0 no-repeat; height:212px; width:269px; float:left;display:none;}
+.loginbody .div5 .div_2{background:url(images/Login/loginbg.png) 0 0 no-repeat; height:238px; width:522px; position:absolute; left:50%; top:50%; margin-left:-283px; margin-top:-184px; padding-top:130px; padding-left:45px }
+.loginbody .div5 .div_3{background:url(images/Login/login_09.jpg) 0 0 no-repeat; height:251px; width:200px; float:left;display:none;}
+.loginbody .div6{background:url(images/Login/login_10.jpg) 0 0 no-repeat; height:109px; display:none}
+.loginbody .div5 #txtAccount{ background:url(images/Login/login2_11.jpg) 0 0 no-repeat; height:35px; width:251px; border:none; font-size:16px; color:#000; line-height:35px; padding:0 5px}
+.loginbody .div5 #txtPwd{ background:url(images/Login/login2_15.jpg) 0 0 no-repeat; height:35px; width:251px; border:none;font-size:16px; color:#000;line-height:32px;padding:0 5px}
+
+#imgLogin{ background:url(images/Login/login2_18.png) 0 0  no-repeat; width:128px; height:63px; margin-left:145px}
+.loginname{background:url(images/Login/login2_03.png) 0 0  no-repeat; width:154px; height:35px; display:block}
+.loginpwd{background:url(images/Login/login2_06.png) 0 0  no-repeat; width:154px; height:35px; display:block}

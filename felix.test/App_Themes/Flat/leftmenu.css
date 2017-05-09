@@ -1,0 +1,106 @@
+﻿.leftmenubb
+{
+	width:250px;
+	background-color: #FFF;	
+    border-right:1px solid #ccc;
+}
+.LeftMenuTD
+{
+	margin: 0px;
+	height: 100%;
+	width:204px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	
+	scrollbar-3dlight-color: #3e4247; /*立体滚动条亮边的颜色*/
+    scrollbar-arrow-color: #FFFFFF; /*立体滚动条亮边的颜色*/
+    scrollbar-base-color: #3e4247; /*底色*/
+    scrollbar-darkshadow-color: #FFFFFF; /*立体滚动条强阴影的颜色*/
+    scrollbar-face-color: #3e4247; /*立体滚动条凸出部分的颜色*/
+    scrollbar-highlight-color: #FFFFFF; /*滚动条空白部分的颜色*/
+    scrollbar-shadow-color: #3e4247 /*立体滚动条亮边的颜色   5ca74d*/;	
+}
+ 
+.ztree li button.switch
+{
+	visibility: hidden;
+	width: 1px;
+}
+.ztree li span.button.switch
+{
+	display: none;
+}
+.ztree li button.switch.roots_docu
+{
+	visibility: visible;
+	width: 16px;
+}
+.ztree li button.switch.center_docu
+{
+	visibility: visible;
+	width: 16px;
+}
+.ztree li button.switch.bottom_docu
+{
+	visibility: visible;
+	width: 16px;
+}
+
+.ztree li a span.button.switch
+{
+	display: none;
+}
+.ztree.showIcon li a span.button.switch
+{
+	display: block;
+}
+
+.ztree li a.curSelectedNode
+{
+	background-color: #4A5B79;
+	color: #ffffff;
+}
+.ztree li span.button
+{
+	height: 16px;
+	width: 16px; 
+}
+.ztree li a {
+
+    line-height:20px;
+}
+.ztree li span.button.diy01_ico_open
+{
+	background-image: url("flatImg/jian.png");
+}
+.ztree li span.button.diy01_ico_open:hover
+{
+	background-image: url("flatImg/jian_selected.png");
+}
+.ztree li span.button.diy01_ico_close
+{
+	background-image: url("flatImg/add.png");
+}
+.ztree li span.button.diy01_ico_close:hover
+{
+	background-image: url("flatImg/add_selected.png");
+}
+.ztree li span.button.diy01_ico_docu
+{
+	background-image: url("flatImg/gou.png");
+}
+
+.ztree li span.button.diy02_ico_open, .ztree li span.button.diy02_ico_close
+{
+	background-image: url("flatImg/gou.png");
+}
+
+.ztree li span.button.diy02_ico_docu
+{
+	
+}
+
+.ztree li a.curSelectedNode .diy02_ico_docu
+{
+	background-image: url("flatImg/gou.png");
+}  

@@ -1,0 +1,80 @@
+﻿.ApplePagerBody
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+}
+
+/*********************内容************************/
+.ApplePagerBody .ApplePagerContent
+{
+	position: fixed;
+	height: 100%;
+}
+.ApplePagerBody .ApplePagerContent .step
+{
+	position: relative;
+	float: left;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*********************按钮************************/
+.ApplePagerBody .ApplePagerContentButton
+{
+	width: 39px;
+	height: 81px;
+	position: absolute;
+	top: 50%;
+	outline: none;
+	z-index: 99999;
+}
+.ApplePagerBody .ApplePagerContentButton:hover
+{
+	background-position: 0px -81px;
+}
+.ApplePagerBody .PrevPage
+{
+	background: url(images/ApplePager/ArrowLeft.png) 0px 0px no-repeat;
+	float: left;
+	left: 10px;
+}
+.ApplePagerBody .NextPage
+{
+	background: url(images/ApplePager/ArrowRight.png) 0px 0px no-repeat;
+	float: right;
+	right: 10px;
+}
+
+/*********************分页************************/
+.ApplePagerBody .ApplePagerNavigator
+{
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	bottom: 20px;
+	z-index: 99999;
+	text-align: center;
+}
+.ApplePagerBody .ApplePagerNavigator span
+{
+	width: 20px;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+}
+.ApplePagerBody .ApplePagerNavigator .PagerButton
+{
+	display: block;
+	width: 20px;
+	height: 100%;
+	position: relative;
+	background: url(images/ApplePager/PagerButton.png) 0px 0px no-repeat;
+	outline: none;
+	cursor: pointer;
+}
+.ApplePagerBody .ApplePagerNavigator .selected
+{
+	background-position: -20px 0px;
+}

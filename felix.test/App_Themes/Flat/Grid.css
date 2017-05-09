@@ -1,0 +1,210 @@
+﻿.GridBody
+{
+	padding:0px;
+	margin:0px;
+	height:100%;
+}
+.GridBody .GridPage
+{
+	padding:0px;
+	margin:0px;
+	height:100%;
+}
+.GridBody_Pop{padding:0px; margin:0px;}
+.GridPage{ background:#f6f6f6;}
+/************************工具栏*************************/
+.GridBody .GridToolbar
+{
+	
+	font-family: 微软雅黑;
+	font-size: 12px;
+	padding:1px 10px 1px 15px;	
+	overflow: hidden;
+	background:#ebebeb url('images/topbg.jpg') 0 0 repeat-x;
+}
+
+
+
+/************************高级查询*************************/
+.GridBody .GridAdvancedSearch
+{
+	display: none;
+	padding: 5px 10px;
+}
+.GridBody .GridAdvancedSearch .GridAdvancedSearchDescription
+{
+}
+.GridBody .GridAdvancedSearch .GridAdvancedSearchCondition
+{
+}
+.GridBody .GridSearch .GridAdvancedSearchButton 
+{
+	padding-top:1px;
+}
+.GridBody .GridSearch .GridAdvancedSearchButton .styButton
+{
+	width: 99px;
+    height: 35px;
+    background: url(images/search.png) 2px 2px no-repeat;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing:2px;
+    padding-left:30px;
+}
+
+.GridBody .GridSearch
+{
+	padding: 6px 10px 5px 20px;
+}
+
+/************************表格描述*************************/
+.GridBody .GridDescription
+{
+	height: 40px;
+	text-align: left;
+	padding: 5px;
+}
+.GridBody .GridDescription .GridDescriptionLabel
+{
+	height: 100%;
+	color: #646464;
+	font-weight: bold;
+	background: url(images/trip.gif) 0px 1px no-repeat;
+	padding-left:15px;
+	vertical-align: middle;
+}
+
+/*************************************************/
+.GridBody .GridTable
+{
+	overflow: auto;
+	padding:0 25px;
+	
+}
+
+.GridBody_Pop .GridTable
+{padding:0 5px;}
+
+.GridBody .GridTable .GridView
+{
+	border: 0px;	
+	border-collapse:collapse;	
+}
+.GridBody .GridTable .GridView .GridViewHeader th
+{
+	height: 34px;
+	background: #f2f2f2;
+	border: 1px solid #d6d6d6;
+	text-align: center;
+}
+
+.GridBody .GridTable .GridView .GridViewHeader th a:link,
+.GridBody .GridTable .GridView .GridViewHeader th a:visited
+{
+	color: #000;
+	font-family: 微软雅黑;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.GridBody .GridTable .GridView .GridViewHeader th a:hover
+{
+	color: #666;
+}
+.GridBody .GridTable .GridView .EDEBDF
+{
+	background: #F8E5C6;
+	color: #515151;
+}
+.GridBody .GridTable .GridView .GridViewRow td
+{
+	height: 35px;
+	cursor:default;
+	color:#505050;
+	border: 1px solid #d6d6d6;
+}
+.GridBody .GridTable .GridView .AlternatingRow
+{
+	color: #505050;
+	
+}
+.GridBody .GridTable .GridView .AlternatingRow td
+{
+	height: 35px;
+	border: 1px solid #d6d6d6;
+	cursor:default;
+}
+.GridBody .GridTable .GridView .SelectedRow td
+{
+	background: #F4E1B1;
+}
+.GridBody .GridTable .GridView td a,
+.GridBody .GridTable .GridView td a:visited
+{
+	color: blue;
+	text-decoration: underline;
+}
+.GridBody .GridTable .GridView td a:hover
+{
+	color: red;
+}
+.GridBody .GridTable .GridView td a:active
+{
+	color: gray;
+}
+
+/************************操作列按钮*************************/
+.gridToolbarDivCss
+{
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.gridToolbarDivCss span
+{
+    vertical-align: text-bottom;
+    vertical-align: middle;
+    text-decoration: underline;
+    color: #204d99;
+}
+
+
+
+
+
+/************************分页控件*************************/
+.GridBody .GridPager
+{
+	height: 36px;
+	background: #d6d6d6;
+	font-size:12px;
+	color:#000;
+	padding:2px 0px;
+}
+.GridBody .GridPager table
+{
+	border: 0px;
+	border-collapse:collapse;
+	margin:0 auto;
+}
+.GridBody .GridPager tr
+{
+	height: 34px;
+}
+.GridBody .GridPager td
+{
+	vertical-align: middle;
+}
+.GridBody .GridPager *{ vertical-align:middle}
+
+.DivRight a
+{
+	color:#000;	
+}

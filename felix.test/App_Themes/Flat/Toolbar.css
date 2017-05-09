@@ -1,0 +1,26 @@
+﻿.ToolbarButton
+{
+	margin:0 auto;
+	width: 92px;
+	height: 35px;
+	line-height: 35px;
+	cursor: pointer;
+	color: #FFF;
+	background-color: #3d4045;
+	text-align:center;
+	margin-right:4px;
+}
+.add{	margin-right:4px;}
+.Add:hover, .Add:active{background-color: #5ca74d;  color: #FFF;}
+
+.Update{	margin-right:4px;}
+.Update:hover, .Update:active{background-color: #5ca74d;  color: #FFF;}
+
+.Delete{	margin-right:4px;}
+.Delete:hover, .Delete:active{background-color: #5ca74d;  color: #FFF;}
+
+/*
+.Save{background: url(images/Toolbar/CotrolBtn.png) -282px 0 no-repeat;}
+.Save:hover{background-position: -282px -30px;}
+.Save:active{background-position: -282px -30px;}
+*/

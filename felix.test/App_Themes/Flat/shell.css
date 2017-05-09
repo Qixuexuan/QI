@@ -1,0 +1,735 @@
+﻿/*全局样式*/
+*
+{
+    font-family: "微软雅黑" , "宋体";
+}
+input{ font-size:12px; }
+select{ font-size:12px;}
+textarea{ font-size:12px}
+body
+{
+    margin: 0 auto;
+    padding: 0 auto;
+    font-size: 12px;
+    /*scrollbar-3dlight-color: #5ca74d; /*立体滚动条亮边的颜色*/
+   /* scrollbar-arrow-color: #FFFFFF; /*立体滚动条亮边的颜色*/
+    /*scrollbar-base-color: #5ca74d; /*底色*/
+    /*scrollbar-darkshadow-color: #FFFFFF; /*立体滚动条强阴影的颜色*/
+    /*scrollbar-face-color: #5ca74d; /*立体滚动条凸出部分的颜色*/
+    /*scrollbar-highlight-color: #FFFFFF; /*滚动条空白部分的颜色*/
+    /*scrollbar-shadow-color: #5ca74d /*立体滚动条亮边的颜色   5ca74d*/
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(150,150,150,0.8); 
+    -webkit-box-shadow: outset 1px 1px 5px rgba(255,255,255,0.3); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(100,100,100,0.4); 
+}
+* {
+	scrollbar-face-color:#EBF5FF;
+	scrollbar-base-color:#EBF5FF;
+	scrollbar-arrow-color:black;
+	scrollbar-track-color:#F3F3F3;
+	scrollbar-shadow-color:#EBF5FF;
+	scrollbar-highlight-color:#EBF5FF;
+	scrollbar-3dlight-color:#78AAFF;
+	scrollbar-darkshadow-Color:#78AAFF;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+html,body{ height:100%; overflow:hidden;}
+a:link, a:visited
+{
+    color: #000;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #717070;
+}
+.styButton
+{
+    width: 92px;
+    height: 35px;
+    background-color: #3d4045;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing:2px;
+}
+
+.styButton:hover,.styButton:active
+{
+    background-color: #5ca74d;
+}
+
+.styButton1
+{
+    width: 110px;
+    height: 35px;
+    background-color: #3d4045;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+.styButton2
+{
+    width: 130px;
+    height: 35px;
+    background-color: #3d4045;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+
+.styButton3
+{
+   width: 150px;
+    height: 35px;
+    background-color: #3d4045;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+.styButton4
+{
+    width: 170px;
+    height: 35px;
+    background-color: #3d4045;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.styButton5
+{
+	 width: 190px;
+    height: 35px;
+    background-color: #3d4045;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+.styTextBox, .datepicker /*文本框*/
+{
+    vertical-align: middle;
+    border: 1px solid #999999;
+}
+.styDropDownList /* 下拉框 */
+{
+    height: 24px;
+}
+
+.advancedsearchbtn /*默认按钮 */
+{
+   width: 99px;
+    height: 35px;
+    background: url(images/search.png) 2px 2px no-repeat;
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing:2px;
+    padding-left:30px;
+}
+
+/*---------------------old css---------------------*/
+/* .top
+{
+    background: #0f75c0;
+    height: 15px;
+    width: 100%;
+    padding-top: 1px;
+    padding-right: 20px;
+    text-align: right;
+    clear: both;
+}
+.top a:link, .top a:visited
+{
+    font-size: 12px;
+    color: #ddd;
+    text-decoration: none;
+}
+.top a:hover
+{
+    color: #fff;
+}
+
+.content
+{
+    width: 100%;
+    height: 100%;
+    color: #333;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 22px;
+    min-height: 300px;
+    float: left;
+    clear: both;
+}
+
+.title
+{
+    text-align: center;
+    width: 78px;
+    height: 18px;
+    border-left: 1px solid #8ABCE1;
+    border-right: 1px solid #8ABCE1;
+    border-top: 1px solid #8ABCE1;
+    padding: 4px 1px 0 1px;
+    background: url(images/bgt.jpg) 2px repeat-x;
+    font-size: 12px;
+    color: #1076C1;
+    font-weight: bold;
+}
+* /
+/***********************toolBar************************toolBar************************toolBar************************toolBar************************toolBar************************toolBar*/
+.toolSave, .toolBaractive, .Add, .Update, .Delete, .Back, .Movedown, .Moveup, .Next, .withdraw, .transmit, .Send, .Lock, .toolBarLock, .toolBarSave, .ask, .ReturnSend, .CancelSend, .hasten, .View, .ask, .Copy, .ActiEnd, .Refuse, .Affirm, .Set, .Count, .Invite, .preview, .pass, .toolBarExport, .toolBarMultiSP, .toolBarMultiSQL, .toolBarSingleSP, .toolBarFolderModule, .toolBarTabModule, .toolBarFolderModule, .toolBarPublicAndSendMail, .toolBarPrint, .toolBarPersonInfo, .toolBarInport, .toolBarExportCSV, .toolBarAdvancedSearch, .toolBarSaveSmall
+{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
+/*激活*/
+.toolBaractive
+{
+    height: 20px;
+    background: url(images/toolbar/toolBaractive.gif) no-repeat;
+}
+
+.Moveup
+{
+    height: 12px;
+    background: url(images/toolbar/upmove.gif) no-repeat;
+}
+.Movedown
+{
+    height: 12px;
+    background: url(images/toolbar/downmove.gif) no-repeat;
+}
+.toolBarAdvancedSearch
+{
+    height: 16px;
+    background: url(images/toolbar/scan.gif) no-repeat;
+}
+
+/*上一步*/
+.Back
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarBack.gif) no-repeat;
+}
+
+/*下一步*/
+.Next
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarNext.gif) no-repeat;
+}
+/*撤销*/
+.withdraw
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarwithdraw.gif) no-repeat;
+}
+
+/*转发*/
+.transmit
+{
+    height: 20px;
+    background: url(images/toolbar/toolBartransmit.gif) no-repeat;
+}
+
+/*发送*/
+.Send
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarSend.gif) no-repeat;
+}
+/*锁定*/
+.toolBarLock
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarLock.gif) no-repeat;
+}
+
+/*答复*/
+.ask
+{
+    height: 20px;
+    background: url(images/toolbar/ask.gif) no-repeat;
+}
+
+/*转发*/
+.ReturnSend
+{
+    background: url(images/toolbar/ReturnSend.gif) no-repeat;
+}
+
+/*撤消发送*/
+.CancelSend
+{
+    height: 20px;
+    background: url(images/toolbar/CancelSend.gif) no-repeat;
+}
+
+/*催促*/
+.hasten
+{
+    background: url(images/toolbar/hasten.gif) no-repeat;
+}
+
+/*查看*/
+.View
+{
+    height: 20px;
+    background: url(images/toolbar/View.gif) no-repeat;
+}
+
+/*复制*/
+.Copy
+{
+    height: 20px;
+    background: url(images/toolbar/Copy.gif) no-repeat;
+}
+
+/*活动结束*/
+.ActiEnd
+{
+    height: 20px;
+    background: url(images/toolbar/ActiEnd.gif) no-repeat;
+}
+
+/*拒绝*/
+.Refuse
+{
+    height: 20px;
+    background: url(images/toolbar/Refuse.gif) no-repeat;
+}
+/*确认*/
+.Affirm
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarChoose.gif) no-repeat;
+}
+
+/*设置试卷*/
+.Set
+{
+    height: 20px;
+    background: url(images/toolbar/n_game.gif) no-repeat;
+}
+
+/*统计*/
+.Count
+{
+    height: 20px;
+    background: url(images/toolbar/Count.gif) no-repeat;
+}
+/*邀请*/
+.Invite
+{
+    height: 20px;
+    background: url(images/toolbar/Invite.gif) no-repeat;
+}
+/*预览*/
+.preview
+{
+    height: 20px;
+    background: url(images/toolbar/preview.gif) no-repeat;
+}
+/*通过*/
+.pass
+{
+    height: 20px;
+    background: url(images/toolbar/pass.gif) no-repeat;
+}
+/*导出*/
+.toolBarExport
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarExport.gif) no-repeat;
+}
+/*多行执行sp*/
+.toolBarMultiSP
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarMultiSP.gif) no-repeat;
+}
+/*sp*/
+.toolBarMultiSQL
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarMultiSQL.gif) no-repeat;
+}
+
+/*sp*/
+.toolBarSingleSP
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarMultiSP.gif) no-repeat;
+}
+/*模组*/
+.toolBarFolderModule
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarFolderModule.gif) no-repeat;
+}
+.toolBarTabModule
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarFolderModule.gif) no-repeat;
+}
+/*保存（字体较长）*/
+.toolBarSave
+{
+    height: 21px;
+    width: 208px;
+    padding-top: 5px;
+    padding-left: 33px;
+    text-align: left;
+    background: url(images/toolbar/toolBarSave.gif) no-repeat;
+}
+/*保存(控件页面下面的保存按钮样式)*/
+.toolBarSaveSmall
+{
+    height: 21px;
+    width: 41px;
+    margin: 0;
+    padding-left: 9px;
+    padding-top: 4px;
+    text-align: left;
+    background: url(images/toolbar/buttonbg.jpg) no-repeat;
+    font-size: xx-large;
+}
+
+/*保存(grid上面的保存按钮样式)*/
+.toolSave
+{
+    background: url(images/toolbar/toolBarTopSave.gif) no-repeat;
+    height: 20px;
+}
+
+/*发送邮件*/
+.toolBarPublicAndSendMail
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarPublicAndSendMail.gif) no-repeat;
+}
+/*打印*/
+.toolBarPrint
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarPrint.gif) no-repeat;
+}
+/*人员详细信息*/
+.toolBarPersonInfo
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarPersonInfo.gif) no-repeat;
+}
+/*导出模板*/
+.toolBarInport
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarInport.gif) no-repeat;
+}
+/*导入模板*/
+.toolBarExportCSV
+{
+    height: 20px;
+    background: url(images/toolbar/toolBarExportCSV.gif) no-repeat;
+}
+
+/*分隔符*/
+.cssSplit
+{
+    background: url(images/toolbar/cssSplit.gif) no-repeat center;
+    width: 2px;
+    height: 17px;
+}
+/************anthem:ListBox行选中样式********************anthem:ListBox行选中样式****************************anthem:ListBox行选中样式****************************anthem:ListBox行选中样式*******************************/
+.listBoxCss
+{
+    border: 0px none;
+}
+
+.modelControl
+{
+    width: 140px;
+}
+
+.tabControls div
+{
+    border-width: 0px;
+    border-style: none;
+}
+
+/* ******************控件样式*********************************控件样式*******************************/
+/*翻页*/
+.home
+{
+    background: url(images/toolbar/home.jpg) no-repeat;
+    margin: 0;
+    padding-bottom: 0;
+    padding-top: 4px;
+    text-align: center;
+    height: 20px;
+    width: 47px;
+}
+.up
+{
+    background: url(images/toolbar/up.jpg) no-repeat;
+    height: 20px;
+    width: 47px;
+}
+.next
+{
+    /*background: url(images/toolbar/next.jpg) no-repeat;*/
+    height: 20px;
+    width: 47px;
+}
+.end
+{
+    background: url(images/toolbar/end.jpg) no-repeat;
+    height: 20px;
+    width: 47px;
+}
+
+
+/*****************grid上toolbar样式**************************grid上toolbar样式******************************grid上toolbar样式************************/
+.gridtoolbarAdd
+{
+    background: url(images/toolbar/add.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    background-position: center;
+}
+/*
+------->delete
+*/
+.gridtoolbarDelete
+{
+	display:block;
+    background:url(images/toolbar/mod-btn.png) -29px 0px  no-repeat;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    float:left;
+}
+
+.gridtoolbarPhone
+{
+	display:block;
+    background:url(images/phone.png) 0px -1px  no-repeat;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    float:left;
+}
+
+.gridtoolbarGou
+{
+	display:block;
+    background: #eeeeee url(images/toolbar/mod-btn.png) -58px 0px  no-repeat;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    border:solid 1px #b9b9b9;
+}
+
+.gridtoolbarUser
+{
+	display:block;
+    background: #eeeeee url(images/toolbar/mod-btn.png) -87px 0px  no-repeat;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    border:solid 1px #b9b9b9;
+}
+
+/*
+------->update
+*/
+.gridtoolbarUpdata
+{
+	width: 28px;
+    height: 28px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    background: url(images/toolbar/mod-btn.png) 0px 0px  no-repeat;
+}
+.gridtoolbarback
+{
+	width: 28px;
+    height: 28px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    margin-top:-2px;
+    background: url(images/toolbar/icon_cancel.png) 0px 0px  no-repeat;
+}
+.gridtoolbarPoint
+{
+	width: 28px;
+    height: 28px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    background: url(images/toolbar/point.png) 0px -2px  no-repeat;
+}
+
+.gridtoolbarAlert-red
+{
+	width: 22px;
+    height: 22px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    background: url(images/toolbar/icon_red_light.png) 4px 4px  no-repeat;
+}
+.gridtoolbarAlert-yellow
+{
+	width: 22px;
+    height: 22px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    background: url(images/toolbar/icon_yellow_light.png) 4px 4px  no-repeat;
+}
+.gridtoolbarAlert-green
+{
+	width: 22px;
+    height: 22px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    background: url(images/toolbar/icon_green_light.png) 4px 4px  no-repeat;
+} 
+.gridtoolbarPreApprove
+{
+	width: 28px;
+    height: 28px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    background: url(images/toolbar/mod-btn.png)  -58px 0px no-repeat;
+}
+
+.gridtoolbarBlackList
+{
+	width: 28px;
+    height: 28px;
+    cursor: pointer;
+    text-decoration:none;    
+	float:left;
+    background: url(images/toolbar/mod-btn.png)  -87px 0px no-repeat;
+}
+
+.gridtoolbarApprove
+{
+    background: url(images/toolbar/审核.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    background-position: center;
+}
+
+.gridtoolbarStop
+{
+    background: url(images/toolbar/终止.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    background-position: center;
+}
+
+.gridtoolbarPub
+{
+    background: url(images/toolbar/公示结果.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    background-position: center;
+}
+
+
+
+
+/*------->search*/
+.gridtoolbarsearch
+{
+    background: url(images/toolbar/scan.gif);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    background-position: center;
+}
+
+
+.GridButton_View
+{    
+    background: url(images/toolbar/toolBarAdd.gif);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    background-position: center;    
+}
+

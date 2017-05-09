@@ -1,0 +1,88 @@
+﻿/************tabTag样式切换菜单样式*************/
+.TabBody
+{
+    
+}
+.TabBody .TabTag
+{
+    height: 33px;
+    line-height: normal;
+    vertical-align:bottom;
+}
+.TabBody .TabTag UL
+{   
+    margin: 0px;
+    padding:0px;
+    list-style-type: none;
+    height: 38px;
+    background-color:#4a9ad9; 
+}
+.TabBody .TabTag UL LI
+{
+	height:36px;
+    padding: 0px;
+    margin: 0px;
+    margin-top:4px;
+    cursor: pointer;
+    float: left;
+}
+.TabBody .TabTag UL LI A
+{
+    padding-right: 0px;
+    padding-left: 4px;
+    float: left;
+    padding-bottom: 0px;
+    margin: 0px;
+    padding-top: 0px;
+    text-decoration: none;
+    position: relative;
+    color: #fff;
+    z-index: 1;
+}
+.TabBody .TabTag UL LI A .TagLeft
+{
+    display: block;
+    padding-left: 16px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+}
+.TabBody .TabTag UL LI A .TagRight
+{
+   
+    width: 16px;
+    height: 36px;
+    display: block;
+    position: absolute;
+    right: -16px;
+    top: 0;
+}
+.TabBody .TabTag .selectedTag A
+{
+    z-index: 2;
+    background-position: 0px -25px;
+}
+.TabBody .TabTag .selectedTag A .TagLeft, .TabBody .TabTag .selectedTag A .TagRight
+{
+    background-color:#f6f6f6;
+    color: #000;
+}
+.TabBody .TabContent
+{
+}
+.TabBody .TabContent iframe
+{
+    width: 100%;
+    height: 100%;
+}
+/*
+.TabBody_Pop{ background:#C0DAF0}
+.TabBody_Pop .TabContent
+{
+    margin: 0 5px 0 5px;
+    *margin: 0 7px 0 5px;
+    border: solid 1px #5285AC;
+    background: #F7F2E8;
+}
+*/
+

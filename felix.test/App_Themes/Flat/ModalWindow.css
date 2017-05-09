@@ -1,0 +1,180 @@
+﻿/************弹出窗口*************/
+.ModalWindowStyle
+{
+	padding: 0px;
+	position: absolute;
+	cursor: default;
+	padding-bottom:40px;
+}
+
+.ie9 .ModalWindowStyle { 
+   padding-bottom:0px;
+}
+
+.ModalWindowStyle .ModalWindowHeadStyle
+{
+	/*width: 100%;*/
+	height: 30px;
+	border-top:solid 2px #273a4d;
+	border-left:solid 1px #273a4d;
+	border-right:solid 1px #273a4d;
+	background-color:#4A5B79;
+	text-align: left;
+	position: relative;
+	padding-top:4px;
+}
+.ModalWindowStyle .ModalWindowHeadStyle .HeadLeft
+{
+	width:20px;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.ModalWindowStyle .ModalWindowHeadStyle .HeadRight
+{
+	width: 8px;
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+.ModalWindowStyle .ModalWindowHeadStyle .HeadMid
+{
+	height: 100%;
+	margin-left: 20px;
+	margin-right: 8px;
+}
+.ModalWindowStyle .ModalWindowHeadStyle .HeadMid span
+{
+	font-size: 14px;
+	color: #fff;
+	line-height: 30px;
+}
+
+
+.ModalWindowStyle .ModalWindowHeadStyle a
+{
+	background: url(images/ModalWindow/Close1.png) 0 0 no-repeat;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	display: block;
+}
+.ModalWindowStyle .ModalWindowHeadStyle a:hover
+{
+	background: url(images/ModalWindow/Close1.png) -19px 0  no-repeat;
+}
+
+.ModalWindowStyle .ModalWindowHeadStyle .show
+{
+	background: url(images/ModalWindow/show.png) 0 2px no-repeat;
+}
+.ModalWindowStyle .ModalWindowHeadStyle .show:hover
+{
+	background: url(images/ModalWindow/show.png) 0 2px no-repeat;
+}
+
+.ModalWindowStyle .ModalWindowHeadStyle .hidden
+{
+	background: url(images/ModalWindow/hidden.png) 0 2px no-repeat;
+}
+.ModalWindowStyle .ModalWindowHeadStyle .hidden:hover
+{
+	background: url(images/ModalWindow/hidden.png) 0 2px no-repeat;
+}
+
+
+
+.ModalWindowStyle .ModalWindowContentStyle
+{
+	background:#f6f6f6;
+	border:solid 1px #273a4d;
+}
+
+.ModalWindowStyle .ModalWindowContentStyle iframe iframe
+{
+    margin:0;
+    border:none
+}
+
+/************弹出Tab页窗口*************/
+.ModalWindowStyle_Tab
+{
+	padding: 0px;
+	position: absolute;
+	cursor: default;
+	background-color:#fff;
+}
+.ModalWindowStyle_Tab .ModalWindowHeadStyle
+{
+	width: 100%;
+	height: 40px;
+	border-top:solid 2px #354637;
+	background-color:#5ca74d;
+	text-align: left;
+	position: relative;
+	padding-top:4px;
+}
+.ModalWindowStyle_Tab .ModalWindowHeadStyle .HeadLeft
+{
+	width:20px;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.ModalWindowStyle_Tab .ModalWindowHeadStyle .HeadRight
+{
+	width: 8px;
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+.ModalWindowStyle_Tab .ModalWindowHeadStyle .HeadMid span
+{
+	font-size: 14px;
+	color: #fff;
+	line-height: 30px;
+}
+.ModalWindowStyle_Tab .ModalWindowHeadStyle .HeadMid
+{
+	height: 100%;
+	margin-left: 20px;
+	margin-right: 8px;
+}
+
+.ModalWindowStyle_Tab .ModalWindowHeadStyle a
+{
+	background: url(images/ModalWindow/Close1.png) 0 0 no-repeat;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	display: block;
+}
+.ModalWindowStyle_Tab a:hover
+{
+	background: url(images/ModalWindow/Close1.png) -19px 0  no-repeat;
+}
+
+.ModalWindowStyle_Tab .ModalWindowContentStyle
+{
+	background:#f6f6f6
+}
+
+/************遮蔽层*************/
+.ModalWindowCoverStyle
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: #000;
+	filter: progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=30);
+	opacity: 0.3;
+}
+

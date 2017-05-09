@@ -1,0 +1,128 @@
+﻿.FormBody
+{
+	    vertical-align:top
+
+}
+.PageDataEditForm
+{
+	height: 100%;	
+}
+.FormBG
+{
+	
+}
+.FormBody .FormDescription
+{
+	height: 40px;
+	text-align: left;
+}
+.FormBody .FormDescription .FormDescriptionLabel
+{
+	height: 100%;
+	color: #646464;
+	font-weight: bold;
+	background: url(images/trip.gif) 0px 1px no-repeat;
+	padding-left:15px;
+	vertical-align: middle;
+}
+.FormBody .FormContent
+{
+
+	overflow-x: hidden;
+	/*overflow-y: auto;*/
+	text-align: center
+}
+
+.FormBody  .FormContentTable
+{
+	
+	border: 0px;
+	margin:0 auto;
+	margin-top:10px;
+}
+.FormBody  .FormContentTable td,
+.FormBody  .FormContentTable th
+{
+	padding: 2px;
+}
+.FormBody .FormButton
+{
+	text-align: center;
+	padding:5px 0;
+	padding:3px 0;
+	text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    outline: 0px;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing:2px;		
+}
+
+.FormBody .FormButton .styButton
+{
+	width: 100px;
+    height: 36px;
+    background: url(images/btnBlue.png) 2px 2px no-repeat;
+   
+    
+}
+
+.FormBody .FormButton .styButton1
+{
+	width: 132px;
+    height: 36px;
+    background: url(images/btnBlue1.png) 2px 2px no-repeat;
+}
+
+.FormBody .Save
+{
+    background: url(images/btnBlue.png)  2px 2px no-repeat;
+    width: 100px;
+    height: 36px;
+    text-align:center;
+    display:block;
+    font-size:14px;
+    color:#FFF;
+    font-weight:bold;
+    margin:0 auto;
+ }
+
+.FormBody .FormButton .toolbarTable
+{
+	width: 100%;
+}
+/*
+.FormPage 弹出页边框
+{
+    margin: 0 5px 5px 5px;
+    margin : 0 7px 5px 5px\9;
+    border: solid 1px #5285AC;
+    background:#F7F2E8;
+}*/
+.FormBody
+{
+	border:0px;
+	margin:0px;	
+}
+
+.flow
+{
+	height:30px;   
+    float:left;
+    margin-top:15px;   
+}
+.circle
+{
+	width:92px;
+    padding:25px 20px 10px 20px;
+    background:url('images/status1.png') center top no-repeat; 
+    color:White;
+    font-size:12px;
+}
+.arow
+{
+	width:15px;
+	padding:20px 5px 10px 15px;
+	background:url('images/statusRow.png') center top no-repeat; 
+}

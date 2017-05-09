@@ -1,0 +1,33 @@
+#header{}
+#header td {padding:0px;}
+
+body  {
+	background: url(indexbg.jpg) repeat-x #eeeeee;
+	padding: 0;
+	text-align: center;
+	color: #333;
+	font-size:12px;
+	line-height:180%;
+	font-family: "ËÎÌו"; margin:0;
+}
+
+#wrap {
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.loginbg{background:url(main02.jpg) no-repeat;}
+.paddingtab{ padding-top:91px; padding-left:55px;}
+
+input.text {
+	font-family:arial,ËÎÌו,serif;
+	height: 24px;
+	padding: 1px;
+	color: #333; 
+	border: 1px solid #fff;
+	background-color: #fff;
+}
+
+

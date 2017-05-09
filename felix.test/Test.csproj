@@ -1,0 +1,1378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6ACA2CF4-4538-4DAD-B71E-F4AD99C3BB13}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>test</RootNamespace>
+    <AssemblyName>test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Anthem, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Anthem.dll</HintPath>
+    </Reference>
+    <Reference Include="AntiXssLibrary, Version=3.1.3524.16873, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.BarCode">
+      <HintPath>..\..\Sln\packages\Geone.Aspose.1.0.0\lib\Aspose.BarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\Sln\packages\Geone.Aspose.1.0.0\lib\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\..\Sln\packages\Geone.Aspose.1.0.0\lib\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="DundasWebChart">
+      <HintPath>..\..\Sln\packages\Geone.web.1.0.5\lib\DundasWebChart.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\HY.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.Cache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\HY.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.DBAccess, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\HY.DBAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.ToolBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\HY.ToolBox.dll</HintPath>
+    </Reference>
+    <Reference Include="HY.WorkFlow">
+      <HintPath>..\..\Sln\packages\Geone.web.1.0.5\lib\HY.WorkFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON">
+      <HintPath>..\..\Sln\packages\Geone.web.1.0.5\lib\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Sln\packages\Geone.web.1.0.5\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Flat\ApplePager.css" />
+    <Content Include="App_Themes\Flat\baike.css" />
+    <Content Include="App_Themes\Flat\bak_JIndex.css" />
+    <Content Include="App_Themes\Flat\CustomizeIndex.css" />
+    <Content Include="App_Themes\Flat\dot_for_ie.gif" />
+    <Content Include="App_Themes\Flat\feedback.css" />
+    <Content Include="App_Themes\Flat\flatImg\add.png" />
+    <Content Include="App_Themes\Flat\flatImg\add_1.png" />
+    <Content Include="App_Themes\Flat\flatImg\add_selected.png" />
+    <Content Include="App_Themes\Flat\flatImg\gou.png" />
+    <Content Include="App_Themes\Flat\flatImg\jian.png" />
+    <Content Include="App_Themes\Flat\flatImg\jian_1.png" />
+    <Content Include="App_Themes\Flat\flatImg\jian_selected.png" />
+    <Content Include="App_Themes\Flat\flatImg\layout_arrows.png" />
+    <Content Include="App_Themes\Flat\FlowChart.js" />
+    <Content Include="App_Themes\Flat\Form.css" />
+    <Content Include="App_Themes\Flat\FormNew.css" />
+    <Content Include="App_Themes\Flat\Grid.css" />
+    <Content Include="App_Themes\Flat\header.png" />
+    <Content Include="App_Themes\Flat\High.png" />
+    <Content Include="App_Themes\Flat\High0.png" />
+    <Content Include="App_Themes\Flat\images\0.gif" />
+    <Content Include="App_Themes\Flat\images\ApplePager\ArrowLeft.png" />
+    <Content Include="App_Themes\Flat\images\ApplePager\ArrowRight.png" />
+    <Content Include="App_Themes\Flat\images\ApplePager\PagerButton.png" />
+    <Content Include="App_Themes\Flat\images\btnBlue.png" />
+    <Content Include="App_Themes\Flat\images\btnBlue1.png" />
+    <Content Include="App_Themes\Flat\images\button\add.png" />
+    <Content Include="App_Themes\Flat\images\button\apply.png" />
+    <Content Include="App_Themes\Flat\images\button\assist.png" />
+    <Content Include="App_Themes\Flat\images\button\back.png" />
+    <Content Include="App_Themes\Flat\images\button\cog_edit.png" />
+    <Content Include="App_Themes\Flat\images\button\comment_add.png" />
+    <Content Include="App_Themes\Flat\images\button\db.gif" />
+    <Content Include="App_Themes\Flat\images\button\deleteduban.png" />
+    <Content Include="App_Themes\Flat\images\button\DeleteRed.png" />
+    <Content Include="App_Themes\Flat\images\button\detail.png" />
+    <Content Include="App_Themes\Flat\images\button\dropdown-icon.png" />
+    <Content Include="App_Themes\Flat\images\button\duban.png" />
+    <Content Include="App_Themes\Flat\images\button\export_database.png" />
+    <Content Include="App_Themes\Flat\images\button\export_table.png" />
+    <Content Include="App_Themes\Flat\images\button\filewrite.gif" />
+    <Content Include="App_Themes\Flat\images\button\FlatNew_03.png" />
+    <Content Include="App_Themes\Flat\images\button\FlatNew_05.png" />
+    <Content Include="App_Themes\Flat\images\button\FlatNew_07.png" />
+    <Content Include="App_Themes\Flat\images\button\FlatNew_09.png" />
+    <Content Include="App_Themes\Flat\images\button\FlatNew_11.png" />
+    <Content Include="App_Themes\Flat\images\button\FlatNew_12.png" />
+    <Content Include="App_Themes\Flat\images\button\FlatNew_13.png" />
+    <Content Include="App_Themes\Flat\images\button\folder_magnify.png" />
+    <Content Include="App_Themes\Flat\images\button\folder_user.png" />
+    <Content Include="App_Themes\Flat\images\button\group_key.png" />
+    <Content Include="App_Themes\Flat\images\button\HeiMingDan.png" />
+    <Content Include="App_Themes\Flat\images\button\icon_tip_bg.png" />
+    <Content Include="App_Themes\Flat\images\button\lock.png" />
+    <Content Include="App_Themes\Flat\images\button\lock_open.png" />
+    <Content Include="App_Themes\Flat\images\button\log.png" />
+    <Content Include="App_Themes\Flat\images\button\openduban.png" />
+    <Content Include="App_Themes\Flat\images\button\operation.png" />
+    <Content Include="App_Themes\Flat\images\button\process.gif" />
+    <Content Include="App_Themes\Flat\images\button\query.gif" />
+    <Content Include="App_Themes\Flat\images\button\release_slow.png" />
+    <Content Include="App_Themes\Flat\images\button\setting.gif" />
+    <Content Include="App_Themes\Flat\images\button\toolBarwithdraw.gif" />
+    <Content Include="App_Themes\Flat\images\button\user_go.png" />
+    <Content Include="App_Themes\Flat\images\button\zoom.png" />
+    <Content Include="App_Themes\Flat\images\button\新建文件夹\FlatNew_03.png" />
+    <Content Include="App_Themes\Flat\images\button\新建文件夹\FlatNew_05.png" />
+    <Content Include="App_Themes\Flat\images\button\新建文件夹\FlatNew_07.png" />
+    <Content Include="App_Themes\Flat\images\button\新建文件夹\FlatNew_09.png" />
+    <Content Include="App_Themes\Flat\images\button\新建文件夹\FlatNew_11.png" />
+    <Content Include="App_Themes\Flat\images\CMSYS-logo.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\%40crs.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\0.gif" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\0.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\0_1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\1_1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\2.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\2_1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\3.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\3_1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\4.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\4_1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\alarm_alert.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\attendance.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\avatar_bg.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\bbs.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\btn_black.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\calendar.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\centerbg_03.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\chat.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\close_over.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\comm.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\ContentBG.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\default.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\desktop_icons.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\diary.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\document.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\email.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\erp.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\fax.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\file_folder.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\funcbar_bg.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\group.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_03.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_05.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_07.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_10.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_13.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_19.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_23.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_26.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_28.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_30.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_34.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_38.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_41.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_46.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\homeindex_47.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\hrms.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\icon_default.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\info.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\info_query.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\knowledge.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\loading.gif" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\logout.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\logo_01.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\logo_02.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_06.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_07.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_09.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_default_03.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_default_04.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_default_06.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\menu_span_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\mytable.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\netdisk.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\news.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\notify.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\online_status.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\on_status_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\person_info.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\portal_icon.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\product.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\project.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\roll_manage.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\sale_manage.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\scrollbar_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\scroll_arrow.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\search_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\second_panel_bg.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\second_tabs_active.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_icon.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_panel_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_panel_close.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_panel_Left.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_panel_Left1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_panel_page_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_panel_Right.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\shortcut_panel_Right1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\sms.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\start_menu.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\start_menu_panel_bg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\start_menu_panel_bg1.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\sys.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\system_search.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\tabs.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\tabs_active.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\tabs_arrow.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\tabs_close.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\topbar_bg.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\topbg.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\topmainbg_02.jpg" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\topwhitebg.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\topwhitebgleft.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\topwhitebgright.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\user.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\workflow.png" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\workflow_small.png" />
+    <Content Include="App_Themes\Flat\images\daiban.png" />
+    <Content Include="App_Themes\Flat\images\dk.png" />
+    <Content Include="App_Themes\Flat\images\DSFXC-logo.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\add.gif" />
+    <Content Include="App_Themes\Flat\images\engine\bit.gif" />
+    <Content Include="App_Themes\Flat\images\engine\del.png" />
+    <Content Include="App_Themes\Flat\images\engine\dropdowntree_over.gif" />
+    <Content Include="App_Themes\Flat\images\engine\dropdowntree_unuse.gif" />
+    <Content Include="App_Themes\Flat\images\engine\dropdowntree_use.gif" />
+    <Content Include="App_Themes\Flat\images\engine\end.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\end0.gif" />
+    <Content Include="App_Themes\Flat\images\engine\end0.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\end10.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\exit.gif" />
+    <Content Include="App_Themes\Flat\images\engine\exit.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\hom0.gif" />
+    <Content Include="App_Themes\Flat\images\engine\hom0.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\home.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\home10.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\next.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\next0.gif" />
+    <Content Include="App_Themes\Flat\images\engine\next0.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\next10.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\pagerbg_03.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\qc.gif" />
+    <Content Include="App_Themes\Flat\images\engine\qd_0.gif" />
+    <Content Include="App_Themes\Flat\images\engine\qd_0.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\tab_left.png" />
+    <Content Include="App_Themes\Flat\images\engine\tab_right.png" />
+    <Content Include="App_Themes\Flat\images\engine\treerightbg.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\tree_close.gif" />
+    <Content Include="App_Themes\Flat\images\engine\tree_document.gif" />
+    <Content Include="App_Themes\Flat\images\engine\tree_folder.gif" />
+    <Content Include="App_Themes\Flat\images\engine\tree_open.gif" />
+    <Content Include="App_Themes\Flat\images\engine\trigger.gif" />
+    <Content Include="App_Themes\Flat\images\engine\trip.gif" />
+    <Content Include="App_Themes\Flat\images\engine\untitled.gif" />
+    <Content Include="App_Themes\Flat\images\engine\untitled2.gif" />
+    <Content Include="App_Themes\Flat\images\engine\up.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\up0.gif" />
+    <Content Include="App_Themes\Flat\images\engine\up0.jpg" />
+    <Content Include="App_Themes\Flat\images\engine\up10.jpg" />
+    <Content Include="App_Themes\Flat\images\Exit.png" />
+    <Content Include="App_Themes\Flat\images\Exit_H.png" />
+    <Content Include="App_Themes\Flat\images\firstpage\arrow0.gif" />
+    <Content Include="App_Themes\Flat\images\firstpage\bar.gif" />
+    <Content Include="App_Themes\Flat\images\firstpage\topright.jpg" />
+    <Content Include="App_Themes\Flat\images\Grid\AlternatingRowBG.png" />
+    <Content Include="App_Themes\Flat\images\Grid\TableHeadBG.png" />
+    <Content Include="App_Themes\Flat\images\gtxc-logo.jpg" />
+    <Content Include="App_Themes\Flat\images\icon_exit.png" />
+    <Content Include="App_Themes\Flat\images\icon_exit_over.png" />
+    <Content Include="App_Themes\Flat\images\icon_help.png" />
+    <Content Include="App_Themes\Flat\images\icon_help_over.png" />
+    <Content Include="App_Themes\Flat\images\icon_more.png" />
+    <Content Include="App_Themes\Flat\images\icon_more_over.png" />
+    <Content Include="App_Themes\Flat\images\icon_updateLog.png" />
+    <Content Include="App_Themes\Flat\images\icon_updateLog_over.png" />
+    <Content Include="App_Themes\Flat\images\icon_user.png" />
+    <Content Include="App_Themes\Flat\images\icon_user_over.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\default.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\dwg.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\excel.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\file.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\text.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\tiff.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\voice.png" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\word.png" />
+    <Content Include="App_Themes\Flat\images\layout_arrows.png" />
+    <Content Include="App_Themes\Flat\images\line.png" />
+    <Content Include="App_Themes\Flat\images\loading.gif" />
+    <Content Include="App_Themes\Flat\images\logo1.JPG" />
+    <Content Include="App_Themes\Flat\images\logo2.png" />
+    <Content Include="App_Themes\Flat\images\MessageNote\messageNote.png" />
+    <Content Include="App_Themes\Flat\images\MessageNote\messageNoteClose.png" />
+    <Content Include="App_Themes\Flat\images\MessageNote\Report.css" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\Close.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\Close1.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\close_over.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\HeadLeft.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\HeadLeft_Tab.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\HeadMid.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\HeadMid_Tab.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\HeadRight.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\HeadRight_Tab.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\hidden.png" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\show.png" />
+    <Content Include="App_Themes\Flat\images\phone.png" />
+    <Content Include="App_Themes\Flat\images\point.png" />
+    <Content Include="App_Themes\Flat\images\search.png" />
+    <Content Include="App_Themes\Flat\images\search1.png" />
+    <Content Include="App_Themes\Flat\images\status1.png" />
+    <Content Include="App_Themes\Flat\images\status2.png" />
+    <Content Include="App_Themes\Flat\images\statusRow.png" />
+    <Content Include="App_Themes\Flat\images\tabs_arrow.png" />
+    <Content Include="App_Themes\Flat\images\tabs_close.png" />
+    <Content Include="App_Themes\Flat\images\tip_icons.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\add.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\alarm_alert.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\arrow.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\bar.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\code.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\comm.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\CotrolBtn.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\cotrolbtn.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\cssSplit.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\del.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\delete.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\down.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\downmove.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\end.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\end0.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\erp.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\f3.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\group.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\HeiMingDan.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\homeindex_10.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\homeindex_19.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\homeindex_23.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\homeindex_26.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\homeindex_30.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\homeindex_46.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\homeindex_47.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\hrms.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\ico.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_cancel.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_date.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_default.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_gray_light.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_green_light.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_light.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_red_light.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\icon_yellow_light.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\info_query.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\jqueryDate.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\kksd1183_9_m.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\knowledge.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\mod-btn.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\mod.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\mytable.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\online_status.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\p0.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\point.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\project.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\roll_manage.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\sale_manage.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\scan.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\scan.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\search_05.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\ShouRu.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\sign.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\starbg.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\sys.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\tabmenu.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\tabmenu0.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\textbg.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBaractive.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarAdd.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarAddd.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarAdvancedSearch.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarBack.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarChoose.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarDelete.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarDeleted.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarExport.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolbarExportCSV.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarFolderModule.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarInport.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarLock.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarMovedown.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarMoveup.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarMultiSP.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarMultiSQL.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarNext.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarPrint.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarPublicAndSendMail.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarSave.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarSend.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarTabModule.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarTopSave.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBartransmit.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarUpdate.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\toolBarwithdraw.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\topright.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\topright.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\trip.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\un-bookapplyback.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\un-delete.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\un-toolBaractive.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\up.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\up.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\up0.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\upmove.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\user.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\users.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\View.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\wfq.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\wjj.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\workflow_small.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\write.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\yeq.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\yfq.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\YuShen.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\yx.gif" />
+    <Content Include="App_Themes\Flat\images\toolbar\yx.jpg" />
+    <Content Include="App_Themes\Flat\images\toolbar\zbtjmx_linkpic.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\公示结果.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\审核.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\终止.png" />
+    <Content Include="App_Themes\Flat\images\toolbar\退回.png" />
+    <Content Include="App_Themes\Flat\images\user-icons.png" />
+    <Content Include="App_Themes\Flat\images\UserMonitor.png" />
+    <Content Include="App_Themes\Flat\images\UserMonitor_H.png" />
+    <Content Include="App_Themes\Flat\images\yiban.png" />
+    <Content Include="App_Themes\Flat\index.css" />
+    <Content Include="App_Themes\Flat\JIndex.css" />
+    <Content Include="App_Themes\Flat\learunui-framework.css" />
+    <Content Include="App_Themes\Flat\leftmenu.css" />
+    <Content Include="App_Themes\Flat\login.css" />
+    <Content Include="App_Themes\Flat\Login\btn_login.jpg" />
+    <Content Include="App_Themes\Flat\Login\btn_login1.jpg" />
+    <Content Include="App_Themes\Flat\Login\CMSYS-top.jpg" />
+    <Content Include="App_Themes\Flat\Login\dsfxc-top.jpg" />
+    <Content Include="App_Themes\Flat\Login\dsfxc-top1.jpg" />
+    <Content Include="App_Themes\Flat\Login\footer.jpg" />
+    <Content Include="App_Themes\Flat\Login\gtxc-top.jpg" />
+    <Content Include="App_Themes\Flat\Login\indexbg.jpg" />
+    <Content Include="App_Themes\Flat\Login\learunui-framework.css" />
+    <Content Include="App_Themes\Flat\Login\loading.jpg" />
+    <Content Include="App_Themes\Flat\Login\login.css" />
+    <Content Include="App_Themes\Flat\Login\loginbj - 副本.png" />
+    <Content Include="App_Themes\Flat\Login\loginbj.png" />
+    <Content Include="App_Themes\Flat\Login\loginnew.css" />
+    <Content Include="App_Themes\Flat\Login\logo.png" />
+    <Content Include="App_Themes\Flat\Login\logo_bak.png" />
+    <Content Include="App_Themes\Flat\Login\main01.jpg" />
+    <Content Include="App_Themes\Flat\Login\main02.jpg" />
+    <Content Include="App_Themes\Flat\Login\main03.jpg" />
+    <Content Include="App_Themes\Flat\Login\zzsc.css" />
+    <Content Include="App_Themes\Flat\MessageNote.css" />
+    <Content Include="App_Themes\Flat\ModalWindow.css" />
+    <Content Include="App_Themes\Flat\newstyle.css" />
+    <Content Include="App_Themes\Flat\Report.css" />
+    <Content Include="App_Themes\Flat\shell.css" />
+    <Content Include="App_Themes\Flat\superTables_Default.css" />
+    <Content Include="App_Themes\Flat\Tab.css" />
+    <Content Include="App_Themes\Flat\throbber.gif" />
+    <Content Include="App_Themes\Flat\time.png" />
+    <Content Include="App_Themes\Flat\Time0.png" />
+    <Content Include="App_Themes\Flat\Toolbar.css" />
+    <Content Include="CKEditor\ckeditor.js" />
+    <Content Include="Content\bootstrap\bootstrap-combined.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-v2.0.4.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\js\bootstrap.alert.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\js\npm.js" />
+    <Content Include="Content\bootstrap\layoutit.css" />
+    <Content Include="Content\common.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\accordion.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\calendar.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\combo.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\combobox.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\datagrid.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\datebox.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\dialog.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\easyui.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\filebox.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\blank.gif" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\loading.gif" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="Content\easyUI\themes\bootstrap\layout.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\linkbutton.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\menu.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\menubutton.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\messager.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\numberbox.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\pagination.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\panel.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\progressbar.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\propertygrid.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\searchbox.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\slider.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\spinner.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\splitbutton.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\tabs.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\textbox.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\tooltip.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\tree.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\validatebox.css" />
+    <Content Include="Content\easyUI\themes\bootstrap\window.css" />
+    <Content Include="Content\easyUI\themes\color.css" />
+    <Content Include="Content\easyUI\themes\icon.css" />
+    <Content Include="Content\easyUI\themes\icons\back.png" />
+    <Content Include="Content\easyUI\themes\icons\blank.gif" />
+    <Content Include="Content\easyUI\themes\icons\cancel.png" />
+    <Content Include="Content\easyUI\themes\icons\clear.png" />
+    <Content Include="Content\easyUI\themes\icons\cut.png" />
+    <Content Include="Content\easyUI\themes\icons\detail.png" />
+    <Content Include="Content\easyUI\themes\icons\download.png" />
+    <Content Include="Content\easyUI\themes\icons\edit_add.png" />
+    <Content Include="Content\easyUI\themes\icons\edit_remove.png" />
+    <Content Include="Content\easyUI\themes\icons\filesave.png" />
+    <Content Include="Content\easyUI\themes\icons\filter.png" />
+    <Content Include="Content\easyUI\themes\icons\help.png" />
+    <Content Include="Content\easyUI\themes\icons\landscape.png" />
+    <Content Include="Content\easyUI\themes\icons\large_chart.png" />
+    <Content Include="Content\easyUI\themes\icons\large_clipart.png" />
+    <Content Include="Content\easyUI\themes\icons\large_picture.png" />
+    <Content Include="Content\easyUI\themes\icons\large_shapes.png" />
+    <Content Include="Content\easyUI\themes\icons\large_smartart.png" />
+    <Content Include="Content\easyUI\themes\icons\layout.png" />
+    <Content Include="Content\easyUI\themes\icons\location.png" />
+    <Content Include="Content\easyUI\themes\icons\locationlayout.png" />
+    <Content Include="Content\easyUI\themes\icons\lock.png" />
+    <Content Include="Content\easyUI\themes\icons\log.png" />
+    <Content Include="Content\easyUI\themes\icons\man.png" />
+    <Content Include="Content\easyUI\themes\icons\message.png" />
+    <Content Include="Content\easyUI\themes\icons\message2.png" />
+    <Content Include="Content\easyUI\themes\icons\mini_add.png" />
+    <Content Include="Content\easyUI\themes\icons\mini_edit.png" />
+    <Content Include="Content\easyUI\themes\icons\mini_refresh.png" />
+    <Content Include="Content\easyUI\themes\icons\no.png" />
+    <Content Include="Content\easyUI\themes\icons\ok.png" />
+    <Content Include="Content\easyUI\themes\icons\pencil.png" />
+    <Content Include="Content\easyUI\themes\icons\print.png" />
+    <Content Include="Content\easyUI\themes\icons\redo.png" />
+    <Content Include="Content\easyUI\themes\icons\reload.png" />
+    <Content Include="Content\easyUI\themes\icons\roll_manage.png" />
+    <Content Include="Content\easyUI\themes\icons\search.png" />
+    <Content Include="Content\easyUI\themes\icons\sum.png" />
+    <Content Include="Content\easyUI\themes\icons\table_add.png" />
+    <Content Include="Content\easyUI\themes\icons\tip.png" />
+    <Content Include="Content\easyUI\themes\icons\undo.png" />
+    <Content Include="Content\form.css" />
+    <Content Include="Content\grid.css" />
+    <Content Include="Content\lhgdialog\lhgcore.lhgdialog.min.js" />
+    <Content Include="Content\lhgdialog\lhgdialog.js" />
+    <Content Include="Content\lhgdialog\lhgdialog.min.js" />
+    <Content Include="Content\lhgdialog\skins\blue.css" />
+    <Content Include="Content\lhgdialog\skins\blue\blue_s.png" />
+    <Content Include="Content\lhgdialog\skins\blue\blue_s2.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\blue_titbtn.gif" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_b.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_l.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_lb.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_lt.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_lt2.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_r.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_rb.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_rt.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_rt2.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_t.png" />
+    <Content Include="Content\lhgdialog\skins\blue\ie6\ui_t2.png" />
+    <Content Include="Content\lhgdialog\skins\chrome.css" />
+    <Content Include="Content\lhgdialog\skins\chrome\chrome_s.gif" />
+    <Content Include="Content\lhgdialog\skins\chrome\chrome_s2.gif" />
+    <Content Include="Content\lhgdialog\skins\chrome\chrome_s3.gif" />
+    <Content Include="Content\lhgdialog\skins\default.css" />
+    <Content Include="Content\lhgdialog\skins\discuz.css" />
+    <Content Include="Content\lhgdialog\skins\iblack.css" />
+    <Content Include="Content\lhgdialog\skins\iblack\iblack_s.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\iblack_s2.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_b.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_l.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_lb.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_lt.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_lt2.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_r.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_rb.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_rt.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_rt2.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_t.png" />
+    <Content Include="Content\lhgdialog\skins\iblack\ie6\ui_t2.png" />
+    <Content Include="Content\lhgdialog\skins\iblue.css" />
+    <Content Include="Content\lhgdialog\skins\iblue\iblue_s.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\iblue_s2.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_b.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_l.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_lb.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_lt.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_lt2.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_r.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_rb.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_rt.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_rt2.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_t.png" />
+    <Content Include="Content\lhgdialog\skins\iblue\ie6\ui_t2.png" />
+    <Content Include="Content\lhgdialog\skins\icons\32X32\fail.png" />
+    <Content Include="Content\lhgdialog\skins\icons\32X32\hits.png" />
+    <Content Include="Content\lhgdialog\skins\icons\32X32\i.png" />
+    <Content Include="Content\lhgdialog\skins\icons\32X32\succ.png" />
+    <Content Include="Content\lhgdialog\skins\icons\alert.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\confirm.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\discuz_bg.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\error.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\face-sad.png" />
+    <Content Include="Content\lhgdialog\skins\icons\face-smile.png" />
+    <Content Include="Content\lhgdialog\skins\icons\fail.png" />
+    <Content Include="Content\lhgdialog\skins\icons\gb_tip_layer.png" />
+    <Content Include="Content\lhgdialog\skins\icons\gb_tip_layer_ie6.png" />
+    <Content Include="Content\lhgdialog\skins\icons\lhgcore.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\loading.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\prompt.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\success.gif" />
+    <Content Include="Content\lhgdialog\skins\icons\tips.gif" />
+    <Content Include="Content\lhgdialog\skins\idialog.css" />
+    <Content Include="Content\lhgdialog\skins\idialog\idialog_s.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\idialog_s2.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_b.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_close.hover.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_close.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_l.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_lb.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_lt.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_r.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_rb.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_rt.png" />
+    <Content Include="Content\lhgdialog\skins\idialog\ie6\ui_t.png" />
+    <Content Include="Content\lhgdialog\skins\igreen.css" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_b.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_l.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_lb.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_lt.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_r.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_rb.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_rt.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\ie6\ui_t.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\igreen_s.png" />
+    <Content Include="Content\lhgdialog\skins\igreen\igreen_s2.png" />
+    <Content Include="Content\lhgdialog\skins\jtop.css" />
+    <Content Include="Content\lhgdialog\skins\mac.css" />
+    <Content Include="Content\table.css" />
+    <Content Include="DatePicker\calendar.js" />
+    <Content Include="DatePicker\config.js" />
+    <Content Include="DatePicker\lang\en.js" />
+    <Content Include="DatePicker\lang\zh-cn.js" />
+    <Content Include="DatePicker\lang\zh-tw.js" />
+    <Content Include="DatePicker\My97DatePicker.htm" />
+    <Content Include="DatePicker\skin\datePicker.gif" />
+    <Content Include="DatePicker\skin\default\datepicker.css" />
+    <Content Include="DatePicker\skin\default\img.gif" />
+    <Content Include="DatePicker\skin\WdatePicker.css" />
+    <Content Include="DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="DatePicker\WdatePicker.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="dll\Anthem.dll" />
+    <Content Include="dll\AntiXssLibrary.dll" />
+    <Content Include="dll\HY.Business.dll" />
+    <Content Include="dll\HY.Cache.dll" />
+    <Content Include="dll\HY.DBAccess.dll" />
+    <Content Include="dll\HY.ToolBox.dll" />
+    <Content Include="error.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Js\arrow.js" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap-datetimepicker.css" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap-theme.css" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap.css" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap.min.css" />
+    <Content Include="Js\bootstrap-3.2.0-dist\js\bootstrap-datetimepicker.js" />
+    <Content Include="Js\bootstrap-3.2.0-dist\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Js\bootstrap-3.2.0-dist\js\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="Js\bootstrap-3.2.0-dist\js\bootstrap-treeview.js" />
+    <Content Include="Js\bootstrap-3.2.0-dist\js\bootstrap.js" />
+    <Content Include="Js\bootstrap-3.2.0-dist\js\bootstrap.min.js" />
+    <Content Include="Js\common.js" />
+    <Content Include="Js\Form.js" />
+    <Content Include="Js\Grid.js" />
+    <Content Include="Js\HighCharts\adapters\standalone-framework.js" />
+    <Content Include="Js\HighCharts\adapters\standalone-framework.src.js" />
+    <Content Include="Js\HighCharts\base.js" />
+    <Content Include="Js\HighCharts\highcharts-3d.js" />
+    <Content Include="Js\HighCharts\highcharts-3d.src.js" />
+    <Content Include="Js\HighCharts\highcharts-more.js" />
+    <Content Include="Js\HighCharts\highcharts-more.src.js" />
+    <Content Include="Js\HighCharts\highcharts-v4-exporting.js" />
+    <Content Include="Js\HighCharts\highcharts-v4.js" />
+    <Content Include="Js\HighCharts\highcharts.js" />
+    <Content Include="Js\HighCharts\highcharts.src.js" />
+    <Content Include="Js\HighCharts\JavaScript.js" />
+    <Content Include="Js\HighCharts\modules\broken-axis.js" />
+    <Content Include="Js\HighCharts\modules\broken-axis.src.js" />
+    <Content Include="Js\HighCharts\modules\canvas-tools.js" />
+    <Content Include="Js\HighCharts\modules\canvas-tools.src.js" />
+    <Content Include="Js\HighCharts\modules\data.js" />
+    <Content Include="Js\HighCharts\modules\data.src.js" />
+    <Content Include="Js\HighCharts\modules\drilldown.js" />
+    <Content Include="Js\HighCharts\modules\drilldown.src.js" />
+    <Content Include="Js\HighCharts\modules\exporting.js" />
+    <Content Include="Js\HighCharts\modules\exporting.src.js" />
+    <Content Include="Js\HighCharts\modules\funnel.js" />
+    <Content Include="Js\HighCharts\modules\funnel.src.js" />
+    <Content Include="Js\HighCharts\modules\heatmap.js" />
+    <Content Include="Js\HighCharts\modules\heatmap.src.js" />
+    <Content Include="Js\HighCharts\modules\map.js" />
+    <Content Include="Js\HighCharts\modules\map.src.js" />
+    <Content Include="Js\HighCharts\modules\no-data-to-display.js" />
+    <Content Include="Js\HighCharts\modules\no-data-to-display.src.js" />
+    <Content Include="Js\HighCharts\modules\solid-gauge.js" />
+    <Content Include="Js\HighCharts\modules\solid-gauge.src.js" />
+    <Content Include="Js\HighCharts\modules\treemap.js" />
+    <Content Include="Js\HighCharts\modules\treemap.src.js" />
+    <Content Include="Js\HighCharts\themes\dark-blue.js" />
+    <Content Include="Js\HighCharts\themes\dark-green.js" />
+    <Content Include="Js\HighCharts\themes\dark-unica.js" />
+    <Content Include="Js\HighCharts\themes\gray.js" />
+    <Content Include="Js\HighCharts\themes\grid-light.js" />
+    <Content Include="Js\HighCharts\themes\grid.js" />
+    <Content Include="Js\HighCharts\themes\sand-signika.js" />
+    <Content Include="Js\HighCharts\themes\skies.js" />
+    <Content Include="Js\HighCharts\T_Grid_District_FeaturesToJS.js" />
+    <Content Include="Js\jPlayer\js\circle.player.js" />
+    <Content Include="Js\jPlayer\js\jplayer.playlist.min.js" />
+    <Content Include="Js\jPlayer\js\Jplayer.swf" />
+    <Content Include="Js\jPlayer\js\jquery.grab.js" />
+    <Content Include="Js\jPlayer\js\jquery.jplayer.inspector.js" />
+    <Content Include="Js\jPlayer\js\jquery.jplayer.min.js" />
+    <Content Include="Js\jPlayer\js\jquery.transform2d.js" />
+    <Content Include="Js\jPlayer\js\mod.csstransforms.min.js" />
+    <Content Include="Js\jPlayer\js\popcorn.jplayer.js" />
+    <Content Include="Js\jPlayer\js\popcorn.js" />
+    <Content Include="Js\jPlayer\js\popcorn.player.js" />
+    <Content Include="Js\jPlayer\js\popcorn.subtitle.js" />
+    <Content Include="Js\jPlayer\skin\blue.monday\jplayer.blue.monday.css" />
+    <Content Include="Js\jPlayer\skin\blue.monday\jplayer.blue.monday.jpg" />
+    <Content Include="Js\jPlayer\skin\blue.monday\jplayer.blue.monday.seeking.gif" />
+    <Content Include="Js\jPlayer\skin\blue.monday\jplayer.blue.monday.video.play.png" />
+    <Content Include="Js\jPlayer\skin\circle.skin\bgr.jpg" />
+    <Content Include="Js\jPlayer\skin\circle.skin\buffer.png" />
+    <Content Include="Js\jPlayer\skin\circle.skin\circle.player.css" />
+    <Content Include="Js\jPlayer\skin\circle.skin\controls.jpg" />
+    <Content Include="Js\jPlayer\skin\circle.skin\progress.png" />
+    <Content Include="Js\jPlayer\skin\circle.skin\progress_sprite.jpg" />
+    <Content Include="Js\jPlayer\skin\pink.flag\jplayer.pink.flag.css" />
+    <Content Include="Js\jPlayer\skin\pink.flag\jplayer.pink.flag.jpg" />
+    <Content Include="Js\jPlayer\skin\pink.flag\jplayer.pink.flag.seeking.gif" />
+    <Content Include="Js\jPlayer\skin\pink.flag\jplayer.pink.flag.video.play.png" />
+    <Content Include="Js\jQuery-1.5.js" />
+    <Content Include="Js\jquery-1.6.2.min.js" />
+    <Content Include="Js\jquery-2.0.2.js" />
+    <Content Include="Js\jquery-migrate-1.1.1.js" />
+    <Content Include="Js\jQuery.js" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Js\jQueryTheme\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Js\jQueryTheme\images\ui-icons_222222_256x240.png" />
+    <Content Include="Js\jQueryTheme\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Js\jQueryTheme\images\ui-icons_454545_256x240.png" />
+    <Content Include="Js\jQueryTheme\images\ui-icons_888888_256x240.png" />
+    <Content Include="Js\jQueryTheme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Js\jQueryTheme\jquery-ui-custom.css" />
+    <Content Include="Js\jQueryTheme\jquery-ui-timepicker-addon.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.accordion.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.all.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.autocomplete.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.base.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.button.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.core.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.datepicker.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.dialog.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.progressbar.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.resizable.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.selectable.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.slider.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.tabs.css" />
+    <Content Include="Js\jQueryTheme\jquery.ui.theme.css" />
+    <Content Include="Js\jQueryUI\jquery-1.7.1.min.js" />
+    <Content Include="Js\jQueryUI\jquery-1.9.1.js" />
+    <Content Include="Js\jQueryUI\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Js\jQueryUI\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Js\jQueryUI\jquery-ui-timepicker-addon.js" />
+    <Content Include="Js\jQueryUI\jquery-ui-timepicker-zh-CN.js" />
+    <Content Include="Js\jQueryUI\jquery-ui.1.8.13.custom.min.js" />
+    <Content Include="Js\jQueryUI\jquery-ui.custom.min.js" />
+    <Content Include="Js\jQueryUI\jquery.effects.bounce.js" />
+    <Content Include="Js\jQueryUI\jquery.pikachoose.full.js" />
+    <Content Include="Js\jQueryUI\jquery.ui.autocomplete.js" />
+    <Content Include="Js\jQueryUI\jquery.ui.core.js" />
+    <Content Include="Js\jQueryUI\jquery.ui.draggable.js" />
+    <Content Include="Js\jQueryUI\jquery.ui.mouse.js" />
+    <Content Include="Js\jQueryUI\jquery.ui.resizable.js" />
+    <Content Include="Js\jQueryUI\jquery.ui.sortable.js" />
+    <Content Include="Js\jQueryUI\jquery.ui.widget.js" />
+    <Content Include="Js\message.js" />
+    <Content Include="Js\modalWindow.js" />
+    <Content Include="Js\printer.js" />
+    <Content Include="Js\respond.js" />
+    <Content Include="Js\rotateimg.js" />
+    <Content Include="Js\Shell\FIndex.js" />
+    <Content Include="Js\Shell\JIndex.js" />
+    <Content Include="Js\Shell\jquery.plugins.js" />
+    <Content Include="Js\Shell\standard.js" />
+    <Content Include="Js\Shell\sterm.js" />
+    <Content Include="Js\Shell\sys_function.js" />
+    <Content Include="Js\Shell\tree.js" />
+    <Content Include="Js\Shell\treeview.js" />
+    <Content Include="Js\Shell\weather.js" />
+    <Content Include="Js\tabcard.js" />
+    <Content Include="Js\TabsControl.js" />
+    <Content Include="Js\TreeView.js" />
+    <Content Include="Js\validate.js" />
+    <Content Include="Js\zTree\css\metroStyle\img\line_conn.png" />
+    <Content Include="Js\zTree\css\metroStyle\img\loading.gif" />
+    <Content Include="Js\zTree\css\metroStyle\img\metro.gif" />
+    <Content Include="Js\zTree\css\metroStyle\img\metro.png" />
+    <Content Include="Js\zTree\css\metroStyle\metroStyle.css" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Js\zTree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Js\zTree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Js\zTree\js\jquery-1.4.4.min.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.all-3.5.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.all-3.5.min.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.core-3.5.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.core-3.5.min.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.excheck-3.5.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.excheck-3.5.min.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.exedit-3.5.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.exedit-3.5.min.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.exedit.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.exhide-3.5.js" />
+    <Content Include="Js\zTree\js\jquery.ztree.exhide-3.5.min.js" />
+    <Content Include="Scripts\easyUI\easyui-lang-zh_CN.js" />
+    <Content Include="Scripts\easyUI\jquery.easyui.min.js" />
+    <Content Include="Scripts\HighCharts\adapters\standalone-framework.js" />
+    <Content Include="Scripts\HighCharts\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\HighCharts\base.js" />
+    <Content Include="Scripts\HighCharts\highcharts-3d.js" />
+    <Content Include="Scripts\HighCharts\highcharts-3d.src.js" />
+    <Content Include="Scripts\HighCharts\highcharts-more.js" />
+    <Content Include="Scripts\HighCharts\highcharts-more.src.js" />
+    <Content Include="Scripts\HighCharts\highcharts.js" />
+    <Content Include="Scripts\HighCharts\highcharts.src.js" />
+    <Content Include="Scripts\HighCharts\JavaScript.js" />
+    <Content Include="Scripts\HighCharts\modules\broken-axis.js" />
+    <Content Include="Scripts\HighCharts\modules\broken-axis.src.js" />
+    <Content Include="Scripts\HighCharts\modules\canvas-tools.js" />
+    <Content Include="Scripts\HighCharts\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\HighCharts\modules\data.js" />
+    <Content Include="Scripts\HighCharts\modules\data.src.js" />
+    <Content Include="Scripts\HighCharts\modules\drilldown.js" />
+    <Content Include="Scripts\HighCharts\modules\drilldown.src.js" />
+    <Content Include="Scripts\HighCharts\modules\exporting.js" />
+    <Content Include="Scripts\HighCharts\modules\exporting.src.js" />
+    <Content Include="Scripts\HighCharts\modules\funnel.js" />
+    <Content Include="Scripts\HighCharts\modules\funnel.src.js" />
+    <Content Include="Scripts\HighCharts\modules\heatmap.js" />
+    <Content Include="Scripts\HighCharts\modules\heatmap.src.js" />
+    <Content Include="Scripts\HighCharts\modules\map.js" />
+    <Content Include="Scripts\HighCharts\modules\map.src.js" />
+    <Content Include="Scripts\HighCharts\modules\no-data-to-display.js" />
+    <Content Include="Scripts\HighCharts\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\HighCharts\modules\solid-gauge.js" />
+    <Content Include="Scripts\HighCharts\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\HighCharts\modules\treemap.js" />
+    <Content Include="Scripts\HighCharts\modules\treemap.src.js" />
+    <Content Include="Scripts\HighCharts\themes\dark-blue.js" />
+    <Content Include="Scripts\HighCharts\themes\dark-green.js" />
+    <Content Include="Scripts\HighCharts\themes\dark-unica.js" />
+    <Content Include="Scripts\HighCharts\themes\gray.js" />
+    <Content Include="Scripts\HighCharts\themes\grid-light.js" />
+    <Content Include="Scripts\HighCharts\themes\grid.js" />
+    <Content Include="Scripts\HighCharts\themes\sand-signika.js" />
+    <Content Include="Scripts\HighCharts\themes\skies.js" />
+    <Content Include="Scripts\HighCharts\T_Grid_District_FeaturesToJS.js" />
+    <Content Include="Scripts\infopublish.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery.easyui.sltdialog.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\resumable.js" />
+    <Content Include="Scripts\tools.js" />
+    <Content Include="Scripts\uploadify\browse-btn.png" />
+    <Content Include="Scripts\uploadify\Change Log.txt" />
+    <Content Include="Scripts\uploadify\jquery.uploadify.js" />
+    <Content Include="Scripts\uploadify\jquery.uploadify.min.js" />
+    <Content Include="Scripts\uploadify\license.txt" />
+    <Content Include="Scripts\uploadify\uploadify-cancel.png" />
+    <Content Include="Scripts\uploadify\uploadify.css" />
+    <Content Include="Scripts\uploadify\uploadify.swf" />
+    <Content Include="Shell\css\CustomizeIndex.css" />
+    <Content Include="Shell\css\images\%40crs.png" />
+    <Content Include="Shell\css\images\0.gif" />
+    <Content Include="Shell\css\images\0.png" />
+    <Content Include="Shell\css\images\0_1.png" />
+    <Content Include="Shell\css\images\1.png" />
+    <Content Include="Shell\css\images\1_1.png" />
+    <Content Include="Shell\css\images\2.png" />
+    <Content Include="Shell\css\images\2_1.png" />
+    <Content Include="Shell\css\images\3.png" />
+    <Content Include="Shell\css\images\3_1.png" />
+    <Content Include="Shell\css\images\4.png" />
+    <Content Include="Shell\css\images\4_1.png" />
+    <Content Include="Shell\css\images\alarm_alert.png" />
+    <Content Include="Shell\css\images\attendance.png" />
+    <Content Include="Shell\css\images\avatar_bg.jpg" />
+    <Content Include="Shell\css\images\bbs.png" />
+    <Content Include="Shell\css\images\btn_black.png" />
+    <Content Include="Shell\css\images\calendar.png" />
+    <Content Include="Shell\css\images\chat.jpg" />
+    <Content Include="Shell\css\images\close_over.png" />
+    <Content Include="Shell\css\images\comm.png" />
+    <Content Include="Shell\css\images\ContentBG.jpg" />
+    <Content Include="Shell\css\images\default.png" />
+    <Content Include="Shell\css\images\desktop_icons.png" />
+    <Content Include="Shell\css\images\diary.png" />
+    <Content Include="Shell\css\images\document.png" />
+    <Content Include="Shell\css\images\email.png" />
+    <Content Include="Shell\css\images\erp.png" />
+    <Content Include="Shell\css\images\fax.png" />
+    <Content Include="Shell\css\images\file_folder.png" />
+    <Content Include="Shell\css\images\funcbar_bg.jpg" />
+    <Content Include="Shell\css\images\group.png" />
+    <Content Include="Shell\css\images\homeindex_03.png" />
+    <Content Include="Shell\css\images\homeindex_05.png" />
+    <Content Include="Shell\css\images\homeindex_07.png" />
+    <Content Include="Shell\css\images\homeindex_10.png" />
+    <Content Include="Shell\css\images\homeindex_13.png" />
+    <Content Include="Shell\css\images\homeindex_19.png" />
+    <Content Include="Shell\css\images\homeindex_23.png" />
+    <Content Include="Shell\css\images\homeindex_26.png" />
+    <Content Include="Shell\css\images\homeindex_28.jpg" />
+    <Content Include="Shell\css\images\homeindex_30.png" />
+    <Content Include="Shell\css\images\homeindex_34.png" />
+    <Content Include="Shell\css\images\homeindex_38.png" />
+    <Content Include="Shell\css\images\homeindex_41.png" />
+    <Content Include="Shell\css\images\homeindex_46.png" />
+    <Content Include="Shell\css\images\homeindex_47.png" />
+    <Content Include="Shell\css\images\hrms.png" />
+    <Content Include="Shell\css\images\icon_default.png" />
+    <Content Include="Shell\css\images\info.png" />
+    <Content Include="Shell\css\images\info_query.png" />
+    <Content Include="Shell\css\images\knowledge.png" />
+    <Content Include="Shell\css\images\loading.gif" />
+    <Content Include="Shell\css\images\logout.jpg" />
+    <Content Include="Shell\css\images\logo_01.jpg" />
+    <Content Include="Shell\css\images\logo_02.png" />
+    <Content Include="Shell\css\images\menu_06.png" />
+    <Content Include="Shell\css\images\menu_07.png" />
+    <Content Include="Shell\css\images\menu_09.png" />
+    <Content Include="Shell\css\images\menu_bg.png" />
+    <Content Include="Shell\css\images\menu_default_03.png" />
+    <Content Include="Shell\css\images\menu_default_04.png" />
+    <Content Include="Shell\css\images\menu_default_06.png" />
+    <Content Include="Shell\css\images\menu_span_bg.png" />
+    <Content Include="Shell\css\images\mytable.png" />
+    <Content Include="Shell\css\images\netdisk.png" />
+    <Content Include="Shell\css\images\news.png" />
+    <Content Include="Shell\css\images\notify.png" />
+    <Content Include="Shell\css\images\online_status.png" />
+    <Content Include="Shell\css\images\on_status_bg.png" />
+    <Content Include="Shell\css\images\person_info.png" />
+    <Content Include="Shell\css\images\portal_icon.png" />
+    <Content Include="Shell\css\images\product.png" />
+    <Content Include="Shell\css\images\project.png" />
+    <Content Include="Shell\css\images\roll_manage.png" />
+    <Content Include="Shell\css\images\sale_manage.png" />
+    <Content Include="Shell\css\images\scrollbar_bg.png" />
+    <Content Include="Shell\css\images\scroll_arrow.png" />
+    <Content Include="Shell\css\images\search_bg.png" />
+    <Content Include="Shell\css\images\second_panel_bg.jpg" />
+    <Content Include="Shell\css\images\second_tabs_active.png" />
+    <Content Include="Shell\css\images\shortcut_icon.png" />
+    <Content Include="Shell\css\images\shortcut_panel_bg.png" />
+    <Content Include="Shell\css\images\shortcut_panel_close.png" />
+    <Content Include="Shell\css\images\shortcut_panel_Left.png" />
+    <Content Include="Shell\css\images\shortcut_panel_Left1.png" />
+    <Content Include="Shell\css\images\shortcut_panel_page_bg.png" />
+    <Content Include="Shell\css\images\shortcut_panel_Right.png" />
+    <Content Include="Shell\css\images\shortcut_panel_Right1.png" />
+    <Content Include="Shell\css\images\sms.png" />
+    <Content Include="Shell\css\images\start_menu.png" />
+    <Content Include="Shell\css\images\start_menu_panel_bg.png" />
+    <Content Include="Shell\css\images\start_menu_panel_bg1.png" />
+    <Content Include="Shell\css\images\sys.png" />
+    <Content Include="Shell\css\images\tabs.png" />
+    <Content Include="Shell\css\images\tabs_active.png" />
+    <Content Include="Shell\css\images\tabs_arrow.png" />
+    <Content Include="Shell\css\images\tabs_close.png" />
+    <Content Include="Shell\css\images\topbar_bg.jpg" />
+    <Content Include="Shell\css\images\topbg.jpg" />
+    <Content Include="Shell\css\images\topmainbg_02.jpg" />
+    <Content Include="Shell\css\images\topwhitebg.png" />
+    <Content Include="Shell\css\images\topwhitebgleft.png" />
+    <Content Include="Shell\css\images\topwhitebgright.png" />
+    <Content Include="Shell\css\images\user.png" />
+    <Content Include="Shell\css\images\workflow.png" />
+    <Content Include="Shell\css\images\workflow_small.png" />
+    <Content Include="Shell\css\JIndex.css" />
+    <Content Include="Shell\fancybox\blank.gif" />
+    <Content Include="Shell\fancybox\fancybox-x.png" />
+    <Content Include="Shell\fancybox\fancybox-y.png" />
+    <Content Include="Shell\fancybox\fancybox.png" />
+    <Content Include="Shell\fancybox\fancy_close.png" />
+    <Content Include="Shell\fancybox\fancy_done.png" />
+    <Content Include="Shell\fancybox\fancy_loading.png" />
+    <Content Include="Shell\fancybox\fancy_nav_left.png" />
+    <Content Include="Shell\fancybox\fancy_nav_right.png" />
+    <Content Include="Shell\fancybox\fancy_title_left.png" />
+    <Content Include="Shell\fancybox\fancy_title_main.png" />
+    <Content Include="Shell\fancybox\fancy_title_over.png" />
+    <Content Include="Shell\fancybox\fancy_title_right.png" />
+    <Content Include="Shell\FIndex.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web\App\css\common.css" />
+    <Content Include="Web\App\css\index.css" />
+    <Content Include="Web\App\js\geone.datagrid.js" />
+    <Content Include="Web\App\js\httpHelper.js" />
+    <Content Include="Web\App\js\projApply.js" />
+    <Content Include="Web\Index\HtmlPage1.html" />
+    <Content Include="Web\Index\index.aspx" />
+    <Content Include="Web\ProjectApply\ProjectApply.aspx" />
+    <Content Include="Web\ProjectApply\ProjectApplyList.aspx" />
+    <Content Include="Web\ProjectApply\ProjectDetail.aspx" />
+    <Content Include="Web\ProjectManagent\AQPQGroup.aspx" />
+    <Content Include="Web\ProjectManagent\AQPQTaskList.aspx" />
+    <Content Include="Web\ProjectManagent\MyProject.aspx" />
+    <Content Include="Web\TaskManagent\TaskManagent.aspx" />
+    <Content Include="Web\UserCenter\UserCenter.aspx" />
+    <Content Include="zTree\css\demo.css" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="zTree\css\zTreeStyle\img\diy\file.png" />
+    <Content Include="zTree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="zTree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="zTree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="zTree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="zTree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="zTree\js\jquery-1.4.4.min.js" />
+    <Content Include="zTree\js\jquery.ztree.all-3.5.js" />
+    <Content Include="zTree\js\jquery.ztree.all-3.5.min.js" />
+    <Content Include="zTree\js\jquery.ztree.core-3.5.js" />
+    <Content Include="zTree\js\jquery.ztree.core-3.5.min.js" />
+    <Content Include="zTree\js\jquery.ztree.excheck-3.5.js" />
+    <Content Include="zTree\js\jquery.ztree.excheck-3.5.min.js" />
+    <Content Include="zTree\js\jquery.ztree.exedit-3.5.js" />
+    <Content Include="zTree\js\jquery.ztree.exedit-3.5.min.js" />
+    <Content Include="zTree\js\jquery.ztree.exhide-3.5.js" />
+    <Content Include="zTree\js\jquery.ztree.exhide-3.5.min.js" />
+    <Content Include="zTree\zTreeCss\demo.css" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\2.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\3.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\4.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\5.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\6.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\7.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\8.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\9.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\file.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\line_conn.gif" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\loading.gif" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\zTreeStyle.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\Common.cs" />
+    <Compile Include="Old_App_Code\Common\ImageHelper.cs" />
+    <Compile Include="Old_App_Code\Common\JsonHelper.cs" />
+    <Compile Include="Old_App_Code\JSON.cs" />
+    <Compile Include="Old_App_Code\JsonInfo.cs" />
+    <Compile Include="Old_App_Code\TreeJson.cs" />
+    <Compile Include="Old_App_Code\Uploader.cs" />
+    <Compile Include="Old_App_Code\WSHelper.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shell\FIndex.aspx.cs">
+      <DependentUpon>FIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shell\FIndex.aspx.designer.cs">
+      <DependentUpon>FIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Index\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Index\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApply.aspx.cs">
+      <DependentUpon>ProjectApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApply.aspx.designer.cs">
+      <DependentUpon>ProjectApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyList.aspx.cs">
+      <DependentUpon>ProjectApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyList.aspx.designer.cs">
+      <DependentUpon>ProjectApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectDetail.aspx.cs">
+      <DependentUpon>ProjectDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectDetail.aspx.designer.cs">
+      <DependentUpon>ProjectDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\AQPQGroup.aspx.cs">
+      <DependentUpon>AQPQGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\AQPQGroup.aspx.designer.cs">
+      <DependentUpon>AQPQGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\AQPQTaskList.aspx.cs">
+      <DependentUpon>AQPQTaskList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\AQPQTaskList.aspx.designer.cs">
+      <DependentUpon>AQPQTaskList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProject.aspx.cs">
+      <DependentUpon>MyProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProject.aspx.designer.cs">
+      <DependentUpon>MyProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\TaskManagent\TaskManagent.aspx.cs">
+      <DependentUpon>TaskManagent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\TaskManagent\TaskManagent.aspx.designer.cs">
+      <DependentUpon>TaskManagent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\UserCenter\UserCenter.aspx.cs">
+      <DependentUpon>UserCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UserCenter\UserCenter.aspx.designer.cs">
+      <DependentUpon>UserCenter.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Flat\Control.skin" />
+    <Content Include="App_Themes\Flat\flatImg\saws.scc" />
+    <Content Include="App_Themes\Flat\images\ApplePager\saws.scc" />
+    <Content Include="App_Themes\Flat\images\CustomizeIndex\saws.scc" />
+    <Content Include="App_Themes\Flat\images\engine\saws.scc" />
+    <Content Include="App_Themes\Flat\images\firstpage\saws.scc" />
+    <Content Include="App_Themes\Flat\images\Grid\saws.scc" />
+    <Content Include="App_Themes\Flat\images\ImageFiles\saws.scc" />
+    <Content Include="App_Themes\Flat\images\MessageNote\saws.scc" />
+    <Content Include="App_Themes\Flat\images\ModalWindow\saws.scc" />
+    <Content Include="App_Themes\Flat\images\saws.scc" />
+    <Content Include="App_Themes\Flat\images\toolbar\saws.scc" />
+    <Content Include="App_Themes\Flat\Login\saws.scc" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="DatePicker\skin\default\saws.scc" />
+    <Content Include="DatePicker\skin\whyGreen\saws.scc" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap-theme.css.map" />
+    <Content Include="Js\bootstrap-3.2.0-dist\css\bootstrap.css.map" />
+    <Content Include="Js\bootstrap-3.2.0-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Js\bootstrap-3.2.0-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Js\bootstrap-3.2.0-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Js\bootstrap-3.2.0-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Js\jPlayer\js\saws.scc" />
+    <Content Include="Js\jPlayer\skin\blue.monday\saws.scc" />
+    <Content Include="Js\jPlayer\skin\circle.skin\saws.scc" />
+    <Content Include="Js\jPlayer\skin\pink.flag\saws.scc" />
+    <Content Include="Js\jQueryTheme\images\saws.scc" />
+    <Content Include="Js\jQueryTheme\saws.scc" />
+    <Content Include="Js\jQueryUI\saws.scc" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Scripts\uploadify\check-exists.php" />
+    <Content Include="Scripts\uploadify\index.php" />
+    <Content Include="Scripts\uploadify\uploadify.php" />
+    <Content Include="Shell\css\images\saws.scc" />
+    <None Include="Properties\PublishProfiles\SSZHAJ.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="zTree\css\zTreeStyle\img\diy\saws.scc" />
+    <Content Include="zTree\css\zTreeStyle\img\saws.scc" />
+    <Content Include="zTree\css\zTreeStyle\saws.scc" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\diy\saws.scc" />
+    <Content Include="zTree\zTreeCss\zTreeStyle\img\saws.scc" />
+    <Content Include="Web\App\config\projApplyConfig.json" />
+    <Content Include="Web\App\config\root.config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="Handler\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19395</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17561/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
