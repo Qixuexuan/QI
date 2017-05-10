@@ -13,13 +13,31 @@
     <script type="text/javascript" src="../../Scripts/easyUI/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="../../Scripts/tools.js"></script>
     <script type="text/javascript" src="../../Scripts/config.js"></script>
-    <script type="text/javascript" src="../../Scripts/geone.datagrid.js"></script>
+    <script src="../App/js/geone.datagrid.js"></script>
     <script src="../../Js/modalWindow.js"></script>
     <script type="text/javascript">
         var _pageIndex = 1;
         var _pageSize = 10;
         var ticket;
         $(document).ready(function () {
+            GetTicket(function (t) {
+                ticket = t;
+            });
+            //post 访问 示例
+            var json = { "wfSchemeCode": "sbjcz", "userId": "1" };
+            //AjaxPost("http://192.168.84.41/sbjcz_wfeservice/CreateWFInstance",
+            //    JSON.stringify(json),
+            //    function (data) {
+            //        console.log(data);
+            //    }, true);
+
+            //AjaxGetAuth("http://pdm.sinno-tech.com:8889/PrjEstablish?PageNumber=1&PageSize=212&keyWord=K",
+            //    function () {
+
+            //    }, true, "1", function () { })
+           
+
+            //列表访问示例
             var columnsObj = [[
                 { field: 'GPSTime', title: 'GPSTime', width: 160, sortable: false },
                 { field: 'Speed', title: 'Speed', width: 60, sortable: false },
@@ -42,15 +60,27 @@
              }
             ]];
 
-            InitDataGridTest(config_service_url + "UserList?Status=0", columnsObj);
+            InitDataGridTest(config_service_url + "PrjEstablish", columnsObj, null, function () { });
         });
+        //点击事件
+        function callback_click(data) {
+            if (data.IsPermit == "1") {
+                $("#Approve").show();
+            }
+            else {
+                $("#Approve").hide();
+
+            }
+        }
         function Edit(p) {
             alert(p);
 
         }
         //分页事件
         function PageEvent(pageNumber, pageSize) {
-            $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, ID: "ddd" });
+            _pageIndex = pageNumber;
+            _pageSize = pageSize;
+            $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, keyWord: "ddd" });
 
         }
 
@@ -72,6 +102,8 @@
                 onclick="test1()">所属任务详情</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="DetailAll()">所有详情</a>
+            <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true" style="display: none"
+                onclick="Approve()">审批</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

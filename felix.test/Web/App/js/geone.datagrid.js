@@ -94,7 +94,7 @@ function InitDataGrid(_url, columnsObj, callback) {
 }
 
 
-function InitDataGridTest(_url, columnsObj, callback) {
+function InitDataGridTest(_url, columnsObj, callback,callback_click) {
     //使用url （可以是json 文件 和 服务地址） 加载
     $("#gd_url").datagrid({
         url: _url.indexOf("?") > 0 ? (_url + "&s=" + Math.random()) : _url + "?s=" + Math.random(),
@@ -160,7 +160,7 @@ function InitDataGridTest(_url, columnsObj, callback) {
             if (callback) callback();
         },
         onClickRow: function (rowIndex, rowData) {
-
+            callback_click(rowData);
         },
         toolbar: '#tb'
     });

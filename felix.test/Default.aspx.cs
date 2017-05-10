@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Web;
+using HY.Business.Cache.Session;
  
 public partial class Default : System.Web.UI.Page
 {
@@ -164,11 +165,11 @@ public partial class Default : System.Web.UI.Page
         //}
         #endregion
 
-        //HYSession.WebUserID = "49963349-1359-4AB0-9FF9-AB27FFF80C16";
-        //HYSession.WebUserAccount = "682995403";
-        //HYSession.WebUserName = Server.UrlEncode("可成科技（宿迁）有限公司");
-        //HYSession.ManageUnit = "";
-        //HYSession.DepID = "";
+        HYSession.WebUserID = "49963349-1359-4AB0-9FF9-AB27FFF80C16";
+        HYSession.WebUserAccount = "682995403";
+        HYSession.WebUserName = Server.UrlEncode("可成科技（宿迁）有限公司");
+        HYSession.ManageUnit = "";
+        HYSession.DepID = "";
     }
 
 

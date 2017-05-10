@@ -29,3 +29,13 @@ C:\Users\Qixx\Desktop\felix.test\felix.test\bin\HY.DBAccess.dll
 C:\Users\Qixx\Desktop\felix.test\felix.test\bin\HY.ToolBox.dll
 C:\Users\Qixx\Desktop\felix.test\felix.test\obj\Debug\test.dll
 C:\Users\Qixx\Desktop\felix.test\felix.test\obj\Debug\test.pdb
+D:\个人\资料\test\QI\felix.test\bin\test.dll
+D:\个人\资料\test\QI\felix.test\bin\test.pdb
+D:\个人\资料\test\QI\felix.test\bin\Anthem.dll
+D:\个人\资料\test\QI\felix.test\bin\AntiXssLibrary.dll
+D:\个人\资料\test\QI\felix.test\bin\HY.Business.dll
+D:\个人\资料\test\QI\felix.test\bin\HY.Cache.dll
+D:\个人\资料\test\QI\felix.test\bin\HY.DBAccess.dll
+D:\个人\资料\test\QI\felix.test\bin\HY.ToolBox.dll
+D:\个人\资料\test\QI\felix.test\obj\Debug\test.dll
+D:\个人\资料\test\QI\felix.test\obj\Debug\test.pdb
