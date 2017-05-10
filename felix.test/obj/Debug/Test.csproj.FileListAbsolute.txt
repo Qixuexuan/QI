@@ -39,3 +39,15 @@ D:\个人\资料\test\QI\felix.test\bin\HY.DBAccess.dll
 D:\个人\资料\test\QI\felix.test\bin\HY.ToolBox.dll
 D:\个人\资料\test\QI\felix.test\obj\Debug\test.dll
 D:\个人\资料\test\QI\felix.test\obj\Debug\test.pdb
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\test.dll.config
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\test.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\test.pdb
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\Anthem.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\AntiXssLibrary.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.Business.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.Cache.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.DBAccess.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.ToolBox.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\obj\Debug\test.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\obj\Debug\test.pdb
+E:\------Work-------\PDM\felix.test\QI\felix.test\obj\Debug\Test.csprojResolveAssemblyReference.cache

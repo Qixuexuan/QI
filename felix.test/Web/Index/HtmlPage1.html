@@ -14,14 +14,13 @@
     <script type="text/javascript">
         var _pageIndex = 1;
         var _pageSize = 10;
-        //var uid = "<%= _userid%>";
         var ticket;
         $(document).ready(function () {
             var columnsObj = [[
-                { field: 'GPSTime', title: 'GPSTime', width: 160, sortable: false },
-                { field: 'Speed', title: 'Speed', width: 60, sortable: false }, 
+                { field: 'CURRENTNODEDESC', title: 'CURRENTNODEDESC', width: 160, sortable: false },
+                { field: 'CURRENTNODE', title: 'CURRENTNODE', width: 60, sortable: false }, 
              {
-                 field: 'LocationType', title: '类型', width: 120, sortable: false,
+                 field: 'FCODE', title: 'FCODE', width: 120, sortable: false,
                  styler: function (value, row, index) {
 
                  },

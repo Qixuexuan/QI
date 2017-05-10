@@ -39,10 +39,10 @@
 
             //列表访问示例
             var columnsObj = [[
-                { field: 'GPSTime', title: 'GPSTime', width: 160, sortable: false },
-                { field: 'Speed', title: 'Speed', width: 60, sortable: false },
+                { field: 'CURRENTNODEDESC', title: '部门', width: 160, sortable: false },
+                { field: 'CURRENTNODE', title: '当前节点', width: 160, sortable: false },
              {
-                 field: 'LocationType', title: '类型', width: 120, sortable: false,
+                 field: 'FCODE', title: '项目编码', width: 120, sortable: false,
                  styler: function (value, row, index) {
 
                  },
@@ -84,12 +84,13 @@
 
         }
 
-        function test() {
+        function PrjDetail() {
             window.parent.parent.createTab("tab_info_1", "项目详情", "../Web/ProjectApply/ProjectDetail.aspx?s=" + Math.random());
         }
 
-        function test1() {
-            showModalWindow('项目详情', 550, 220, "../Web/ProjectApply/ProjectDetail.aspx?s=" + Math.random());
+        function addPrjApply() {
+            //showModalWindow('项目详情', 550, 220, "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
+            window.parent.parent.createTab("tab_info_1", "项目申请", "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
         }
     </script>
 </head>
@@ -97,9 +98,9 @@
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">
         <div style="float: left;">
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="test()">隐患详情</a>
+                onclick="addPrjApply()">新增项目申请</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="test1()">所属任务详情</a>
+                onclick="PrjDetail()">项目详情</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="DetailAll()">所有详情</a>
             <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true" style="display: none"

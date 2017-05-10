@@ -14,7 +14,7 @@
     <RootNamespace>test</RootNamespace>
     <AssemblyName>test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -1134,12 +1134,16 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Web\App\config\applyConfig.js" />
     <Content Include="Web\App\css\common.css" />
     <Content Include="Web\App\css\index.css" />
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\httpHelper.js" />
     <Content Include="Web\App\js\projApply.js" />
-    <Content Include="Web\Index\HtmlPage1.html" />
+    <Content Include="Web\App\js\validate.js" />
+    <Content Include="Web\Index\HtmlPage1.html">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web\Index\index.aspx" />
     <Content Include="Web\ProjectApply\ProjectApply.aspx" />
     <Content Include="Web\ProjectApply\ProjectApplyList.aspx" />
