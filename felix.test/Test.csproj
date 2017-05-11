@@ -995,6 +995,7 @@
     <Content Include="Scripts\HighCharts\T_Grid_District_FeaturesToJS.js" />
     <Content Include="Scripts\infopublish.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery.easyui.sltdialog.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\respond.js" />
@@ -1134,6 +1135,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Web\App\config\addApplyConfigData.js" />
     <Content Include="Web\App\config\applyConfig.js" />
     <Content Include="Web\App\css\common.css" />
     <Content Include="Web\App\css\index.css" />

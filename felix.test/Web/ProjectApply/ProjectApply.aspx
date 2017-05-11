@@ -9,26 +9,26 @@
     <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
     <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../App/css/common.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
     <script src="../App/config/applyConfig.js"></script>
-    <script src="../App/config/validate.js"></script>
+    <script src="../App/js/validate.js"></script>
     <script src="../../Scripts/tools.js" type="text/javascript"></script>
+    <script src="../../Scripts/config.js" type="text/javascript"></script>
     <title>立项申请</title>
 
 <script type="text/javascript">
-for (var obj in configData) {
-        let Obj = configData[obj];
-        for (let item of Obj.Items) {
-            let opt = "<option value='"+item+"'>"+item+"</option>";
-//console.log(opt);
-//console.log(obj);
-            $("#" + obj).append(opt)
-        }
-    }
+
+
 
 function Submit(){
-var jsonObj = initStrJson($(".content"));
+    var jsonObj = initStrJson($(".content"));
     console.log(jsonObj);
+
+    var da={"ProjectNo":"111","ProjectName":"ddf"}
+
+    AjaxPost(config_service_url + "PrjEstablish",da,function(){
+        alert(rr)
+    },true)
 
 }
 
