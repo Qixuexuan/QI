@@ -10,27 +10,137 @@
     <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../App/css/common.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../Scripts/config.js"></script>
     <script src="../App/config/applyConfig.js"></script>
     <script src="../App/js/validate.js"></script>
-    <script src="../../Scripts/tools.js" type="text/javascript"></script>
-    <script src="../../Scripts/config.js" type="text/javascript"></script>
+    
     <title>立项申请</title>
 
 <script type="text/javascript">
 
+  
+var ticket;
+$(document).ready(function () {
+    //每个需要访问服务的页面都要
+    GetTicket(function (t) {
+        ticket = t;
+        console.log("ticket:"+ticket);
+
+        BlindData();
+    });
+})
 
 
-function Submit(){
+function BlindData(){
+
+//  客户类别
+BindSltAuth($("#CustomCategory"), config_service_url + "Dictionary/CustomCategory", function () {
+            });
+
+//  项目类型
+BindSltAuth($("#ProjectType"), config_service_url + "Dictionary/ProjectType", function () {
+            });
+
+//  客户规模
+BindSltAuth($("#CustomSituation"), config_service_url + "Dictionary/CustomSituation", function () {
+            });
+
+//  成立时间
+BindSltAuth($("#EstablishTime"), config_service_url + "Dictionary/EstablishTime", function () {
+            });
+
+//  账期
+BindSltAuth($("#PayDays"), config_service_url + "Dictionary/PayDays", function () {
+            });
+
+
+//  支付方式
+BindSltAuth($("#PayType"), config_service_url + "Dictionary/PayType", function () {
+            });
+
+
+//  交付方式
+BindSltAuth($("#DeliveryMethod"), config_service_url + "Dictionary/DeliveryMethod", function () {
+            });
+
+
+//  项目周期
+BindSltAuth($("#ProjectCycle"), config_service_url + "Dictionary/ProjectCycle", function () {
+            });
+
+
+//  所需资源
+BindSltAuth($("#ResourceNeed"), config_service_url + "Dictionary/ResourceNeed", function () {
+            });
+
+
+//  利润率
+BindSltAuth($("#RateOfProfit"), config_service_url + "Dictionary/RateOfProfit", function () {
+            });
+
+
+//  制造难度
+BindSltAuth($("#DifficultyOfManufacture"), config_service_url + "Dictionary/DifficultyOfManufacture", function () {
+            });
+
+
+//  回复期限
+BindSltAuth($("#ReplyLimit"), config_service_url + "Dictionary/ReplyLimit", function () {
+            });
+}
+
+
+
+
+
+function Submit() {
     var jsonObj = initStrJson($(".content"));
     console.log(jsonObj);
 
-    var da={"ProjectNo":"111","ProjectName":"ddf"}
-
-    AjaxPost(config_service_url + "PrjEstablish",da,function(){
-        alert(rr)
-    },true)
-
+    AjaxPostAuthNew(config_service_url + "PrjEstablish/Submit", jsonObj, function (result) {
+        console.log(result);
+    }, 
+    true, 
+    ticket,
+     function (XMLHttpRequest, textStatus, errorThrown) {
+         console.log(XMLHttpRequest);
+         console.log(textStatus);
+         console.log(errorThrown);
+     })
 }
+
+//判断是否有效
+        function CheckValidate(obj)
+        {
+            var isOK = true;
+            obj.find("input[type=text]").each(function ()
+            {
+                if ($(this).attr("isneed") == "true")
+                {
+                    //验证是否必填
+                    if (IsNullOrEmpty($(this).val()))
+                    {
+                        isOK = false;
+                        var _eleObj = $(this);
+
+                        $.messager.alert("提示", $(this).attr("validate-msg"), "info",
+                            function ()
+                            {
+                                _eleObj.focus();
+                                _eleObj.attr("placeholder", "--必填--");
+                            });
+                        return isOK;
+                    }
+                }
+                //else if ($(this).attr("isdemical") == "true")
+                //{
+                //    //验证是否是数字
+
+                //}
+            });
+            return isOK;
+        }
 
 </script>
 </head>
@@ -46,31 +156,31 @@ function Submit(){
                 <div class="content">
                     <div class="form-horizontal">
                         <div class="form-group">
-                            <label for="ProjectNO" class="col-sm-3 control-label">项目编号</label>
+                            <label for="ProjectNo" class="col-sm-3 control-label">项目编号</label>
                             <div class="col-sm-7">
-                                <input id="ProjectNO" name="ProjectNO" type="text" value="项目编号" class="form-control" placeholder=""/>
+                                <input id="ProjectNo" name="ProjectNo" type="text" value="项目编号" class="form-control" placeholder=""/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="CustomerName" class="col-sm-3 control-label">客户名称</label>
+                            <label for="CustomName" class="col-sm-3 control-label">客户名称</label>
                             <div class="col-sm-7">
-                                <input id="CustomerName" name="CustomerName" type="text" value="客户名称" class="form-control" placeholder=""/>
+                                <input id="CustomName" name="CustomName" type="text" value="客户名称" class="form-control" placeholder=""/>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="ObjType" class="col-sm-3 control-label">客户类别</label>
+                            <label for="CustomCategory" class="col-sm-3 control-label">客户类别</label>
                             <div class="col-sm-3">
-                                <select id="ObjType" name="ObjType" class="form-control"></select>
+                                <select id="CustomCategory" name="CustomCategory" class="form-control"></select>
                             </div>
                             <div class="col-sm-4">
-                                <select id="HostType" name="HostType" class="form-control"></select>
+                                <select id="ProjectType" name="ProjectType" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="CustomerSize" class="col-sm-3 control-label">客户规模</label>
+                            <label for="CustomSituation" class="col-sm-3 control-label">客户规模</label>
                             <div class="col-sm-7">
-                                <select id="CustomerSize" name="CustomerSize" class="form-control"></select>
+                                <select id="CustomSituation" name="CustomSituation" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -80,9 +190,9 @@ function Submit(){
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Tel" class="col-sm-3 control-label">联系方式 </label>
+                            <label for="CustomContact" class="col-sm-3 control-label">联系方式 </label>
                             <div class="col-sm-7">
-                                <input id="Tel" name="Tel" type="text" class="form-control" placeholder=""/>
+                                <input id="CustomContact" name="CustomContact" type="text" class="form-control" placeholder=""/>
                             </div>
                         </div>
                     </div>
@@ -107,24 +217,24 @@ function Submit(){
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="AccountTime" class="col-sm-3 control-label">帐期 </label>
+                            <label for="PayDays" class="col-sm-3 control-label">帐期 </label>
                             <div class="col-sm-3">
-                                <select id="AccountTime" name="AccountTime" class="form-control"></select>
+                                <select id="PayDays" name="PayDays" class="form-control"></select>
                             </div>
                             <div class="col-sm-4">
                                 <select id="PayType" name="PayType" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="DeliverType" class="col-sm-3 control-label">交付方式 </label>
+                            <label for="DeliveryMethod" class="col-sm-3 control-label">交付方式 </label>
                             <div class="col-sm-7">
-                                <select id="DeliverType" name="DeliverType" class="form-control"></select>
+                                <select id="DeliveryMethod" name="DeliveryMethod" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="FPTTIme" class="col-sm-3 control-label">FOT时间 </label>
+                            <label for="FotTime" class="col-sm-3 control-label">FOT时间 </label>
                             <div class="col-sm-7">
-                                <input id="FPTTIme" name="FPTTIme" type="text" class="form-control" placeholder=""/>
+                                <input id="FotTime" name="FotTime" type="text" class="form-control" placeholder=""/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -140,33 +250,33 @@ function Submit(){
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="RequireResource" class="col-sm-3 control-label">所需资源 </label>
+                            <label for="ResourceNeed" class="col-sm-3 control-label">所需资源 </label>
                             <div class="col-sm-7">
-                                <select id="RequireResource" name="RequireResource" class="form-control"></select>
+                                <select id="ResourceNeed" name="ResourceNeed" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="ProfitMargin" class="col-sm-3 control-label">利润率 </label>
+                            <label for="RateOfProfit" class="col-sm-3 control-label">利润率 </label>
                             <div class="col-sm-7">
-                                <select id="ProfitMargin" name="ProfitMargin" class="form-control"></select>
+                                <select id="RateOfProfit" name="RateOfProfit" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="DifficultyGrade" class="col-sm-3 control-label">制造难度 </label>
+                            <label for="DifficultyOfManufacture" class="col-sm-3 control-label">制造难度 </label>
                             <div class="col-sm-7">
-                                <select id="DifficultyGrade" name="DifficultyGrade" class="form-control"></select>
+                                <select id="DifficultyOfManufacture" name="DifficultyOfManufacture" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="ReplyTerm" class="col-sm-3 control-label">回复期限 </label>
+                            <label for="ReplyLimit" class="col-sm-3 control-label">回复期限 </label>
                             <div class="col-sm-7">
-                                <select id="ReplyTerm" name="ReplyTerm" class="form-control"></select>
+                                <select id="ReplyLimit" name="ReplyLimit" class="form-control"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="ProjectDes" class="col-sm-3 control-label">项目描述 </label>
+                            <label for="ProjectDesc" class="col-sm-3 control-label">项目描述 </label>
                             <div class="col-sm-7">
-                                <input id="ProjectDes" name="ProjectDes" type="text" class="form-control" placeholder=""/>
+                                <input id="ProjectDesc" name="ProjectDesc" type="text" class="form-control" placeholder=""/>
                             </div>
                         </div>
 

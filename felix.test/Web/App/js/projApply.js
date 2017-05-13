@@ -3,7 +3,7 @@
  */
 let _rootconfig;
 const CONST_CONFIG_PATH = "config/projApplyConfig.json"
-$.get(CONST_CONFIG_PATH, function(data) {
+$.get(CONST_CONFIG_PATH, function (data) {
     _rootconfig = data;
     for (var obj in _rootconfig) {
         let Obj = _rootconfig[obj];

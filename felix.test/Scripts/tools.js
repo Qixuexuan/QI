@@ -109,12 +109,12 @@ function AddDays(date, days) {
 }
 
 ////得到根窗口对象
-//function getWindow()
-//{
-//    var w = window;
-//    while (w.parent.location.href != w.location.href) { w = w.parent; }
-//    return w;
-//}
+function getWindow()
+{
+    var w = window;
+    while (w.parent.location.href != w.location.href) { w = w.parent; }
+    return w;
+}
 
 //function getDocument()
 //{

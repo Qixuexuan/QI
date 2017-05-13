@@ -48,5 +48,6 @@ E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.Business.dll
 E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.Cache.dll
 E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.DBAccess.dll
 E:\------Work-------\PDM\felix.test\QI\felix.test\bin\HY.ToolBox.dll
+E:\------Work-------\PDM\felix.test\QI\felix.test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 E:\------Work-------\PDM\felix.test\QI\felix.test\obj\Debug\test.dll
 E:\------Work-------\PDM\felix.test\QI\felix.test\obj\Debug\test.pdb

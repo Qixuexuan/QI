@@ -157,7 +157,7 @@
         </div>
 
         <div class="row ibox">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="title">
                     <h5>审核信息</h5>
                     <span class="glyphicon glyphicon-chevron-up"></span>
@@ -202,6 +202,25 @@
                             </form>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <button type="button" class="btn btn-warning btn-lg" onclick="submit()">Reject</button>
+                        <button type="button" class="btn btn-success btn-lg">Approve</button>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="title">
+                    <h5>审核信息</h5>
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </div>
+                <div class="content">
 
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -259,6 +278,9 @@
 
             </div>
         </div>
+
+
+
 
     </div>
 </body>
