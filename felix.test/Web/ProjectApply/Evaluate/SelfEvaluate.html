@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>项目自评</title>
+	<meta charset="utf-8" />
+    <link href="../../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../App/css/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../../Scripts/config.js"></script>
+    <style type="text/css">
+        button {
+            float:right;
+            margin-right:20px
+        }
+        input {
+            height:50px;
+        }
+    </style>
+    <script type="text/javascript">
+        var ticket;
+        $(document).ready(function () {
+            //每个需要访问服务的页面都要
+            GetTicket(function (t) {
+                ticket = t;
+            });
+            BindSltAuth($("#SelfEvaluate"), config_service_url + "Dictionary/SelfEvaluate", function () {
+            });
+        })
+    </script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="SelfEvaluate" class="col-sm-3 control-label">项目评估 </label>
+                <div class="col-sm-6">
+                    <select id="SelfEvaluate" name="SelfEvaluate" class="form-control"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="SelfEvaluateRemark" class="col-sm-3 control-label">备注 </label>
+                <div class="col-sm-6">
+                    <!--<input id="SelfEvaluateRemark" type="text" class="form-control" placeholder="" />-->
+                    <textarea class="form-control" rows="3"></textarea>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-success">提交</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

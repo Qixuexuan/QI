@@ -13,86 +13,9 @@
     <script type="text/javascript" src="../../Scripts/easyUI/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="../../Scripts/tools.js"></script>
     <script type="text/javascript" src="../../Scripts/config.js"></script>
-    <script src="../App/js/geone.datagrid.js"></script>
-    <script src="../../Js/modalWindow.js"></script>
-    <script type="text/javascript">
-        var _pageIndex = 1;
-        var _pageSize = 10;
-        var ticket;
-        $(document).ready(function () {
-            GetTicket(function (t) {
-                ticket = t;
-            });
-            //post 访问 示例
-            var json = { "wfSchemeCode": "sbjcz", "userId": "1" };
-            //AjaxPost("http://192.168.84.41/sbjcz_wfeservice/CreateWFInstance",
-            //    JSON.stringify(json),
-            //    function (data) {
-            //        console.log(data);
-            //    }, true);
-
-            //AjaxGetAuth("http://pdm.sinno-tech.com:8889/PrjEstablish?PageNumber=1&PageSize=212&keyWord=K",
-            //    function () {
-
-            //    }, true, "1", function () { })
-           
-
-            //列表访问示例
-            var columnsObj = [[
-                { field: 'CURRENTNODEDESC', title: '部门', width: 160, sortable: false },
-                { field: 'CURRENTNODE', title: '当前节点', width: 160, sortable: false },
-             {
-                 field: 'FCODE', title: '项目编码', width: 120, sortable: false,
-                 styler: function (value, row, index) {
-
-                 },
-                 formatter: function (value, row, index) {
-
-                     if (value == "22") {
-                         return '<div onclick="Edit(\'' + row.UserName + '\')" style="background-color:green;margin-top:5px;margin-left:5px;width:60px;height:60px;">编辑</div>';
-                     }
-                     else if (value == "0") {
-                         return 'ee';
-
-                     }
-
-                 }
-             }
-            ]];
-
-            InitDataGridTest(config_service_url + "PrjEstablish", columnsObj, null, function () { });
-        });
-        //点击事件
-        function callback_click(data) {
-            if (data.IsPermit == "1") {
-                $("#Approve").show();
-            }
-            else {
-                $("#Approve").hide();
-
-            }
-        }
-        function Edit(p) {
-            alert(p);
-
-        }
-        //分页事件
-        function PageEvent(pageNumber, pageSize) {
-            _pageIndex = pageNumber;
-            _pageSize = pageSize;
-            $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, keyWord: "ddd" });
-
-        }
-
-        function PrjDetail() {
-            window.parent.parent.createTab("tab_info_1", "项目详情", "../Web/ProjectApply/ProjectDetail.aspx?s=" + Math.random());
-        }
-
-        function addPrjApply() {
-            //showModalWindow('项目详情', 550, 220, "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
-            window.parent.parent.createTab("tab_info_1", "项目申请", "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
-        }
-    </script>
+    <script type="text/javascript" src="../../Js/modalWindow.js"></script>
+    <script type="text/javascript" src="../App/js/geone.datagrid.js"></script>
+    <script type="text/javascript" src="../App/js/ProjectApplyList.js"></script>
 </head>
 <body>
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">
@@ -103,8 +26,8 @@
                 onclick="PrjDetail()">项目详情</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="DetailAll()">所有详情</a>
-            <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true" style="display: none"
-                onclick="Approve()">审批</a>
+            <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+                onclick="Approve()">审核</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

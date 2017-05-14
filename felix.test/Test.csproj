@@ -1135,18 +1135,21 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web\App\config\addApplyConfigData.js" />
-    <Content Include="Web\App\config\applyConfig.js" />
     <Content Include="Web\App\css\common.css" />
     <Content Include="Web\App\css\index.css" />
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\httpHelper.js" />
-    <Content Include="Web\App\js\projApply.js" />
+    <Content Include="Web\App\js\ProjectApply.js" />
+    <Content Include="Web\App\js\ProjectApplyList.js" />
     <Content Include="Web\App\js\validate.js" />
     <Content Include="Web\Index\HtmlPage1.html">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web\Index\index.aspx" />
+    <Content Include="Web\ProjectApply\Evaluate\MDeptEvaluate.html" />
+    <Content Include="Web\ProjectApply\Evaluate\PrjDeptEvaluate.html" />
+    <Content Include="Web\ProjectApply\Evaluate\SelfEvaluate.html" />
+    <Content Include="Web\ProjectApply\Evaluate\TechDeptEvaluate.html" />
     <Content Include="Web\ProjectApply\ProjectApply.aspx" />
     <Content Include="Web\ProjectApply\ProjectApplyList.aspx" />
     <Content Include="Web\ProjectApply\ProjectDetail.aspx" />
