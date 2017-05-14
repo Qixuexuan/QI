@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>项目详情</title>
+    <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App/css/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../Scripts/config.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .alignRight {
+            text-align: right;
+            padding-right: 30px;
+            width: 25%;
+            background-color: #F6F6F6;
+        }
+
+        .alignLeft {
+            padding-left: 30px;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+            border: 1px solid lightgray;
+        }
+
+        tr {
+            height: 35px;
+            border-bottom: 1px solid #f2f0f1;
+        }
+
+        td {
+            border-right: 1px solid #f2f0f1;
+        }
+
+        .mytitle {
+            font-size: 15px;
+            font-weight: bold;
+            line-height:40px;
+            vertical-align:bottom;
+            margin-top:30px;
+            color:gray;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var ticket;
+        var pguid;
+        $(document).ready(function () {
+            GetTicket(function (t) {
+                ticket = t;
+            });
+            pguid = getQueryString("PGuid");
+        })
+        console.log(config_service_url + "PrjEstablish/detail/" + pguid);
+        AjaxGetAuth(config_service_url + "PrjEstablish/detail/" + pguid, function (result) {
+            console.log(result);
+
+            if (result.Data.length > 0) {
+                var data = result.Data[0];
+                for (var key in data) {
+                    $("#" + key).val(data[key]);
+                }
+            }
+
+        }, true, ticket, function () {
+            $.messager.alert("提示：", "获取详情数据失败.", "info");
+        })
+
+    </script>
+</head>
+<body>
+    <div class="container-fluid" style="background-color:white">
+        <div class="row" style="display:none">
+            <div class="col-md-12">
+                <span class="mytitle">详细信息</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9 col-md-offset-1">
+                <table>
+                    <tr>
+                        <td class="alignRight"><span>项目编码</span></td>
+                        <td class="alignLeft"><span id="ProjectNo"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>项目名称</span></td>
+                        <td class="alignLeft"><span id="ProjectName"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>项目申请人</span></td>
+                        <td class="alignLeft"><span id="ApplyPerson"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>项目申请时间</span></td>
+                        <td class="alignLeft"><span id="ApplyTime"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="alignRight"><span>客户类别</span></td>
+                        <td class="alignLeft"><span id="CustomCategory"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>客户名称</span></td>
+                        <td class="alignLeft"><span id="CustomName"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>客户规模</span></td>
+                        <td class="alignLeft"><span id="CustomSituation"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>成立时间</span></td>
+                        <td class="alignLeft"><span id="EstablishTime"></span></td>
+                    <tr>
+                        <td class="alignRight"><span>项目编码</span></td>
+                        <td class="alignLeft"><span id="ProjectNo"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>联系方式</span></td>
+                        <td class="alignLeft"><span id="CustomContact"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>帐期</span></td>
+                        <td class="alignLeft"><span id="PayDays"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>支付方式</span></td>
+                        <td class="alignLeft"><span id="PayType"></span></td>
+                    <tr>
+                        <td class="alignRight"><span>交付方式</span></td>
+                        <td class="alignLeft"><span id="DeliveryMethod"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>FOT时间</span></td>
+                        <td class="alignLeft"><span id="FotTime"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>PPAP时间</span></td>
+                        <td class="alignLeft"><span id="PPAPTime"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>项目周期</span></td>
+                        <td class="alignLeft"><span id="ProjectCycle"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>所需资源</span></td>
+                        <td class="alignLeft"><span id="ResourceNeed"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>利润率</span></td>
+                        <td class="alignLeft"><span id="RateOfProfit"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>制造难度</span></td>
+                        <td class="alignLeft"><span id="DifficultyOfManufacture"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>回复期限</span></td>
+                        <td class="alignLeft"><span id="ReplyLimit"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>项目描述</span></td>
+                        <td class="alignLeft"><span id="ProjectDesc"></span></td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-9 col-md-offset-1">
+                <table>
+                    <tr>
+                        <td class="alignRight"><span>项目部评估</span></td>
+                        <td class="alignLeft"><span id="PrjDeptEvaluateDesc"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>技术部评估</span></td>
+                        <td class="alignLeft"><span id="TechDeptEvaluateDesc"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>制造难度评估</span></td>
+                        <td class="alignLeft"><span id="MakeDifficutEvaluateDesc"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>产能评估</span></td>
+                        <td class="alignLeft"><span id="OutDifficultEvaluateDesc"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight"><span>项目自评</span></td>
+                        <td class="alignLeft"><span id="SelfEvaluateDesc"></span></td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

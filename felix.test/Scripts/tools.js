@@ -567,8 +567,6 @@ function BindSltAuth(sltObj, url, callBack) {
     AjaxGetAuth(url, function (rr) {
         var json = eval(rr);
         json = json.Data;
-        console.log(json);
-        alert();
         $(json).each(function (idx) {
             sltObj.append("<option value='" + json[idx].Value + "'>" + json[idx].Name + "</option>");
         });

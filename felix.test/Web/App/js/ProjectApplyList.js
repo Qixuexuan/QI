@@ -21,6 +21,7 @@ $(document).ready(function () {
 
     //列表访问示例
     var columnsObj = [[
+        { field: 'PGUID', title: 'PGUID', width: 100, sortable: false },
         { field: 'ProjectNo', title: '项目编号', width: 100, sortable: false },
         { field: 'ProjectName', title: '项目名称', width: 100, sortable: false },
         { field: 'CustomCategory', title: '客户类型', width: 100, sortable: false },
@@ -42,10 +43,11 @@ $(document).ready(function () {
          formatter: function (value, row, index) {
 
              if (value == "1") {
-                 return '<div onclick="Edit(\'' + row.UserName + '\')" style="background-color:green;margin-top:5px;margin-left:5px;width:60px;height:60px;">审核</div>';
+                 //return '<div onclick="Edit(\'' + row.UserName + '\')" style="background-color:green;margin-top:5px;margin-left:5px;width:60px;height:60px;">审核</div>';
+                 return '有'
              }
              else if (value == "0") {
-                 return '-';
+                 return '无';
 
              }
 
@@ -67,28 +69,50 @@ function callback_click(data) {
 }
 
 
-//详情
-function Detail() {
-    SessionIsOverTime(function () {
-        var rowData = $("#gd_url").datagrid("getSelected");
-        if (rowData == undefined || rowData == null) {
-            $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
-        }
-        else {
-            showModalWindow('详情', 720, 350, "../Web/DangerousCargo/DCListView.html?s=" + Math.random() + "&id=" + rowData.ID);
-            //$.messager.alert("提示：", "功能开发中.", "info");
-        }
-    });
-}
-
+//  审核
 function Approve() {
     SessionIsOverTime(function () {
         var rowData = $("#gd_url").datagrid("getSelected");
         if (rowData == undefined || rowData == null) {
             $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
+
+            if (rowData.CanApprove != "1") {
+                $.messager.alert("提示：", "抱歉，您无改项目的审核权限.", "info");
+            }
         }
+        
         else {
-            showModalWindow('项目评估', 550, 220, "../Web/ProjectApply/Evaluate/SelfEvaluate.html?s=" + Math.random());
+
+            var CurrentNode = rowData.CURRENTNODE;
+            var PGuid = rowData.PGUID;
+            var width = 550;
+            var height = 230;
+            var pageUrl = "";
+            var modelTitle = "";
+
+            CurrentNode = "TechDeptEvaluate";
+
+            switch (CurrentNode) {
+                case "SelfEvaluate":
+                    modelTitle = "项目自评";
+                    pageUrl = "../Web/ProjectApply/Evaluate/SelfEvaluate.html";
+                    break;
+                case "PrjDeptEvaluate":
+                    modelTitle = "项目部评估";
+                    pageUrl = "../Web/ProjectApply/Evaluate/PrjDeptEvaluate.html";
+                    break;
+                case "TechDeptEvaluate":
+                    modelTitle = "技术部评估";
+                    pageUrl = "../Web/ProjectApply/Evaluate/TechDeptEvaluate.html";
+                    break;
+                case "MDeptEvaluate":
+                    modelTitle = "制造难度评估";
+                    pageUrl = "../Web/ProjectApply/Evaluate/MDeptEvaluate.html";
+                    height = 300;
+                    break;
+            }
+           
+            showModalWindow(modelTitle, width, height, pageUrl + "?s=" + Math.random() + "&CurrentNode=" + CurrentNode + "&PGuid=" + PGuid);
         }
     });
 
@@ -106,8 +130,21 @@ function PageEvent(pageNumber, pageSize) {
 
 }
 
+//  项目详情
 function PrjDetail() {
-    window.parent.parent.createTab("tab_info_1", "项目详情", "../Web/ProjectApply/ProjectDetail.aspx?s=" + Math.random());
+    SessionIsOverTime(function () {
+        var rowData = $("#gd_url").datagrid("getSelected");
+        if (rowData == undefined || rowData == null) {
+            $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
+        }
+
+        else {
+
+            var PGuid = rowData.PGUID;
+            window.parent.parent.createTab("tab_info_1", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
+        }
+    });
+    
 }
 
 function addPrjApply() {

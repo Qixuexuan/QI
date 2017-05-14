@@ -24,16 +24,10 @@
                 onclick="addPrjApply()">新增项目申请</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="PrjDetail()">项目详情</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="DetailAll()">所有详情</a>
             <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="Approve()">审核</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
-        </div>
-        <div id="processCmd">
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
-                onclick="FileProblem()">归档</a>
         </div>
     </div>
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc;">

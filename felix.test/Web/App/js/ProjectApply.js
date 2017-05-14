@@ -3,7 +3,6 @@ $(document).ready(function () {
     //每个需要访问服务的页面都要
     GetTicket(function (t) {
         ticket = t;
-        
 
         BlindData();
     });
@@ -73,21 +72,22 @@ BindSltAuth($("#ReplyLimit"), config_service_url + "Dictionary/ReplyLimit", func
 
 //  提交立项申请
 function Submit() {
-    debugger;
     //表单验证
     if (!CheckValidate($(".content"))) return false;
 
     var jsonObj = initStrJson($(".content"));
     console.log(jsonObj);
 
-    //AjaxPostAuthNew(config_service_url + "PrjEstablish/Submit", jsonObj, function (result) {
-    //    console.log(result);
-    //}, 
-    //true, 
-    //ticket,
-    // function (XMLHttpRequest, textStatus, errorThrown) {
-    //     console.log(XMLHttpRequest);
-    //     console.log(textStatus);
-    //     console.log(errorThrown);
-    // })
+    AjaxPostAuthNew(config_service_url + "PrjEstablish/Submit", jsonObj, function (result) {
+        //console.log(result);
+        $.messager.alert("提示：", result.Message, "info");
+    }, 
+    true, 
+    ticket,
+     function (XMLHttpRequest, textStatus, errorThrown) {
+         $.messager.alert("提示：", result.Message, "info");
+         //console.log(XMLHttpRequest);
+         //console.log(textStatus);
+         //console.log(errorThrown);
+     })
 }

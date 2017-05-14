@@ -4,8 +4,90 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>制造部评估</title>
 	<meta charset="utf-8" />
+    <link href="../../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="../../App/css/common.css" rel="stylesheet" type="text/css" />-->
+    <script type="text/javascript" src="../../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../../Scripts/easyUI/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../../Scripts/config.js"></script>
+    <script type="text/javascript" src="../../App/js/validate.js"></script>
+    <style type="text/css">
+        button {
+            float: right;
+            margin-right: 20px;
+        }
+        body {
+            background-color:white;
+        }
+        label {
+            float:left;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var ticket;
+        var pguid;
+        var currentnode;
+        $(document).ready(function () {
+            //每个需要访问服务的页面都要
+            GetTicket(function (t) {
+                ticket = t;
+            });
+
+            pguid = getQueryString("PGuid");
+            currentnode = getQueryString("CurrentNode");
+
+            BindSltAuth($("#MakeDifficutEvaluate"), config_service_url + "Dictionary/MakeDifficutEvaluate", function () {
+            });
+            BindSltAuth($("#OutDifficultEvaluate"), config_service_url + "Dictionary/OutDifficultEvaluate", function () {
+            });
+        })
+
+        function Submit() {
+            //表单验证
+            if (!CheckValidate($(".content"))) return false;
+
+            var jsonObj = initStrJson($(".content"));
+            console.log(jsonObj);
+
+            AjaxPostAuthNew(config_service_url + "PrjEstablish/" + currentnode + "/" + pguid, jsonObj, function (result) {
+                $.messager.alert("提示：", result.Message, "info");
+            }, 
+            true, 
+            ticket,
+             function (XMLHttpRequest, textStatus, errorThrown) {
+                 $.messager.alert("提示：", "提交失败.", "info");
+             })
+        }
+    </script>
 </head>
 <body>
-
+    <div class="container">
+        <div class="content" style="margin-top:10px">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="SelfEvaluate" class="col-sm-3 control-label">制造难度评估 </label>
+                    <div class="col-sm-6">
+                        <select id="MakeDifficutEvaluate" name="MakeDifficutEvaluate"  isneed="true" validate-msg="请选择制造难度评估." class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="OutDifficultEvaluate" class="col-sm-3 control-label">产能难度评估 </label>
+                    <div class="col-sm-7">
+                        <select id="OutDifficultEvaluate" name="OutDifficultEvaluate"  isneed="true" validate-msg="请选择产能难度评估." class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="SelfEvaluateRemark" class="col-sm-3 control-label">备注 </label>
+                    <div class="col-sm-6">
+                        <textarea id="MakeDifficutEvaluateRemark" name="MakeDifficutEvaluateRemark" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" onclick="Submit()">提交</button>
+                </div>
+            </div>
+            </div>
+        </div>
 </body>
 </html>

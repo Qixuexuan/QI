@@ -10,6 +10,8 @@
     <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../App/css/common.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+
+    <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="../../Scripts/tools.js"></script>
     <script type="text/javascript" src="../../Scripts/config.js"></script>
     <script src="../App/js/validate.js"></script>
@@ -32,13 +34,13 @@
                         <div class="form-group">
                             <label for="ProjectNo" class="col-sm-3 control-label">项目编号</label>
                             <div class="col-sm-7">
-                                <input id="ProjectNo" name="ProjectNo" type="text" value="项目编号" class="form-control" isneed="true" validate-msg="请输入项目编号." placeholder="--必填--"/>
+                                <input id="ProjectNo" name="ProjectNo" type="text" class="form-control" isneed="true" validate-msg="请输入项目编号." placeholder="--必填--"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="CustomName" class="col-sm-3 control-label">客户名称</label>
                             <div class="col-sm-7">
-                                <input id="CustomName" name="CustomName" type="text" value="客户名称" class="form-control" isneed="true" validate-msg="请输入客户名称." placeholder="--必填--"/>
+                                <input id="CustomName" name="CustomName" type="text" class="form-control" isneed="true" validate-msg="请输入客户名称." placeholder="--必填--"/>
                             </div>
                         </div>
 
@@ -150,7 +152,8 @@
                         <div class="form-group">
                             <label for="ProjectDesc" class="col-sm-3 control-label">项目描述 </label>
                             <div class="col-sm-7">
-                                <input id="ProjectDesc" name="ProjectDesc" type="text" class="form-control" placeholder=""/>
+                                <!--<input id="ProjectDesc" name="ProjectDesc" type="text" class="form-control" placeholder=""/>-->
+                                <textarea id="ProjectDesc" name="ProjectDesc" class="form-control" rows="3"></textarea>
                             </div>
                         </div>
 

@@ -1153,6 +1153,7 @@
     <Content Include="Web\ProjectApply\ProjectApply.aspx" />
     <Content Include="Web\ProjectApply\ProjectApplyList.aspx" />
     <Content Include="Web\ProjectApply\ProjectDetail.aspx" />
+    <Content Include="Web\ProjectApply\ProjectDetail.html" />
     <Content Include="Web\ProjectManagent\AQPQGroup.aspx" />
     <Content Include="Web\ProjectManagent\AQPQTaskList.aspx" />
     <Content Include="Web\ProjectManagent\MyProject.aspx" />

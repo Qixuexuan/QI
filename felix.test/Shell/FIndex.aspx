@@ -372,7 +372,7 @@
                 <div id="north">
                     <div class="leftcorner"></div>
                     <div id="north_left">
-                        <div id="logobg" runat="server">星诺奇项目管理</div>
+                        <div id="logobg" runat="server"></div>
                         <div id="tip" style="display: none;">
                         </div>
                     </div>
