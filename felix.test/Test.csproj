@@ -1137,6 +1137,7 @@
     </Content>
     <Content Include="Web\App\css\common.css" />
     <Content Include="Web\App\css\index.css" />
+    <Content Include="Web\App\css\tableContent.css" />
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\httpHelper.js" />
     <Content Include="Web\App\js\ProjectApply.js" />

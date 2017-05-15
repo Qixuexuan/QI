@@ -1,0 +1,36 @@
+﻿html,
+body {
+    background-color: white;
+}
+
+.alignRight {
+    text-align: right;
+    padding-right: 30px;
+    width: 25%;
+    background-color: #F6F6F6;
+}
+
+.alignLeft {
+    padding-left: 30px;
+}
+
+table {
+    margin-top: 20px;
+    margin: 0 auto;
+    width: 70%;
+    border: 1px solid lightgray;
+}
+
+tr {
+    height: 35px;
+    border-bottom: 1px solid #f2f0f1;
+}
+
+td {
+    border-right: 1px solid #f2f0f1;
+}
+
+.tableBox {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

@@ -90,7 +90,7 @@ function Approve() {
             var pageUrl = "";
             var modelTitle = "";
 
-            CurrentNode = "TechDeptEvaluate";
+            CurrentNode = "MDeptEvaluate";
 
             switch (CurrentNode) {
                 case "SelfEvaluate":
@@ -149,5 +149,5 @@ function PrjDetail() {
 
 function addPrjApply() {
     //showModalWindow('项目详情', 550, 220, "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
-    window.parent.parent.createTab("tab_info_1", "项目申请", "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
+    window.parent.parent.createTab("tab_info_2", "项目申请", "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
 }

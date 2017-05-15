@@ -91,3 +91,8 @@ function Submit() {
          //console.log(errorThrown);
      })
 }
+
+//  重置当前页面
+function Reset() {
+    location.reload();
+}

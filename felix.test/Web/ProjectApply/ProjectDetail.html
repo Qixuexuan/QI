@@ -5,52 +5,12 @@
     <meta charset="utf-8" />
     <title>项目详情</title>
     <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../App/css/common.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../../Scripts/tools.js"></script>
+    <link href="../App/css/tableContent.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../Scripts/config.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/tools.js"></script>
     <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
-    <style>
-        body {
-            background-color: white;
-        }
-
-        .alignRight {
-            text-align: right;
-            padding-right: 30px;
-            width: 25%;
-            background-color: #F6F6F6;
-        }
-
-        .alignLeft {
-            padding-left: 30px;
-        }
-
-        table {
-            margin-top: 20px;
-            width: 100%;
-            border: 1px solid lightgray;
-        }
-
-        tr {
-            height: 35px;
-            border-bottom: 1px solid #f2f0f1;
-        }
-
-        td {
-            border-right: 1px solid #f2f0f1;
-        }
-
-        .mytitle {
-            font-size: 15px;
-            font-weight: bold;
-            line-height:40px;
-            vertical-align:bottom;
-            margin-top:30px;
-            color:gray;
-        }
-    </style>
-
+ 
     <script type="text/javascript">
         var ticket;
         var pguid;
@@ -59,33 +19,30 @@
                 ticket = t;
             });
             pguid = getQueryString("PGuid");
-        })
-        console.log(config_service_url + "PrjEstablish/detail/" + pguid);
-        AjaxGetAuth(config_service_url + "PrjEstablish/detail/" + pguid, function (result) {
-            console.log(result);
 
-            if (result.Data.length > 0) {
-                var data = result.Data[0];
-                for (var key in data) {
-                    $("#" + key).val(data[key]);
+            console.log(config_service_url + "PrjEstablish/detail/" + pguid);
+            AjaxGetAuth(config_service_url + "PrjEstablish/detail/" + pguid, function (result) {
+                console.log(result);
+
+                if (result.Data.length > 0) {
+                    var data = result.Data[0];
+                    for (var key in data) {
+                        $("#" + key).text(data[key]);
+                    }
                 }
-            }
 
-        }, true, ticket, function () {
-            $.messager.alert("提示：", "获取详情数据失败.", "info");
+            }, true, ticket, function () {
+                $.messager.alert("提示：", "获取详情数据失败.", "info");
+            })
         })
+       
 
     </script>
 </head>
 <body>
-    <div class="container-fluid" style="background-color:white">
-        <div class="row" style="display:none">
-            <div class="col-md-12">
-                <span class="mytitle">详细信息</span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-9 col-md-offset-1">
+    <!--<div class="container-fluid" style="background-color:white">-->
+        <!--<div class="row">-->
+            <div class="tableBox">
                 <table>
                     <tr>
                         <td class="alignRight"><span>项目编码</span></td>
@@ -174,10 +131,10 @@
                 </table>
             </div>
 
-        </div>
+        <!--</div>-->
 
-        <div class="row">
-            <div class="col-md-9 col-md-offset-1">
+        <!--<div class="row">-->
+            <div class="tableBox">
                 <table>
                     <tr>
                         <td class="alignRight"><span>项目部评估</span></td>
@@ -203,7 +160,7 @@
                 </table>
             </div>
 
-        </div>
-    </div>
+        <!--</div>-->
+    <!--</div>-->
 </body>
 </html>
