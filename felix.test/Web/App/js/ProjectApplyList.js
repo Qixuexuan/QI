@@ -21,7 +21,6 @@ $(document).ready(function () {
 
     //列表访问示例
     var columnsObj = [[
-        { field: 'PGUID', title: 'PGUID', width: 100, sortable: false },
         { field: 'ProjectNo', title: '项目编号', width: 100, sortable: false },
         { field: 'ProjectName', title: '项目名称', width: 100, sortable: false },
         { field: 'CustomCategory', title: '客户类型', width: 100, sortable: false },
@@ -36,7 +35,7 @@ $(document).ready(function () {
         { field: 'ApplyTime', title: '申请时间', width: 100, sortable: false },
         { field: 'ApplyPerson', title: '申请人', width: 100, sortable: false },
      {
-         field: 'CanApprove', title: '审核权限', width: 120, sortable: false,
+         field: 'CanApprove', title: '是否可审核', width: 120, sortable: false,
          styler: function (value, row, index) {
 
          },
@@ -44,10 +43,10 @@ $(document).ready(function () {
 
              if (value == "1") {
                  //return '<div onclick="Edit(\'' + row.UserName + '\')" style="background-color:green;margin-top:5px;margin-left:5px;width:60px;height:60px;">审核</div>';
-                 return '有'
+                 return '是'
              }
              else if (value == "0") {
-                 return '无';
+                 return '否';
 
              }
 
@@ -90,7 +89,7 @@ function Approve() {
             var pageUrl = "";
             var modelTitle = "";
 
-            CurrentNode = "MDeptEvaluate";
+            //CurrentNode = "MDeptEvaluate";
 
             switch (CurrentNode) {
                 case "SelfEvaluate":

@@ -26,9 +26,9 @@
         }
     </style>
     <script type="text/javascript">
-        var ticket;
-        var pguid;
-        var currentnode;
+        let ticket;
+        let pguid;
+        let currentnode;
         $(document).ready(function () {
             //每个需要访问服务的页面都要
             GetTicket(function (t) {
@@ -47,10 +47,9 @@
             //表单验证
             if (!CheckValidate($(".content"))) return false;
 
-            var jsonObj = initStrJson($(".content"));
-            console.log(jsonObj);
+            let jsonStr = GetParmsData();
 
-            AjaxPostAuthNew(config_service_url + "PrjEstablish/" + currentnode + "/" + pguid, jsonObj, function (result) {
+            AjaxPostAuthNew(config_service_url + "PrjEstablish/" + currentnode + "/" + pguid, jsonStr, function (result) {
                 $.messager.alert("提示：", result.Message, "info");
             },
             true,
@@ -58,6 +57,36 @@
              function (XMLHttpRequest, textStatus, errorThrown) {
                  $.messager.alert("提示：", "提交失败.", "info");
              })
+        }
+
+        function Reject() {
+            //表单验证
+            if (!CheckValidate($(".content"))) return false;
+
+
+            let jsonStr = GetParmsData();
+
+            AjaxPostAuthNew(config_service_url + "PrjEstablish/Reject/" + pguid + "/" + currentnode, jsonStr, function (result) {
+                $.messager.alert("提示：", result.Message, "info");
+            },
+            true,
+            ticket,
+             function (XMLHttpRequest, textStatus, errorThrown) {
+                 $.messager.alert("提示：", "提交失败.", "info");
+             })
+        }
+
+        //  获取表单数据
+        function GetParmsData() {
+            let jsonStr = initStrJson($(".content"));
+            let jsonObj = JSON.parse(jsonStr);
+
+            jsonObj.MakeDifficutEvaluateDesc = $("#MakeDifficutEvaluate").find("option:selected").text();
+            jsonObj.OutDifficultEvaluateDesc = $("#OutDifficultEvaluateDesc").find("option:selected").text();
+
+            jsonStr = JSON.stringify(jsonObj);
+
+            return jsonStr;
         }
     </script>
 </head>
@@ -79,7 +108,7 @@
                     </div>
                 </div>
                 <div class="form-group" style="text-align:center">
-                    <button type="button" class="btn btn-success" onclick="Submit()">Approve</button>
+                    <button type="button" class="btn btn-success" onclick="Reject()">Approve</button>
                     <button type="button" class="btn btn-warning" onclick="Reset()">Reject</button>
                 </div>
             </div>
