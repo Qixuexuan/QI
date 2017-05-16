@@ -5,6 +5,8 @@
     <title>制造部评估</title>
 	<meta charset="utf-8" />
     <link href="../../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../../Content/easyUI/themes/icon.css" rel="stylesheet" />
+    <link href="../../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
     <!--<link href="../../App/css/common.css" rel="stylesheet" type="text/css" />-->
     <script type="text/javascript" src="../../../Scripts/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="../../../Scripts/easyUI/jquery.easyui.min.js"></script>
@@ -52,6 +54,7 @@
             let jsonStr = GetParmsData();
          
             AjaxPostAuthNew(config_service_url + "PrjEstablish/" + currentnode + "/" + pguid, jsonStr, function (result) {
+                this.close();
                 $.messager.alert("提示：", result.Message, "info");
             }, 
             true, 
