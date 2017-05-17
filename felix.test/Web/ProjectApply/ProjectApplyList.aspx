@@ -8,6 +8,7 @@
     <title></title>
     <link href="../../Content/easyUI/themes/icon.css" rel="stylesheet" />
     <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="../../Content/common.css" rel="stylesheet" />
     <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="../../Scripts/easyUI/easyui-lang-zh_CN.js"></script>
@@ -17,7 +18,7 @@
     <script type="text/javascript" src="../App/js/geone.datagrid.js"></script>
     <script type="text/javascript" src="../App/js/ProjectApplyList.js"></script>
 </head>
-<body>
+<body class="GridBody">
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">
         <div style="float: left;">
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"

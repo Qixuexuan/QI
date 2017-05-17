@@ -54,7 +54,6 @@
             let jsonStr = GetParmsData();
          
             AjaxPostAuthNew(config_service_url + "PrjEstablish/" + currentnode + "/" + pguid, jsonStr, function (result) {
-                this.close();
                 $.messager.alert("提示：", result.Message, "info");
             }, 
             true, 

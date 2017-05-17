@@ -68,71 +68,10 @@
             }
         };
         //
-        var zNodes = [{
-            id: '5BBE7A78-4DDA-4797-86F0-839116AFD915',
-            pId: '0', name: '立项申请单', targetURL: '', iconSkin: 'diy01', JQKey: '857', IsThird: '0', open: true
-        },
-        {
-            id: '8617567D-C574-4A53-AB29-A8B2FF0BC79F',
-            pId: '5BBE7A78-4DDA-4797-86F0-839116AFD915', name: '立项申请列表', targetURL: '../Web/ProjectApply/ProjectApplyList.aspx?MenuID=8617567D-C574-4A53-AB29-A8B2FF0BC79F&isfresh=0', iconSkin: 'diy02', JQKey: '858', IsThird: '1'
-        }, {
-            id: 'E2EAE958-9217-43F2-88DF-9313E060ABBC',
-            pId: '5BBE7A78-4DDA-4797-86F0-839116AFD915', name: '立项申请', targetURL: '../Web/ProjectApply/ProjectApply.aspx?MenuID=E2EAE958-9217-43F2-88DF-9313E060ABBC&isfresh=0', iconSkin: 'diy02', JQKey: '859', IsThird: '1'
-        },
+        //var zNodes ="";
 
-
-
-        {
-            id: 'd2905edc-463e-43fb-a3cb-089552aeebf0',
-            pId: '0', name: '项目管理', targetURL: '', iconSkin: 'diy01', JQKey: '860', IsThird: '0'
-        },
-        {
-            id: '8be95ccd-1129-49e0-b91b-e6ac4e27e658',
-            pId: 'd2905edc-463e-43fb-a3cb-089552aeebf0', name: '我的项目', targetURL: '../Web/ProjectManagent/MyProject.aspx?MenuID=8be95ccd-1129-49e0-b91b-e6ac4e27e658&isfresh=1', iconSkin: 'diy02', JQKey: '861', IsThird: '1'
-        }, {
-            id: '9def8617-2f34-41d5-9ff4-e9e80ee9d8a7',
-            pId: 'd2905edc-463e-43fb-a3cb-089552aeebf0', name: 'APQP小组', targetURL: '../Web/ProjectManagent/AQPQGroup.aspx?MenuID=9def8617-2f34-41d5-9ff4-e9e80ee9d8a7&isfresh=1', iconSkin: 'diy02', JQKey: '863', IsThird: '1'
-        }, {
-            id: '3bd0bfea-a6ed-4d40-8f3a-fd514a94caa3',
-            pId: 'd2905edc-463e-43fb-a3cb-089552aeebf0', name: 'APQP任务列表', targetURL: '../Web/ProjectManagent/AQPQTaskList.aspx?MenuID=3bd0bfea-a6ed-4d40-8f3a-fd514a94caa3&isfresh=1', iconSkin: 'diy02', JQKey: '864', IsThird: '1'
-        }, 
-
-
-
-
-        {
-            id: 'cf19d6a4-cf2e-42b5-8ac5-64463d3aff08',
-            pId: '0', name: '任务管理', targetURL: '', iconSkin: 'diy01', JQKey: '868', IsThird: '0'
-        },
-        {
-            id: 'afcada98-51cc-4ce7-9b69-373623fb18a7',
-            pId: 'cf19d6a4-cf2e-42b5-8ac5-64463d3aff08', name: '任务管理一', targetURL: '../Web/TaskManagent/TaskManagent.aspx?MenuID=afcada98-51cc-4ce7-9b69-373623fb18a7&isfresh=1', iconSkin: 'diy02', JQKey: '867', IsThird: '1'
-        }, {
-            id: '16e6f3eb-eb89-4afb-9ca2-1a809ff4a31b',
-            pId: 'cf19d6a4-cf2e-42b5-8ac5-64463d3aff08', name: '任务管理二', targetURL: '../Web/TaskManagent/TaskManagent.aspx?MenuID=16e6f3eb-eb89-4afb-9ca2-1a809ff4a31b&isfresh=0', iconSkin: 'diy02', JQKey: '870', IsThird: '1'
-        }, {
-            id: '7eb8100b-6d27-47fc-b02e-2378b0da0039',
-            pId: 'cf19d6a4-cf2e-42b5-8ac5-64463d3aff08', name: '任务管理三', targetURL: '../Web/TaskManagent/TaskManagent.aspx?MenuID=7eb8100b-6d27-47fc-b02e-2378b0da0039&isfresh=1', iconSkin: 'diy02', JQKey: '869', IsThird: '1'
-        }, {
-            id: '2a79bfd4-7e2e-4c46-8c63-40f76b9724d3',
-            pId: 'cf19d6a4-cf2e-42b5-8ac5-64463d3aff08', name: '任务管理四', targetURL: '../Web/TaskManagent/TaskManagent.aspx?MenuID=2a79bfd4-7e2e-4c46-8c63-40f76b9724d3&isfresh=1', iconSkin: 'diy02', JQKey: '883', IsThird: '1'
-        }, {
-            id: '6fe15453-6040-4e29-8a41-4eea9e1d3a7c',
-            pId: 'cf19d6a4-cf2e-42b5-8ac5-64463d3aff08', name: '任务管理五', targetURL: '../Web/TaskManagent/TaskManagent.aspx?MenuID=6fe15453-6040-4e29-8a41-4eea9e1d3a7c&isfresh=1', iconSkin: 'diy02', JQKey: '884', IsThird: '1'
-        },
-
-
-
-        {
-            id: '22114d7e-9c81-4a0e-940e-5a16588a3e9e',
-            pId: '0', name: '个人中心', targetURL: '', iconSkin: 'diy01', JQKey: '871', IsThird: '0'
-        }, {
-            id: '49479fcb-d518-4aa8-b53f-7a0577428fed',
-            pId: '22114d7e-9c81-4a0e-940e-5a16588a3e9e', name: '信息维护', targetURL: '../Web/UserCenter/UserCenter.aspx?MenuID=6fe15453-6040-4e29-8a41-4eea9e1d3a7c&isfresh=1', iconSkin: 'diy02', JQKey: '872', IsThird: '1'
-        }];
-
-        var loginUser = { "uid": " 1 ", "user_id": " test ", "user_name": " 测fff试 " };
-        var OA_TIME = new Date(2016, 1, 19, 15, 31, 26);
+        //var loginUser = { "uid": " 1 ", "user_id": " test ", "user_name": " 测fff试 " };
+        //var OA_TIME = new Date(2016, 1, 19, 15, 31, 26);
 
 
         jQuery(document).ready(function ()
@@ -395,7 +334,7 @@
                             <asp:Image ID="imgUser" runat="server" ImageUrl="~/App_Themes/Flat/images/0.gif" />
                         </div>
                         <div id="MenuUserName" runat="server" class="username">
-                            系统管理员
+                             
                         </div>
                         <div class="tools">
                             <a id="hide_leftbar" href="javascript:void(0);"></a>

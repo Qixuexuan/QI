@@ -109,8 +109,7 @@ function AddDays(date, days) {
 }
 
 ////得到根窗口对象
-function getWindow()
-{
+function getWindow() {
     var w = window;
     while (w.parent.location.href != w.location.href) { w = w.parent; }
     return w;
@@ -123,12 +122,12 @@ function getWindow()
 
 /*判断session是否有效*/
 function SessionIsOverTime(SuccessCallback) {
+   
     //判断session是否有效
-    //CheckSession("../../Handler/SystemService.asmx/CheckSession",
-    //    function ()
-    //    {
-    SuccessCallback();
-    //});
+    CheckSession("../../Handler/SystemService.asmx/CheckSession",
+        function () {
+            SuccessCallback();
+        });
 }
 
 /*判断*/
@@ -140,7 +139,9 @@ function CheckRole(_url, SuccessCallback) {
 }
 
 function CheckSession(_url, _callback) {
+   
     AjaxGet(_url, function (rr) {
+   
         if (rr.d == "0") {
             $.messager.alert("提示：", "页面已经过期，请重新登录.", "info", function () {
                 //如果session过期，跳转页面
@@ -149,7 +150,10 @@ function CheckSession(_url, _callback) {
             });
         }
         else
-            _callback(true);
+        {
+            alert("d");
+            _callback();
+        }
 
     }, false);
 
@@ -607,7 +611,7 @@ function getRootPath() {
     var localhostPaht = curPath.substring(0, pos);
     //获取带"/"的项目名，如：/test
     var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
-   
+
     return (localhostPaht + projectName);
 }
 

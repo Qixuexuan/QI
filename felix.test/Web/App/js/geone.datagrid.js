@@ -164,19 +164,25 @@ function InitDataGridTest(_url, columnsObj, callback,callback_click) {
         },
         toolbar: '#tb'
     });
-
+    var isIE = navigator.userAgent.toUpperCase().indexOf("MSIE") == -1 ? false : true;
+    var docHeight = (isIE) ? document.documentElement.scrollHeight : document.documentElement.clientHeight;
+     
     //Grid 调整大小事件
     $('#gd_url').datagrid('resize', {
 
-        //width: document.body.clientWidth,
-        //height: (document.body.clientHeight - 130)
+        width: document.body.clientWidth,
+        height: (docHeight - 120)
+
     });
 
     //窗口尺寸变化事件
     $(window).resize(function () {
+        var isIE = navigator.userAgent.toUpperCase().indexOf("MSIE") == -1 ? false : true;
+        var docHeight = (isIE) ? document.documentElement.scrollHeight : document.documentElement.clientHeight;
+
         $('#gd_url').datagrid('resize', {
-            //width: document.body.clientWidth,
-            //height: (document.body.clientHeight - 130)
+            width: document.body.clientWidth,
+            height: (docHeight - 120)
         });
     });
 }

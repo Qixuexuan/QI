@@ -2,18 +2,22 @@
 using System.Configuration;
 using System.Data;
 //using HY.Business.Cache.Session;
- 
+
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Web;
 using HY.Business.Cache.Session;
- 
+using System.Net;
+using Newtonsoft.Json;
+using System.Text;
+using System.IO;
+
 public partial class Default : System.Web.UI.Page
 {
     private string _target = "Shell/" + ConfigurationManager.AppSettings["FirstPage"];
 
     protected void Page_Load(object sender, EventArgs e)
-    { 
+    {
         //HYSession.Clear(); 
         if (!IsPostBack)
         {
@@ -32,66 +36,11 @@ public partial class Default : System.Web.UI.Page
         {
             if (ValidateLogin())    //验证通过
             {
-                ////限制恶意试密码
-                //if (CheckLoginState("1", txtAccount.Text.Trim()))
-                //{
-                //    //初始化session，并跳转到指定页面
-                //    SetSession();
-                //    Response.Redirect(Server.UrlDecode(this._target), false);
-                //}
-                //else
-                //{
-                //    //跳转到错误页面
-                //    HttpContext.Current.Session.Clear();
-                //    Response.Redirect("error.html");
-                //}
-                //初始化session，并跳转到指定页面
-                SetSession();
                 Response.Redirect(Server.UrlDecode(this._target), false);
             }
-            else
-            {
-                ////验证失败
-                ////限制恶意试密码
-                //if (!CheckLoginState("0", txtAccount.Text.Trim()))
-                //{
-                //跳转到错误页面
-                //HttpContext.Current.Session.Clear();
-                //Response.Redirect("error.html");
-                //}
-            }
         }
         catch
-        { }
-    }
-
-    /// <summary>
-    /// 限制恶意试密码
-    /// </summary>
-    /// <returns></returns>
-    private bool CheckLoginState(string state, string username)
-    {
-        try
-        {
-            //List<ParameterInfo> pList = new List<ParameterInfo>();
-            //pList.Add(new ParameterInfo() { ParameterName = "username", Direction = ParameterDirection.Input, Value = username, dbType = DbType.String });
-            //pList.Add(new ParameterInfo() { ParameterName = "state", Direction = ParameterDirection.Input, Value = state, dbType = DbType.String });
-
-            //DataTable dtUser = DBAccess.ExecuteDataTable("Sys_SetLoginLog", pList, CommandType.StoredProcedure);
-            //if (dtUser != null && dtUser.Rows.Count > 0 && dtUser.Rows[0][0].ToString() == "-1")
-            //{
-            //    //验证失败 登录次数连续 大于 5次 在停用时间内
-            //    return false;
-            //}
-            //else
-            //{
-                return true;
-            //}
-        }
-        catch
-        {
-            return true;
-        }
+        { Label1.Text = "登陆失败"; }
     }
 
     private bool ValidateLogin()
@@ -104,36 +53,43 @@ public partial class Default : System.Web.UI.Page
             //    return false;
             //} 
             string account = txtAccount.Text.Trim();
+            string pwd = txtPwd.Text.Trim();
 
-            return true;
+            WebClient client = new WebClient();
+            string url = ConfigurationManager.AppSettings["serverUrl"] + "Account/ValidateLogin/" + account + "/" + pwd;
+            client.Headers.Add("authorization", "1");
+            Stream data = client.OpenRead(url);
+            StreamReader reader = null;
+            try
+            {
+                reader = new StreamReader(data, Encoding.UTF8);
+                string responseJson = reader.ReadToEnd();
+                Dictionary<string, dynamic> dic = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(responseJson);
+                Newtonsoft.Json.Linq.JArray al = dic["Data"] as Newtonsoft.Json.Linq.JArray;
 
-            //SystemManager sm = new SystemManager();
-            //if (sm.ValidateLogin(account, txtPwd.Text.Trim()))
-            //{
+                string rs = JsonConvert.SerializeObject(al);
+                List<Dictionary<string, string>> list_Accont = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(rs);
+                if (list_Accont == null || list_Accont.Count == 0)
+                {
+                    Label1.Text = "登陆失败";
+                    return false;
+                }
+                else
+                {
+                    HYSession.WebUserID = list_Accont[0]["userguid"].ToString();
+                    HYSession.WebUserAccount = list_Accont[0]["useraccount"].ToString();
+                    HYSession.WebUserName = Server.UrlEncode(list_Accont[0]["realname"].ToString());
+                    HYSession.ManageUnit = "";
+                    HYSession.DepID = list_Accont[0]["department"].ToString();
+                    return true;
+                }
 
-            //    SetSession();
-            //    //记录操作日志
-            //    //AddSysOperateLog(Server.UrlDecode(HYSession.WebUserName), "访问", "登录", this.GetType().Name, "ValidateLogin");
-            //    return true;
-
-            //}
-            //else
-            //{
-            //    if (account == "" && txtPwd.Text.Trim() == "")
-            //    {
-            //        //ClientScript.RegisterStartupScript(this.GetType(), "empty", "<script type='text/javascript'>alert('用户名不能为空！');</script>");
-            //        Label1.Text = "用户名不能为空！";
-            //    }
-            //    else
-            //    {
-            //        //ClientScript.RegisterStartupScript(this.GetType(), "window", "<script type='text/javascript'>alert('请输入正确的用户名或密码！');</script>");
-            //        Label1.Text = "请输入正确的用户名或密码！";
-            //        //HYSession.Clear();
-            //    }
-            //    return false;
-            //}
-
-
+            }
+            catch
+            {
+                Label1.Text = "登陆失败";
+                return false;
+            }
         }
         catch (Exception ex)
         {
@@ -142,35 +98,5 @@ public partial class Default : System.Web.UI.Page
             return false;
         }
     }
-    private void SetSession()
-    {
-        #region 注释
-        //List<ParameterInfo> pList = new List<ParameterInfo>();
-        //pList.Add(new ParameterInfo() { ParameterName = "UserAccount", Direction = ParameterDirection.Input, Value = txtAccount.Text.Trim(), dbType = DbType.String });
-
-        //DataTable dtUser = DBAccess.ExecuteDataTable("Sys_GetUserInfo", pList, CommandType.StoredProcedure);
-        //if (dtUser != null && dtUser.Rows.Count > 0)
-        //{
-        //    DataRow dr = dtUser.Rows[0];
-        //    HYSession.WebUserID = Convert.ToString(dr["ID"]);
-        //    HYSession.WebUserAccount = Convert.ToString(dr["UserAccount"]);
-        //    HYSession.WebUserName = Server.UrlEncode(Convert.ToString(dr["UserName"]));
-        //    HYSession.ManageUnit = Server.UrlEncode(Convert.ToString(dr["ManageUnit"]));
-        //    HYSession.DepID = Server.UrlEncode(Convert.ToString(dr["Department"]));
-
-        //}
-        //else
-        //{
-        //    throw new Exception("");
-        //}
-        #endregion
-
-        HYSession.WebUserID = "49963349-1359-4AB0-9FF9-AB27FFF80C16";
-        HYSession.WebUserAccount = "682995403";
-        HYSession.WebUserName = Server.UrlEncode("可成科技（宿迁）有限公司");
-        HYSession.ManageUnit = "";
-        HYSession.DepID = "";
-    }
-
 
 }

@@ -72,6 +72,7 @@ function callback_click(data) {
 function Approve() {
     SessionIsOverTime(function () {
         var rowData = $("#gd_url").datagrid("getSelected");
+
         if (rowData == undefined || rowData == null) {
             $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
 
@@ -79,9 +80,9 @@ function Approve() {
                 $.messager.alert("提示：", "抱歉，您无改项目的审核权限.", "info");
             }
         }
-        
-        else {
 
+        else {
+            console.log(rowData);
             var CurrentNode = rowData.CURRENTNODE;
             var PGuid = rowData.PGUID;
             var width = 550;
@@ -92,6 +93,10 @@ function Approve() {
             //CurrentNode = "MDeptEvaluate";
 
             switch (CurrentNode) {
+                case "Apply":
+                    modelTitle = "立项申请";
+                    pageUrl = "../Web/ProjectApply/Evaluate/Apply.html";
+                    break;
                 case "SelfEvaluate":
                     modelTitle = "项目自评";
                     pageUrl = "../Web/ProjectApply/Evaluate/SelfEvaluate.html";
@@ -109,9 +114,14 @@ function Approve() {
                     pageUrl = "../Web/ProjectApply/Evaluate/MDeptEvaluate.html";
                     height = 300;
                     break;
+                default:
+                    modelTitle = "";
+                    pageUrl = "";
+                    height = 300;
+                    break;
             }
-           
-            showModalWindow(modelTitle, width, height, pageUrl + "?s=" + Math.random() + "&CurrentNode=" + CurrentNode + "&PGuid=" + PGuid);
+            if (pageUrl != "")
+                showModalWindow(modelTitle, width, height, pageUrl + "?s=" + Math.random() + "&CurrentNode=" + CurrentNode + "&PGuid=" + PGuid);
         }
     });
 
@@ -143,7 +153,7 @@ function PrjDetail() {
             window.parent.parent.createTab("tab_info_1", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
         }
     });
-    
+
 }
 
 function addPrjApply() {

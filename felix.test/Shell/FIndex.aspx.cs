@@ -6,17 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using HY.Business.Cache.Session;
- 
+
 using System.Text;
 using System.Configuration;
- 
-
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
 public partial class Shell_FIndex : Page
 {
     public string userid = string.Empty;
     public string username = string.Empty;
     public string psd = string.Empty;
-    public string ComOrAJ = string.Empty;   
+    public string ComOrAJ = string.Empty;
 
     #region OnInitComplete
     /// <summary>
@@ -25,66 +26,58 @@ public partial class Shell_FIndex : Page
     /// <param name="e">包含事件数据的 System.EventArgs。</param>
     protected override void OnInitComplete(EventArgs e)
     {
-        base.OnInitComplete(e); 
+        base.OnInitComplete(e);
     }
     #endregion
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (string.IsNullOrEmpty(HYSession.WebUserID))
-        //{
-        //    Response.Redirect("../default.aspx");
-        //}
-        //else
-        //{
-        //    if (!IsPostBack)
-        //    {
-        //        MenuUserName.Attributes["title"] = Server.UrlDecode(HYSession.WebUserName);
-        //        MenuUserName.InnerText = Server.UrlDecode(HYSession.WebUserName);
-
-        //        txtUserID.Text = Server.UrlDecode(HYSession.WebUserName);
-        //        txtAppid.Text = ConfigurationManager.AppSettings["appID"];
-        //        txtServerUrl.Text = ConfigurationManager.AppSettings["serverUrl"];
-        //        userid = HYSession.WebUserID;
-        //        showData(); 
-        //    }
-        //    username = HYSession.WebUserAccount;
-             
-        //}
+        if (!string.IsNullOrEmpty(HYSession.WebUserID))
+        {
+            showData();
+        }
     }
-     
+
     private void showData()
     {
-        //string strSQL = string.Format("EXEC UP_HY_Menu_GET '{0}', '{1}'", HYSession.WebUserAccount, ConfigurationManager.AppSettings["appID"]);
+        StreamReader reader = null;
+        try
+        {
+            WebClient client = new WebClient();
+            string url = ConfigurationManager.AppSettings["serverUrl"] + "Account/Menu";
+            client.Headers.Add("authorization", HYSession.WebUserID);
+            Stream data = client.OpenRead(url);
 
-        //DataTable dt = DBAccess.ExecuteDataTable(strSQL, "DataCenter");
-        //int cnt = 0;
-        //string treeNodes = @" var zNodes = [";
-        //foreach (DataRow dr in dt.Rows)
-        //{
-        //    string strNode = string.Empty;
-        //    if (cnt == 0)
-        //    {
-        //        strNode = string.Format(@" id:'{0}',pId:'{1}',name:'{2}',targetURL:'{3}',iconSkin:'{4}', JQKey:'{5}', IsThird:'{6}',open:true", dr["id"], dr["ParentID"], dr["CName"], dr["TargetURL"], dr["Icon"], dr["JQKey"], dr["IsThird"]);
-        //    }
-        //    else
-        //    {
-        //        strNode = string.Format(@" id:'{0}',pId:'{1}',name:'{2}',targetURL:'{3}',iconSkin:'{4}', JQKey:'{5}', IsThird:'{6}'", dr["id"], dr["ParentID"], dr["CName"], dr["TargetURL"], dr["Icon"], dr["JQKey"], dr["IsThird"]);
-        //    }
-        //    cnt++;
-        //    treeNodes += "{" + strNode + "},";
-        //}
-        //treeNodes = treeNodes.TrimEnd(',');
-        //treeNodes += "];";
+            reader = new StreamReader(data, Encoding.UTF8);
+            string responseJson = reader.ReadToEnd();
+            Dictionary<string, dynamic> dic = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(responseJson);
+            Newtonsoft.Json.Linq.JArray al = dic["Data"] as Newtonsoft.Json.Linq.JArray;
+            string rs = JsonConvert.SerializeObject(al);
 
-        //string loginUser = "var loginUser = {\"uid\":\" " + HYSession.WebUserID + " \",\"user_id\":\" " + Server.UrlDecode(HYSession.WebUserAccount) + " \",\"user_name\":\" " + Server.UrlDecode(HYSession.WebUserName) + " \"};\r\n";
-        //string oa_Time = string.Format("var OA_TIME = new Date({0},{1},{2},{3},{4},{5});\r\n",
-        //                               DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            string treeNodes = @" var zNodes = " + rs;
+            MenuUserName.InnerText = Server.UrlDecode(HYSession.WebUserName);
+            this.ClientScript.RegisterStartupScript(this.GetType(),
+                   "msg",
+                   treeNodes,
+                   true);
+        }
+        catch
+        {
 
-        //this.ClientScript.RegisterStartupScript(this.GetType(),
-        //"msg",
-        //treeNodes + loginUser + oa_Time,
-        //true);
+        }
+        finally
+        {
+            try
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+            }
+            catch
+            { }
+        }
+
     }
 
     /// <summary>

@@ -1504,7 +1504,7 @@ function createTab(id, name, code, open_window) {
 //	    return;
 //	}
 
-	var url2 = 'http://192.168.155.76' + url;
+	var url2 = '' + url;
 	var parse = url2.match(/^(([a-z]+):\/\/)?([^\/\?#]+)\/*([^\?#]*)\??([^#]*)#?(\w*)$/i); //*/
 	var path = parse[4];
 	var query = parse[5];

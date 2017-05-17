@@ -88,6 +88,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -950,6 +951,7 @@
     <Content Include="Js\zTree\js\jquery.ztree.exedit.js" />
     <Content Include="Js\zTree\js\jquery.ztree.exhide-3.5.js" />
     <Content Include="Js\zTree\js\jquery.ztree.exhide-3.5.min.js" />
+    <Content Include="Scripts\config.js" />
     <Content Include="Scripts\easyUI\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\easyUI\jquery.easyui.min.js" />
     <Content Include="Scripts\HighCharts\adapters\standalone-framework.js" />
