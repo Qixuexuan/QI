@@ -130,7 +130,7 @@
 
         </table>
         <div class="form-group" style="text-align:center;margin-top:20px">
-            <button type="button" class="btn btn-warning" onclick="Reset()">重  置</button>
+            <button type="button" class="btn btn-warning" onclick="Save()">保  存</button>
             <button type="button" class="btn btn-success" onclick="Submit()">提  交</button>
         </div>
     </div>

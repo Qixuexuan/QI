@@ -90,7 +90,7 @@ function Approve() {
             var pageUrl = "";
             var modelTitle = "";
 
-            //CurrentNode = "MDeptEvaluate";
+            CurrentNode = "PrjDeptEvaluate";
 
             switch (CurrentNode) {
                 case "Apply":
@@ -104,6 +104,7 @@ function Approve() {
                 case "PrjDeptEvaluate":
                     modelTitle = "项目部评估";
                     pageUrl = "../Web/ProjectApply/Evaluate/PrjDeptEvaluate.html";
+                    height = 300;
                     break;
                 case "TechDeptEvaluate":
                     modelTitle = "技术部评估";
@@ -117,7 +118,6 @@ function Approve() {
                 default:
                     modelTitle = "";
                     pageUrl = "";
-                    height = 300;
                     break;
             }
             if (pageUrl != "")

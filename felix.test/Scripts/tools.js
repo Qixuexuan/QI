@@ -151,7 +151,6 @@ function CheckSession(_url, _callback) {
         }
         else
         {
-            alert("d");
             _callback();
         }
 

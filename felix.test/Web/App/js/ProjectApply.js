@@ -92,7 +92,7 @@ function Submit() {
      })
 }
 
-//  重置当前页面
-function Reset() {
+//  保存申请内容
+function Save() {
     location.reload();
 }
