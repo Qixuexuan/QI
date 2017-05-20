@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectApply.aspx.cs" Inherits="test.Web.ProjectApply.ProjectApply" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectApplyEdit.aspx.cs" Inherits="test.Web.ProjectApply.ProjectApply" %>
 
 <!DOCTYPE html>
 
@@ -15,7 +15,7 @@
     <script type="text/javascript" src="../../Scripts/tools.js"></script>
     <script type="text/javascript" src="../../Scripts/config.js"></script>
     <script src="../App/js/validate.js"></script>
-    <script src="../App/js/ProjectApply.js"></script>
+    <script src="../App/js/ProjectApplyEdit.js"></script>
 
     <title>立项申请</title>
 

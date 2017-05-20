@@ -83,8 +83,7 @@
             let jsonStr = initStrJson($(".content"));
             let jsonObj = JSON.parse(jsonStr);
 
-            jsonObj.MakeDifficutEvaluateDesc = $("#MakeDifficutEvaluate").find("option:selected").text();
-            jsonObj.OutDifficultEvaluateDesc = $("#OutDifficultEvaluateDesc").find("option:selected").text();
+            jsonObj.SelfEvaluateDesc = $("#SelfEvaluate").find("option:selected").text();
 
             jsonStr = JSON.stringify(jsonObj);
 

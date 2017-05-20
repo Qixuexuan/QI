@@ -42,8 +42,29 @@
 
             BindSltAuth($("#PrjDeptEvaluate"), config_service_url + "Dictionary/PrjDeptEvaluate", function () {
             });
+
+            BindSltAuth($("#PrjManager"), config_service_url + "Account/PM", function () {
+            });
           
         })
+
+        //  获取项目经理  未用
+        function GetPrjManager() {
+            AjaxGetAuth(config_service_url + "Account/PM", function (result) {
+                console.log(result);
+
+                sltObj.empty();
+                sltObj.append("<option value=''>请选择...</option>");
+
+
+                sltObj.append("<option value='" + json[idx].Value + "'>" + json[idx].Name + "</option>");
+
+            }, true, ticket, function () {
+                $.messager.alert("提示：", "未获取到项目经理数据.", "info");
+
+            })
+        }
+
 
         function Submit() {
             //表单验证
@@ -83,8 +104,8 @@
             let jsonStr = initStrJson($(".content"));
             let jsonObj = JSON.parse(jsonStr);
 
-            jsonObj.MakeDifficutEvaluateDesc = $("#MakeDifficutEvaluate").find("option:selected").text();
-            jsonObj.OutDifficultEvaluateDesc = $("#OutDifficultEvaluateDesc").find("option:selected").text();
+            jsonObj.PrjDeptEvaluateDesc = $("#PrjDeptEvaluate").find("option:selected").text();
+            jsonObj.PM = $("#PrjManager").find("option:selected").text();
 
             jsonStr = JSON.stringify(jsonObj);
 
@@ -103,7 +124,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="PrjDeptEvaluate" class="col-sm-3 control-label">项目经理</label>
+                    <label for="PrjManager" class="col-sm-3 control-label">项目经理</label>
                     <div class="col-sm-6">
                         <select id="PrjManager" name="PrjManager" isneed="true" validate-msg="请选择项目经理." class="form-control"></select>
                     </div>

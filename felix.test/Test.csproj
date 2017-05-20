@@ -1143,6 +1143,8 @@
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\httpHelper.js" />
     <Content Include="Web\App\js\ProjectApply.js" />
+    <Content Include="Web\App\js\ProjectApplyAddList.js" />
+    <Content Include="Web\App\js\ProjectApplyHistoryList.js" />
     <Content Include="Web\App\js\ProjectApplyList.js" />
     <Content Include="Web\App\js\validate.js" />
     <Content Include="Web\Index\HtmlPage1.html">
@@ -1154,6 +1156,8 @@
     <Content Include="Web\ProjectApply\Evaluate\SelfEvaluate.html" />
     <Content Include="Web\ProjectApply\Evaluate\TechDeptEvaluate.html" />
     <Content Include="Web\ProjectApply\ProjectApply.aspx" />
+    <Content Include="Web\ProjectApply\ProjectApplyAddList.aspx" />
+    <Content Include="Web\ProjectApply\ProjectApplyHistoryList.aspx" />
     <Content Include="Web\ProjectApply\ProjectApplyList.aspx" />
     <Content Include="Web\ProjectApply\ProjectDetail.aspx" />
     <Content Include="Web\ProjectApply\ProjectDetail.html" />
@@ -1245,6 +1249,20 @@
     </Compile>
     <Compile Include="Web\ProjectApply\ProjectApply.aspx.designer.cs">
       <DependentUpon>ProjectApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyAddList.aspx.cs">
+      <DependentUpon>ProjectApplyAddList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyAddList.aspx.designer.cs">
+      <DependentUpon>ProjectApplyAddList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyHistoryList.aspx.cs">
+      <DependentUpon>ProjectApplyHistoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyHistoryList.aspx.designer.cs">
+      <DependentUpon>ProjectApplyHistoryList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web\ProjectApply\ProjectApplyList.aspx.cs">
       <DependentUpon>ProjectApplyList.aspx</DependentUpon>

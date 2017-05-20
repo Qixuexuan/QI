@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectApplyList.aspx.cs" Inherits="test.Web.ProjectApply.ProjectApplyList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectApplyHistoryList.aspx.cs" Inherits="test.Web.ProjectApply.ProjectApplyHistoryList" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>申请历史列表</title>
     <link href="../../Content/easyUI/themes/icon.css" rel="stylesheet" />
     <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
     <link href="../../Content/common.css" rel="stylesheet" />
@@ -16,15 +16,13 @@
     <script type="text/javascript" src="../../Scripts/config.js"></script>
     <script type="text/javascript" src="../../Js/modalWindow.js"></script>
     <script type="text/javascript" src="../App/js/geone.datagrid.js"></script>
-    <script type="text/javascript" src="../App/js/ProjectApplyList.js"></script>
+    <script type="text/javascript" src="../App/js/ProjectApplyHistoryList.js"></script>
 </head>
 <body class="GridBody">
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">
         <div style="float: left;">
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="PrjDetail()">项目详情</a>
-            <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="Approve()">审核</a>
+                onclick="prjDetail()">项目详情</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

@@ -54,7 +54,7 @@ $(document).ready(function () {
      }
     ]];
 
-    InitDataGridTest(config_service_url + "PrjEstablish", columnsObj, null, function () { });
+    InitDataGridTest(config_service_url + "PrjEstablish/1", columnsObj, null, function () { });
 });
 //点击事件
 function callback_click(data) {
@@ -127,10 +127,6 @@ function Approve() {
 
 }
 
-function Edit(p) {
-    alert(p);
-
-}
 //分页事件
 function PageEvent(pageNumber, pageSize) {
     _pageIndex = pageNumber;
@@ -141,6 +137,7 @@ function PageEvent(pageNumber, pageSize) {
 
 //  项目详情
 function PrjDetail() {
+
     SessionIsOverTime(function () {
         var rowData = $("#gd_url").datagrid("getSelected");
         if (rowData == undefined || rowData == null) {
@@ -156,7 +153,7 @@ function PrjDetail() {
 
 }
 
-function addPrjApply() {
-    //showModalWindow('项目详情', 550, 220, "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
-    window.parent.parent.createTab("tab_info_2", "项目申请", "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
+//  刷新内容
+function reload() {
+    window.location.reload();
 }

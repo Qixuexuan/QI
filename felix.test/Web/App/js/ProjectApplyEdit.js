@@ -1,10 +1,12 @@
-var ticket;
+let ticket;
+let pguid;
 $(document).ready(function () {
     //每个需要访问服务的页面都要
     GetTicket(function (t) {
         ticket = t;
-
+        pguid = getQueryString("PGuid");
         BlindData();
+        GetPrjDetail();
     });
 })
 
@@ -72,6 +74,32 @@ BindSltAuth($("#CustomName"), config_service_url + "Account/Customer", function 
 }
 
 
+//  获取项目详情
+function GetPrjDetail() {
+
+    AjaxGetAuth(config_service_url + "PrjEstablish/detail/" + pguid, function (result) {
+        if (result.Data.length > 0) {
+
+            console.log(result);
+
+            var data = result.Data[0];
+            for (var key in data) {
+                //$("#" + key).text(data[key]);
+                try{
+                    //$("#" + key).find("option[text='" + data[key] + "']").attr("selected", true);
+                    $("#" + key).val(data[key]);
+                }
+                catch(err){
+                    $("#" + key).val(data[key]);
+                }
+                
+            }
+        }
+
+    }, true, ticket, function () {
+        $.messager.alert("提示：", "获取详情数据失败.", "info");
+    })
+}
 
 
 //  提交立项申请
@@ -79,7 +107,9 @@ function Submit() {
     //表单验证
     if (!CheckValidate($(".content"))) return false;
 
-    var jsonObj = initStrJson($(".content"));
+    let jsonObj1 = initStrJson($(".content"));
+   
+
     console.log(jsonObj);
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Submit", jsonObj, function (result) {
@@ -98,7 +128,10 @@ function Save() {
     //表单验证
     if (!CheckValidate($(".content"))) return false;
 
-    var jsonObj = initStrJson($(".content"));
+    var jsonObj1 = initStrJson($(".content"));
+    let Obj = JSON.parse(jsonObj1);
+    Obj.PGUID = pguid;
+    let jsonObj = JSON.stringify(Obj);
     console.log(jsonObj);
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Save", jsonObj, function (result) {
