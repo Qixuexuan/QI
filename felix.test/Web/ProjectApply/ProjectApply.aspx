@@ -10,7 +10,6 @@
     <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <%--<link href="../App/css/tableContent.css" rel="stylesheet" type="text/css" />--%>
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
-
     <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="../../Scripts/tools.js"></script>
     <script type="text/javascript" src="../../Scripts/config.js"></script>
@@ -18,7 +17,6 @@
     <script src="../App/js/ProjectApply.js"></script>
 
     <title>立项申请</title>
-
     <style>
         table {
             width: 80%;
@@ -57,7 +55,7 @@
         <table>
         <tr>
             <td>客户名称</td>
-            <td><select id="CustomName" name="CustomName" type="text" class="form-control" isneed="true" validate-msg="请输入客户名称."</select></td>
+            <td><select id="CustomName" name="CustomName" type="text" class="form-control" isneed="true" validate-msg="请输入客户名称."></select></td>
             <td>客户类别</td>
             <td><select id="CustomCategory" name="CustomCategory" class="form-control" isneed="true" validate-msg="请选择客户类别."></select></td>
         </tr>

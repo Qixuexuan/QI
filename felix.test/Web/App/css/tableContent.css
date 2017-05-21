@@ -1,36 +1,30 @@
-﻿html,
-body {
-    background-color: white;
-}
-
-.alignRight {
-    text-align: right;
-    padding-right: 30px;
-    width: 25%;
-    background-color: #F6F6F6;
-}
-
-.alignLeft {
-    padding-left: 30px;
-}
-
-table {
-    margin-top: 20px;
-    margin: 0 auto;
-    width: 70%;
-    border: 1px solid lightgray;
-}
-
-tr {
-    height: 35px;
-    border-bottom: 1px solid #f2f0f1;
-}
-
-td {
-    border-right: 1px solid #f2f0f1;
-}
-
-.tableBox {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
+﻿table {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 1px solid lightgray;
+        }
+        
+        table,
+        table tr th,
+        table tr td {
+            border: 1px solid #f2f0f1;
+        }
+        
+        tr {
+            height: 45px;
+            line-height: 40px;
+        }
+        
+        /*odd表示下标是基数的元素*/
+        table tr td:nth-child(odd) {
+            width: 100px;
+            background-color: #F6F6F6;
+            text-align: right;
+            padding-right: 10px;
+        }
+        table tr td:nth-child(even) {
+            width: 340px;
+            padding-left: 20px;
+            padding-right: 15px;
+        }

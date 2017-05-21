@@ -108,7 +108,10 @@ function Submit() {
     if (!CheckValidate($(".content"))) return false;
 
     let jsonObj1 = initStrJson($(".content"));
-   
+    let Obj = JSON.parse(jsonObj1);
+    Obj.PGUID = pguid;
+    let jsonObj = JSON.stringify(Obj);
+    console.log(jsonObj);
 
     console.log(jsonObj);
 
@@ -119,7 +122,7 @@ function Submit() {
     true, 
     ticket,
      function (XMLHttpRequest, textStatus, errorThrown) {
-         $.messager.alert("提示：", result.Message, "info");
+         $.messager.alert("提示：", "提交失败.", "info");
      })
 }
 

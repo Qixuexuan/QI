@@ -90,7 +90,7 @@ function Approve() {
             var pageUrl = "";
             var modelTitle = "";
 
-            CurrentNode = "PrjDeptEvaluate";
+            //CurrentNode = "PrjDeptEvaluate";
 
             switch (CurrentNode) {
                 case "Apply":
@@ -110,7 +110,7 @@ function Approve() {
                     modelTitle = "技术部评估";
                     pageUrl = "../Web/ProjectApply/Evaluate/TechDeptEvaluate.html";
                     break;
-                case "MDeptEvaluate":
+                case "ManufactDeptEvaluate":
                     modelTitle = "制造难度评估";
                     pageUrl = "../Web/ProjectApply/Evaluate/MDeptEvaluate.html";
                     height = 300;

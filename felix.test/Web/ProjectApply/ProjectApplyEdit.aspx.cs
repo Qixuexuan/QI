@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace test.Web.ProjectApply
 {
-    public partial class ProjectApply : System.Web.UI.Page
+    public partial class ProjectApplyEdit : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

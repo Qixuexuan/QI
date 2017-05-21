@@ -1141,7 +1141,7 @@
     <Content Include="Web\App\css\index.css" />
     <Content Include="Web\App\css\tableContent.css" />
     <Content Include="Web\App\js\geone.datagrid.js" />
-    <Content Include="Web\App\js\httpHelper.js" />
+    <Content Include="Web\App\js\ProjectApplyEdit.js" />
     <Content Include="Web\App\js\ProjectApply.js" />
     <Content Include="Web\App\js\ProjectApplyAddList.js" />
     <Content Include="Web\App\js\ProjectApplyHistoryList.js" />
@@ -1155,6 +1155,7 @@
     <Content Include="Web\ProjectApply\Evaluate\PrjDeptEvaluate.html" />
     <Content Include="Web\ProjectApply\Evaluate\SelfEvaluate.html" />
     <Content Include="Web\ProjectApply\Evaluate\TechDeptEvaluate.html" />
+    <Content Include="Web\ProjectApply\ProjectApplyEdit.aspx" />
     <Content Include="Web\ProjectApply\ProjectApply.aspx" />
     <Content Include="Web\ProjectApply\ProjectApplyAddList.aspx" />
     <Content Include="Web\ProjectApply\ProjectApplyHistoryList.aspx" />
@@ -1242,6 +1243,13 @@
     </Compile>
     <Compile Include="Web\Index\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyEdit.aspx.cs">
+      <DependentUpon>ProjectApplyEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectApply\ProjectApplyEdit.aspx.designer.cs">
+      <DependentUpon>ProjectApplyEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web\ProjectApply\ProjectApply.aspx.cs">
       <DependentUpon>ProjectApply.aspx</DependentUpon>

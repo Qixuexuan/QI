@@ -5,7 +5,7 @@ $(document).ready(function () {
     GetTicket(function (t) {
         ticket = t;
     });
-   
+
     var columnsObj = [[
         { field: 'ProjectNo', title: '项目编号', width: 100, sortable: false },
         { field: 'ProjectName', title: '项目名称', width: 100, sortable: false },
@@ -20,7 +20,7 @@ $(document).ready(function () {
         { field: 'ProjectDesc', title: '项目描述', width: 100, sortable: false },
         { field: 'ApplyTime', title: '申请时间', width: 100, sortable: false },
         { field: 'ApplyPerson', title: '申请人', width: 100, sortable: false }
-     
+
     ]];
 
     InitDataGridTest(config_service_url + "PrjEstablish/0", columnsObj, null, function () { });
@@ -65,8 +65,17 @@ function submitPrjApply() {
         }
         else {
 
-            var PGuid = rowData.PGUID;
-            //TODO: 提交选中的新增项目申请
+            let PGuid = rowData.PGUID;
+            let jsonObj = { "PGUID ": PGuid };
+
+            AjaxPostAuthNew(config_service_url + "PrjEstablish/ApplySubmit/" + PGuid, jsonObj, function (result) {
+                $.messager.alert("提示：", result.Message, "info");
+            },
+            true,
+            ticket,
+             function () {
+                 $.messager.alert("提示：", "提交失败.", "info");
+             })
         }
     });
 }
@@ -83,6 +92,8 @@ function deletePrjApply() {
 
             var PGuid = rowData.PGUID;
             //TODO: 删除选中的新增项目申请
+
+           
         }
     });
 }

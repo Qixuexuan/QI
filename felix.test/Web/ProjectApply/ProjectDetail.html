@@ -5,12 +5,46 @@
     <meta charset="utf-8" />
     <title>项目详情</title>
     <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../App/css/tableContent.css" rel="stylesheet" type="text/css" />
+    <!--<link href="../App/css/tableContent.css" rel="stylesheet" type="text/css" />-->
     <script type="text/javascript" src="../../Scripts/config.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="../../Scripts/tools.js"></script>
     <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
- 
+
+    <style>
+        table {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 1px solid lightgray;
+        }
+
+            table,
+            table tr th,
+            table tr td {
+                border: 1px solid #f2f0f1;
+            }
+
+        tr {
+            height: 45px;
+            line-height: 40px;
+        }
+
+        /*odd表示下标是基数的元素*/
+        table tr td:nth-child(odd) {
+            width: 100px;
+            background-color: #F6F6F6;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        table tr td:nth-child(even) {
+            width: 340px;
+            padding-left: 20px;
+            padding-right: 15px;
+        }
+    </style>
+
     <script type="text/javascript">
         var ticket;
         var pguid;
@@ -39,127 +73,88 @@
     </script>
 </head>
 <body>
-    <!--<div class="container-fluid" style="background-color:white">-->
-        <!--<div class="row">-->
-            <div class="tableBox">
-                <table>
-                    <tr>
-                        <td class="alignRight"><span>项目编码</span></td>
-                        <td class="alignLeft"><span id="ProjectNo"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>项目名称</span></td>
-                        <td class="alignLeft"><span id="ProjectName"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>项目申请人</span></td>
-                        <td class="alignLeft"><span id="ApplyPerson"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>项目申请时间</span></td>
-                        <td class="alignLeft"><span id="ApplyTime"></span></td>
-                    </tr>
-
-                    <tr>
-                        <td class="alignRight"><span>客户类别</span></td>
-                        <td class="alignLeft"><span id="CustomCategory"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>客户名称</span></td>
-                        <td class="alignLeft"><span id="CustomName"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>客户规模</span></td>
-                        <td class="alignLeft"><span id="CustomSituation"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>成立时间</span></td>
-                        <td class="alignLeft"><span id="EstablishTime"></span></td>
-                    <tr>
-                        <td class="alignRight"><span>项目编码</span></td>
-                        <td class="alignLeft"><span id="ProjectNo"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>联系方式</span></td>
-                        <td class="alignLeft"><span id="CustomContact"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>帐期</span></td>
-                        <td class="alignLeft"><span id="PayDays"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>支付方式</span></td>
-                        <td class="alignLeft"><span id="PayType"></span></td>
-                    <tr>
-                        <td class="alignRight"><span>交付方式</span></td>
-                        <td class="alignLeft"><span id="DeliveryMethod"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>FOT时间</span></td>
-                        <td class="alignLeft"><span id="FotTime"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>PPAP时间</span></td>
-                        <td class="alignLeft"><span id="PPAPTime"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>项目周期</span></td>
-                        <td class="alignLeft"><span id="ProjectCycle"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>所需资源</span></td>
-                        <td class="alignLeft"><span id="ResourceNeed"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>利润率</span></td>
-                        <td class="alignLeft"><span id="RateOfProfit"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>制造难度</span></td>
-                        <td class="alignLeft"><span id="DifficultyOfManufacture"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>回复期限</span></td>
-                        <td class="alignLeft"><span id="ReplyLimit"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>项目描述</span></td>
-                        <td class="alignLeft"><span id="ProjectDesc"></span></td>
-                    </tr>
-
-                </table>
-            </div>
-
-        <!--</div>-->
-
-        <!--<div class="row">-->
-            <div class="tableBox">
-                <table>
-                    <tr>
-                        <td class="alignRight"><span>项目部评估</span></td>
-                        <td class="alignLeft"><span id="PrjDeptEvaluateDesc"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>技术部评估</span></td>
-                        <td class="alignLeft"><span id="TechDeptEvaluateDesc"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>制造难度评估</span></td>
-                        <td class="alignLeft"><span id="MakeDifficutEvaluateDesc"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>产能评估</span></td>
-                        <td class="alignLeft"><span id="OutDifficultEvaluateDesc"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight"><span>项目自评</span></td>
-                        <td class="alignLeft"><span id="SelfEvaluateDesc"></span></td>
-                    </tr>
-
-                </table>
-            </div>
-
-        <!--</div>-->
-    <!--</div>-->
+    <div class="content tableBox">
+        <table>
+            <tr>
+                <td>项目编码</td>
+                <td><span id="ProjectNo"></span></td>
+                <td>项目名称</td>
+                <td><span id="ProjectName"></span></td>
+            </tr>
+            <tr>
+                <td>项目申请人</td>
+                <td><span id="ApplyPerson"></span></td>
+                <td>项目申请时间</td>
+                <td><span id="ApplyTime"></span></td>
+            </tr>
+            <tr>
+                <td>客户类别</td>
+                <td><span id="CustomCategoryDesc"></span></td>
+                <td>客户名称</td>
+                <td><span id="CustomName"></span></td>
+            </tr>
+            <tr>
+                <td>客户规模</td>
+                <td><span id="CustomSituationDesc"></span></td>
+                <td>成立时间</td>
+                <td><span id="EstablishTimeDesc"></span></td>
+            </tr>
+            <tr>
+                <td>联系方式</td>
+                <td><span id="CustomContact"></span></td>
+                <td>帐期</td>
+                <td><span id="PayDaysDesc"></span></td>
+            </tr>
+            <tr>
+                <td>支付方式</td>
+                <td><span id="PayTypeDesc"></span></td>
+                <td>交付方式</td>
+                <td><span id="DeliveryMethodDesc"></span></td>
+            </tr>
+            <tr>
+                <td>FOT时间</td>
+                <td><span id="FotTime"></span></td>
+                <td>PPAP时间</td>
+                <td><span id="PPAPTime"></span></td>
+            </tr>
+            <tr>
+                <td>项目周期</td>
+                <td><span id="ProjectCycleDesc"></span></td>
+                <td>所需资源</td>
+                <td><span id="ResourceNeedDesc"></span></td>
+            </tr>
+            <tr>
+                <td>利润率</td>
+                <td><span id="RateOfProfitDesc"></span></td>
+                <td>制造难度</td>
+                <td><span id="DifficultyOfManufactureDesc"></span></td>
+            </tr>
+            <tr>
+                <td>回复期限</td>
+                <td><span id="ReplyLimitDesc"></span></td>
+                <td>项目描述</td>
+                <td><span id="ProjectDesc"></span></td>
+            </tr>
+            <tr>
+                <td>项目部评估</td>
+                <td><span id="PrjDeptEvaluateDesc"></span></td>
+                <td>技术部评估</td>
+                <td><span id="TechDeptEvaluateDesc"></span></td>
+            </tr>
+            <tr>
+                <td>制造难度评估</td>
+                <td><span id="MakeDifficutEvaluateDesc"></span></td>
+                <td>产能评估</td>
+                <td><span id="OutDifficultEvaluateDesc"></span></td>
+            </tr>
+            <tr>
+                <td>项目自评</td>
+                <td><span id="SelfEvaluateDesc"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+                        
+        </table>
+    </div>
 </body>
 </html>
