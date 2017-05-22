@@ -90,8 +90,18 @@ function deletePrjApply() {
         }
         else {
 
-            var PGuid = rowData.PGUID;
-            //TODO: 删除选中的新增项目申请
+            let PGuid = rowData.PGUID;
+            let jsonObj = { "PGUID ": PGuid };
+            let jsonStr = JSON.stringify(jsonObj);
+
+            AjaxPostAuthNew(config_service_url + "PrjEstablish/delete/" + PGuid, jsonStr, function (result) {
+                $.messager.alert("提示：", result.Message, "info");
+            },
+            true,
+            ticket,
+             function () {
+                 $.messager.alert("提示：", "提交失败.", "info");
+             })
 
            
         }

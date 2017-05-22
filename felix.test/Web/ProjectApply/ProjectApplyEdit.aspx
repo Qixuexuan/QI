@@ -53,61 +53,61 @@
     </style>
 </head>
 <body>
-    <div class="content tableBox">
+    <div class="content">
         <table>
         <tr>
             <td>客户名称</td>
-            <td><select id="CustomName" name="CustomName" type="text" class="form-control" isneed="true" validate-msg="请输入客户名称."</select></td>
+            <td class="formJson"><select id="CustomName" name="CustomName" type="text" class="form-control" isneed="true" validate-msg="请输入客户名称."></select></td>
             <td>客户类别</td>
-            <td><select id="CustomCategory" name="CustomCategory" class="form-control" isneed="true" validate-msg="请选择客户类别."></select></td>
+            <td class="formJson"><select id="CustomCategory" name="CustomCategory" class="form-control" isneed="true" validate-msg="请选择客户类别."></select></td>
         </tr>
         <tr>
             <td>项目类型</td>
-            <td><select id="ProjectType" name="ProjectType" class="form-control" isneed="true" validate-msg="请选择项目类型."></select></td>
+            <td class="formJson"><select id="ProjectType" name="ProjectType" class="form-control" isneed="true" validate-msg="请选择项目类型."></select></td>
             <td>客户规模</td>
-            <td><select id="CustomSituation" name="CustomSituation" class="form-control" isneed="true" validate-msg="请选择客户规模."></select></td>
+            <td class="formJson"><select id="CustomSituation" name="CustomSituation" class="form-control" isneed="true" validate-msg="请选择客户规模."></select></td>
         </tr>
         <tr>
             <td>成立时间</td>
-            <td><select id="EstablishTime" name="EstablishTime" class="form-control" isneed="true" validate-msg="请选择客户公司成立时间."></select></td>
+            <td class="formJson"><select id="EstablishTime" name="EstablishTime" class="form-control" isneed="true" validate-msg="请选择客户公司成立时间."></select></td>
             <td>联系方式</td>
-            <td><input id="CustomContact" name="CustomContact" type="tel" class="form-control" isneed="true" validate-msg="请输入客户联系方式." placeholder="--必填--" /></td>
+            <td class="formJson"><input id="CustomContact" name="CustomContact" type="tel" class="form-control" isneed="true" validate-msg="请输入客户联系方式." placeholder="--必填--" /></td>
         </tr>
         <tr>
             <td>项目名称</td>
-            <td><input id="ProjectName" name="ProjectName" type="text" class="form-control" isneed="true" validate-msg="请输入项目名称." placeholder="--必填--" /></td>
+            <td class="formJson"><input id="ProjectName" name="ProjectName" type="text" class="form-control" isneed="true" validate-msg="请输入项目名称." placeholder="--必填--" /></td>
             <td>账期</td>
-            <td><select id="PayDays" name="PayDays" class="form-control" isneed="true" validate-msg="请选择账期."></select></td>
+            <td class="formJson"><select id="PayDays" name="PayDays" class="form-control" isneed="true" validate-msg="请选择账期."></select></td>
         </tr>
         <tr>
             <td>支付方式</td>
-            <td><select id="PayType" name="PayType" class="form-control" isneed="true" validate-msg="请选择支付方式."></select></td>
+            <td class="formJson"><select id="PayType" name="PayType" class="form-control" isneed="true" validate-msg="请选择支付方式."></select></td>
             <td>交付方式</td>
-            <td><select id="DeliveryMethod" name="DeliveryMethod" class="form-control" isneed="true" validate-msg="请选择交付方式."></select></td>
+            <td class="formJson"><select id="DeliveryMethod" name="DeliveryMethod" class="form-control" isneed="true" validate-msg="请选择交付方式."></select></td>
         </tr>
         <tr>
             <td>FOT时间</td>
-            <td><input id="FotTime" name="FotTime" type="date" class="form-control" isneed="true" validate-msg="请输入FOT时间." placeholder="--必填--" /></td>
+            <td class="formJson"><input id="FotTime" name="FotTime" type="date" class="form-control" isneed="true" validate-msg="请输入FOT时间." placeholder="--必填--" /></td>
             <td>PPAP时间</td>
-            <td><input id="PPAPTime" name="PPAPTime" type="date" class="form-control" isneed="true" validate-msg="请输入PPAP时间." placeholder="--必填--" /></td>
+            <td class="formJson"><input id="PPAPTime" name="PPAPTime" type="date" class="form-control" isneed="true" validate-msg="请输入PPAP时间." placeholder="--必填--" /></td>
         </tr>
         <tr>
             <td>项目周期</td>
-            <td><select id="ProjectCycle" name="ProjectCycle" class="form-control" isneed="true" validate-msg="请选择项目周期."></select></td>
+            <td class="formJson"><select id="ProjectCycle" name="ProjectCycle" class="form-control" isneed="true" validate-msg="请选择项目周期."></select></td>
             <td>所需资源</td>
-            <td><select id="ResourceNeed" name="ResourceNeed" class="form-control" isneed="true" validate-msg="请选择所需资源."></select></td>
+            <td class="formJson"><select id="ResourceNeed" name="ResourceNeed" class="form-control" isneed="true" validate-msg="请选择所需资源."></select></td>
         </tr>
         <tr>
             <td>利润率</td>
-            <td><select id="RateOfProfit" name="RateOfProfit" class="form-control" isneed="true" validate-msg="请选择利润率."></select></td>
+            <td class="formJson"><select id="RateOfProfit" name="RateOfProfit" class="form-control" isneed="true" validate-msg="请选择利润率."></select></td>
             <td>制造难度</td>
-            <td><select id="DifficultyOfManufacture" name="DifficultyOfManufacture" class="form-control" isneed="true" validate-msg="请选择制造难度."></select></td>
+            <td class="formJson"><select id="DifficultyOfManufacture" name="DifficultyOfManufacture" class="form-control" isneed="true" validate-msg="请选择制造难度."></select></td>
         </tr>
         <tr>
             <td>回复期限</td>
-            <td><select id="ReplyLimit" name="ReplyLimit" class="form-control" isneed="true" validate-msg="请选择回复期限."></select></td>
+            <td class="formJson"><select id="ReplyLimit" name="ReplyLimit" class="form-control" isneed="true" validate-msg="请选择回复期限."></select></td>
             <td>项目描述</td>
-            <td><textarea id="ProjectDesc" name="ProjectDesc" class="form-control" rows="3"></textarea></td>
+            <td class="formJson"><textarea id="ProjectDesc" name="ProjectDesc" class="form-control" rows="3"></textarea></td>
         </tr>
     </table>
         <div class="form-group" style="text-align:center;margin-top:20px">
