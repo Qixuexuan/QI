@@ -10,7 +10,7 @@
 namespace test.Web.ProjectManagent {
     
     
-    public partial class AQPQTaskList {
+    public partial class APQPTaskList {
         
         /// <summary>
         /// form1 控件。

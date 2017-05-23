@@ -1141,6 +1141,8 @@
     <Content Include="Web\App\css\index.css" />
     <Content Include="Web\App\css\tableContent.css" />
     <Content Include="Web\App\js\geone.datagrid.js" />
+    <Content Include="Web\App\js\MyProjectList.js" />
+    <Content Include="Web\App\js\MyProjectListHistory.js" />
     <Content Include="Web\App\js\ProjectApplyEdit.js" />
     <Content Include="Web\App\js\ProjectApply.js" />
     <Content Include="Web\App\js\ProjectApplyAddList.js" />
@@ -1162,9 +1164,11 @@
     <Content Include="Web\ProjectApply\ProjectApplyList.aspx" />
     <Content Include="Web\ProjectApply\ProjectDetail.aspx" />
     <Content Include="Web\ProjectApply\ProjectDetail.html" />
-    <Content Include="Web\ProjectManagent\AQPQGroup.aspx" />
-    <Content Include="Web\ProjectManagent\AQPQTaskList.aspx" />
-    <Content Include="Web\ProjectManagent\MyProject.aspx" />
+    <Content Include="Web\ProjectManagent\APQPGroup.aspx" />
+    <Content Include="Web\ProjectManagent\MemberSelect.aspx" />
+    <Content Include="Web\ProjectManagent\APQPTaskList.aspx" />
+    <Content Include="Web\ProjectManagent\MyProjectList.aspx" />
+    <Content Include="Web\ProjectManagent\MyProjectListHistory.aspx" />
     <Content Include="Web\TaskManagent\TaskManagent.aspx" />
     <Content Include="Web\UserCenter\UserCenter.aspx" />
     <Content Include="zTree\css\demo.css" />
@@ -1286,26 +1290,40 @@
     <Compile Include="Web\ProjectApply\ProjectDetail.aspx.designer.cs">
       <DependentUpon>ProjectDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Web\ProjectManagent\AQPQGroup.aspx.cs">
-      <DependentUpon>AQPQGroup.aspx</DependentUpon>
+    <Compile Include="Web\ProjectManagent\APQPGroup.aspx.cs">
+      <DependentUpon>APQPGroup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Web\ProjectManagent\AQPQGroup.aspx.designer.cs">
-      <DependentUpon>AQPQGroup.aspx</DependentUpon>
+    <Compile Include="Web\ProjectManagent\APQPGroup.aspx.designer.cs">
+      <DependentUpon>APQPGroup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Web\ProjectManagent\AQPQTaskList.aspx.cs">
-      <DependentUpon>AQPQTaskList.aspx</DependentUpon>
+    <Compile Include="Web\ProjectManagent\MemberSelect.aspx.cs">
+      <DependentUpon>MemberSelect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Web\ProjectManagent\AQPQTaskList.aspx.designer.cs">
-      <DependentUpon>AQPQTaskList.aspx</DependentUpon>
+    <Compile Include="Web\ProjectManagent\MemberSelect.aspx.designer.cs">
+      <DependentUpon>MemberSelect.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Web\ProjectManagent\MyProject.aspx.cs">
-      <DependentUpon>MyProject.aspx</DependentUpon>
+    <Compile Include="Web\ProjectManagent\APQPTaskList.aspx.cs">
+      <DependentUpon>APQPTaskList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Web\ProjectManagent\MyProject.aspx.designer.cs">
-      <DependentUpon>MyProject.aspx</DependentUpon>
+    <Compile Include="Web\ProjectManagent\APQPTaskList.aspx.designer.cs">
+      <DependentUpon>APQPTaskList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProjectList.aspx.cs">
+      <DependentUpon>MyProjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProjectList.aspx.designer.cs">
+      <DependentUpon>MyProjectList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProjectListHistory.aspx.cs">
+      <DependentUpon>MyProjectListHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProjectListHistory.aspx.designer.cs">
+      <DependentUpon>MyProjectListHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web\TaskManagent\TaskManagent.aspx.cs">
       <DependentUpon>TaskManagent.aspx</DependentUpon>

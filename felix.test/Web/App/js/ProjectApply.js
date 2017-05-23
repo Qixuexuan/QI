@@ -96,13 +96,10 @@ function Submit() {
 //  保存申请内容
 function Save() {
     //表单验证
-    debugger;
     if (!CheckValidate($(".content"))) return false;
 
     var jsonObj = initStrJson($(".content"));
     console.log(jsonObj);
-
-    return;
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Save", jsonObj, function (result) {
         //console.log(result);

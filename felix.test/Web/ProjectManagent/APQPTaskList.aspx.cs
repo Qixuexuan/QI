@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace test.Web.ProjectManagent
 {
-    public partial class AQPQTaskList : System.Web.UI.Page
+    public partial class APQPTaskList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

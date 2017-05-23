@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AQPQGroup.aspx.cs" Inherits="test.Web.ProjectManagent.AQPQGroup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MemberSelect.aspx.cs" Inherits="test.Web.ProjectManagent.AQPQGroup" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>APQ小组</title>
+    <title>选择APQP小组成员</title>
 
     <link href="../../Content/easyUI/themes/icon.css" rel="stylesheet" />
     <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />

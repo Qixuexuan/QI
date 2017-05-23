@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyProject.aspx.cs" Inherits="test.Web.ProjectManagent.MyProject" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyProjectListHistory.aspx.cs" Inherits="test.Web.ProjectManagent.MyProjectListHistory" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    我的项目
+    
     </div>
     </form>
 </body>

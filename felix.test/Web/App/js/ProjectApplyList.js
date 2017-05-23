@@ -34,6 +34,7 @@ $(document).ready(function () {
         { field: 'ProjectDesc', title: '项目描述', width: 100, sortable: false },
         { field: 'ApplyTime', title: '申请时间', width: 100, sortable: false },
         { field: 'ApplyPerson', title: '申请人', width: 100, sortable: false },
+        { field: 'CURRENTNODEDESC', title: '当前节点', width: 100, sortable: false },
      {
          field: 'CanApprove', title: '是否可审核', width: 120, sortable: false,
          styler: function (value, row, index) {
@@ -75,10 +76,10 @@ function Approve() {
 
         if (rowData == undefined || rowData == null) {
             $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
-
-            if (rowData.CanApprove != "1") {
-                $.messager.alert("提示：", "抱歉，您无改项目的审核权限.", "info");
-            }
+        }
+        if (rowData.CanApprove != "1") {
+            $.messager.alert("提示：", "抱歉，您不可审核该项目.", "info");
+            return;
         }
 
         else {

@@ -72,6 +72,8 @@
 
             let jsonStr = GetParmsData();
 
+            console.log(jsonStr);
+
             AjaxPostAuthNew(config_service_url + "PrjEstablish/" + currentnode + "/" + pguid, jsonStr, function (result) {
                 $.messager.alert("提示：", result.Message, "info");
             },
@@ -105,7 +107,7 @@
             let jsonObj = JSON.parse(jsonStr);
 
             jsonObj.PrjDeptEvaluateDesc = $("#PrjDeptEvaluate").find("option:selected").text();
-            jsonObj.PM = $("#PrjManager").find("option:selected").text();
+            jsonObj.PM = $("#PrjManager").val();
 
             jsonStr = JSON.stringify(jsonObj);
 
