@@ -58,8 +58,8 @@ function APQPGroup() {
         }
 
         else {
-            var PGuid = rowData.PEGUID;
-            window.parent.parent.createTab("tab_info_1", "APQP小组", "../Web/ProjectManagent/APQPGroup.aspx?s=" + Math.random() + "&PGuid=" + PGuid);
+            var PEGuid = rowData.PEGUID;
+            window.parent.parent.createTab("tab_info_1", "APQP小组", "../Web/ProjectManagent/APQPGroup.aspx?s=" + Math.random() + "&PEGuid=" + PEGuid);
         }
     });
 }
