@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectApplyList.aspx.cs" Inherits="test.Web.ProjectApply.ProjectApplyList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyProjectList.aspx.cs" Inherits="test.Web.ProjectApply.ProjectApplyList" %>
 
 <!DOCTYPE html>
 

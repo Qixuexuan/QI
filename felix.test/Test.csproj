@@ -644,6 +644,25 @@
     <Content Include="Content\easyUI\themes\icons\undo.png" />
     <Content Include="Content\form.css" />
     <Content Include="Content\grid.css" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\AUTHORS.txt" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\external\jquery\jquery.js" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\index.html" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.css" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.structure.min.css" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.theme.css" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\jquery-ui.theme.min.css" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\LICENSE.txt" />
     <Content Include="Content\lhgdialog\lhgcore.lhgdialog.min.js" />
     <Content Include="Content\lhgdialog\lhgdialog.js" />
     <Content Include="Content\lhgdialog\lhgdialog.min.js" />
@@ -1382,6 +1401,7 @@
     <Content Include="Scripts\uploadify\index.php" />
     <Content Include="Scripts\uploadify\uploadify.php" />
     <Content Include="Shell\css\images\saws.scc" />
+    <Content Include="Content\jquery-ui-1.12.1.custom\package.json" />
     <None Include="Properties\PublishProfiles\SSZHAJ.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
