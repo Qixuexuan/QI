@@ -16,17 +16,16 @@
             width: 80%;
             margin: 0 auto;
             margin-top: 20px;
-            border: 1px solid lightgray;
+            border: 1px solid black;
         }
 
-            table,
-            table tr th,
-            table tr td {
+           
+             th,td {
                 border: 1px solid #f2f0f1;
             }
 
         tr {
-            height: 45px;
+            height: 40px;
             line-height: 40px;
         }
 
@@ -43,6 +42,35 @@
             padding-left: 20px;
             padding-right: 15px;
         }
+
+        th {
+            text-align:center;
+            font-weight:normal
+        }
+
+        .sptr {
+            height:25px;
+        }
+            .sptr td:nth-child(1) {
+                background-color:#F6F6F6;
+                width:15%;
+                text-align:center
+            }
+             .sptr td:nth-child(2) {
+                background-color:white;
+                width:15%;
+            }
+              .sptr td:nth-child(3) {
+                background-color:white;
+                width:20%;
+            }
+               .sptr td:nth-child(4) {
+                background-color:white;
+                width:15%;
+            } .sptr td:nth-child(5) {
+                background-color:white;
+                width:15%;
+            }
     </style>
 
     <script type="text/javascript">
@@ -54,6 +82,7 @@
             });
             pguid = getQueryString("PGuid");
 
+            //  获取项目详情
             AjaxGetAuth(config_service_url + "PrjEstablish/detail/" + pguid, function (result) {
                 console.log(result);
 
@@ -66,7 +95,20 @@
 
             }, true, ticket, function () {
                 $.messager.alert("提示：", "获取详情数据失败.", "info");
-            })
+            });
+
+            //  获取流程日志
+            AjaxGetAuth(config_service_url + "PrjEstablish/WFDetail/" + pguid, function (result) {
+                console.log(result);
+
+                for(let data of result.Data) {
+                    let trhtml = `<tr class="sptr"><td>${data.CURRENTNODEDESC}</td><td>${data.OPERUSERNAME}</td><td>${data.OPERSTARTTIME}</td><td>${data.OPERENDTIME}</td><td>${data.DURINGTIME}</td></tr>`;
+                    $("#WFTable").append(trhtml);
+                }
+
+            }, true, ticket, function () {
+                $.messager.alert("提示：", "获取流程日志数据失败.", "info");
+            });
         })
        
 
@@ -74,7 +116,11 @@
 </head>
 <body>
     <div class="content tableBox">
+        
         <table>
+            <tr>
+                <td colspan="4" style="text-align:center;background-color:white;height:50px;font-weight:bold">星诺奇科技·项目详情</td>
+            </tr>
             <tr>
                 <td>项目编码</td>
                 <td><span id="ProjectNo"></span></td>
@@ -91,7 +137,7 @@
                 <td>客户类别</td>
                 <td><span id="CustomCategoryDesc"></span></td>
                 <td>客户名称</td>
-                <td><span id="CustomName"></span></td>
+                <td><span id="CustomNameDesc"></span></td>
             </tr>
             <tr>
                 <td>客户规模</td>
@@ -154,6 +200,55 @@
                 <td></td>
             </tr>
                         
+        </table>
+
+        <table id="WFTable">
+            <tr>
+                <td colspan="5" style="text-align:center;background-color:white;height:50px;font-weight:bold">审批</td>
+            </tr>
+            <tr class="sptr">
+                <th>节点</th>
+                <th>操作人</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>总时长</th>
+            </tr>
+            <!--<tr class="sptr">
+                <td>1.商务部申请</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="sptr">
+                <td>2.项目部审核</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="sptr">
+                <td>3.技术部审核</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="sptr">
+                <td>4.制造部审核</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="sptr">
+                <td>5.商务部自评</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>-->
+
         </table>
     </div>
 </body>

@@ -98,6 +98,13 @@ function Save() {
     //表单验证
     if (!CheckValidate($(".content"))) return false;
 
+    let msg = CheckDate();
+    if (msg != undefined && msg != null) {
+        $.messager.alert("提示：", msg, "info");
+        return;
+    }
+    
+
     var jsonObj = initStrJson($(".content"));
     console.log(jsonObj);
 
@@ -110,4 +117,22 @@ function Save() {
      function (XMLHttpRequest, textStatus, errorThrown) {
          $.messager.alert("提示：", result.Message, "info");
      })
+}
+
+//  检查所填时间不能早于申请填写时间
+function CheckDate() {
+    let msg;
+    let DateObj = new Date();
+    let currentDate = new Date(DateObj.toLocaleDateString());
+
+    let FotTime = new Date($("#FotTime").val());
+    let PPAPTime = new Date($("#PPAPTime").val());
+
+    if (currentDate > FotTime) {
+        msg = 'FOT时间不能早于当前时间.';
+    }
+    if (currentDate > PPAPTime) {
+        msg = 'PPAP时间不能早于当前时间.';
+    }
+    return msg;
 }
