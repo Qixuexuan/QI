@@ -130,7 +130,7 @@ function Submit() {
 function Save() {
     //表单验证
     if (!CheckValidate($(".content"))) return false;
-    let msg = CheckDate();
+    let msg = CheckData();
     if (msg != undefined && msg != null) {
         $.messager.alert("提示：", msg, "info");
         return;
@@ -141,7 +141,6 @@ function Save() {
     let Obj = JSON.parse(jsonObj1);
     Obj.PGUID = pguid;
     let jsonObj = JSON.stringify(Obj);
-    console.log(jsonObj);
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Save", jsonObj, function (result) {
         //console.log(result);
@@ -154,8 +153,8 @@ function Save() {
      })
 }
 
-//  检查所填时间不能早于申请填写时间
-function CheckDate() {
+//  检查用户填写的时间及联系方式数据
+function CheckData() {
     let msg;
     let DateObj = new Date();
     let currentDate = new Date(DateObj.toLocaleDateString());
@@ -165,9 +164,16 @@ function CheckDate() {
 
     if (currentDate > FotTime) {
         msg = 'FOT时间不能早于当前时间.';
+        return msg;
     }
     if (currentDate > PPAPTime) {
         msg = 'PPAP时间不能早于当前时间.';
+        return msg;
+    }
+
+    if (!IsAnyPhoneNumber($("#CustomContact").val())) {
+        msg = '请填写正确的客户联系方式.';
+        return msg;
     }
     return msg;
 }
