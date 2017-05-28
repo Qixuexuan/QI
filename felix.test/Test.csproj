@@ -1159,6 +1159,10 @@
     <Content Include="Web\App\css\common.css" />
     <Content Include="Web\App\css\index.css" />
     <Content Include="Web\App\css\tableContent.css" />
+    <Content Include="Web\App\icon\icon_active.png" />
+    <Content Include="Web\App\icon\icon_canceled.png" />
+    <Content Include="Web\App\icon\icon_unactive.png" />
+    <Content Include="Web\App\icon\icon_warn.png" />
     <Content Include="Web\App\js\APQPGroup.js" />
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\MyProjectList.js" />

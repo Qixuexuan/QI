@@ -3,6 +3,7 @@ let peguid;//项目的peguid
 let configData;//APQP小组配置项
 let configDataLength;//配置项的长度
 let treeData;// 成员树的数据
+let IsCanEditn;
 
 $(document).ready(function () {
     GetTicket(function (t) {
@@ -10,6 +11,7 @@ $(document).ready(function () {
     });
 
     peguid = getQueryString("PEGuid");
+    IsCanEditn = getQueryString("IsCanEditn");
 
     GetAPQPData();
     GetTreeData();
@@ -35,7 +37,8 @@ function GetTreeData() {
     AjaxGetAuth(config_service_url + "Account/PersonTree", function (result) {
 
         treeData = result.Data;
-        $("#APQTree").tree({ data: treeData });
+        $("#APQTree").tree({ data: treeData, onlyLeafCheck: $(this).is(':checked') });
+        //$('#APQTree').tree({ onlyLeafCheck: $(this).is(':checked') })
 
     }, true, ticket, function () {
         $.messager.alert("提示：", "获取部门成员数据失败.", "info");
@@ -66,6 +69,12 @@ function BindData(DataList) {
 
 //  添加成员
 function PlusMember(ele) {
+
+    if (IsCanEditn != "1") {
+        $.messager.alert("提示：", "当前状态不可添加成员.", "info");
+        return;
+    }
+
     $("#treeBox").show();
 
     $("#dialog-confirm").dialog({
@@ -77,10 +86,9 @@ function PlusMember(ele) {
         buttons: [{
             text: "Save",
             click: function () {
-                debugger;
-                alert();
                 let dataList = GetTreeSelectNode();
-                AddMembersTo(dataList,ele);
+                AddMembersTo(dataList, ele);
+                $(this).dialog("close");
             }
         }, {
             text: "Cancel",
@@ -97,17 +105,38 @@ function PlusMember(ele) {
 //  获取成员树中选择的成员节点
 function GetTreeSelectNode() {
 
+    ClearSelectNode();
     let dataArr = [];
-
+    
     let nodes = $('#APQTree').tree('getChecked');
     for (let i = 0; i < nodes.length; i++) {
-        let obj = {};
-        obj.id = nodes[i].id;
-        obj.name = nodes[i].text;
-        dataArr.push(obj);
+        if (nodes[i].children == null) {
+            let obj = {};
+            obj.id = nodes[i].id;
+            obj.name = nodes[i].text;
+            dataArr.push(obj);
+        }
+        
     }
-    console.log(dataArr);
     return dataArr;
+}
+
+//  TOTO:清楚树中选择的节点
+function ClearSelectNode() {
+    let nodes = $('#APQTree').tree('getChecked');
+    console.log(nodes);
+
+
+    //var root = $("#APQTree").tree('getRoot');
+    //$("#APQTree").tree('uncheck', root.target);
+
+    for (let i = 0; i < nodes.length; i++) {
+        nodes[i].checked = false;
+
+    }
+
+    console.log($('#APQTree').tree('getChecked'));
+
 }
 
 //  在界面中填入选择好的成员元素
@@ -121,28 +150,47 @@ function AddMembersTo(dataList,ele) {
         let $allsapn = $('span'); //获取所有的span元素
         let flag = $(pretd).find($allsapn); //根据$allsapn获取pretd元素中的所有span
         //  遍历pretd元素中的所有span  判断是否存在id为newid的span
-        for (let sp of flag) {
-            if (sp.id == newid) {
-                alert(`已经存在${newid}成员`);
+
+        let isExist=false;
+
+        for (let i = 0; i < flag.length; i++) {
+            if (flag[i].id == newid) {
+                isExist = true;
                 break;
             }
         }
-        let newmember = `<div><span id="${newid}" class="member-name">${name}</span><span class="glyphicon glyphicon-minus member-minus" onclick="MinusMember(this)"></span>`;
-        pretd.append(newmember);
+
+        if (!isExist) {
+            let newmember = `<div><span id="${newid}" class="member-name">${name}</span><span class="glyphicon glyphicon-minus member-minus" onclick="MinusMember(this)"></span>`;
+            pretd.append(newmember);
+        }
+
+        
     }
 }
 
 //  移除成员
 function MinusMember(ele) {
+
+    if (IsCanEditn != "1") {
+        $.messager.alert("提示：", "当前状态不可删除成员.", "info");
+        return;
+    }
+
     $(ele).parent().remove();
 }
 
-//  全部重置
+//  全部重置(清除)
 function Reset() {
+
+    for (let i = 0; i < configDataLength; i++) {
+         $(`#${i}`).children().remove(); //成员所在的td
+    }
 }
 
 //  保存内容
 function Submit() {
+    debugger;
     let data = GetSelectMember();
 
     let jsonObj = JSON.stringify(data);
@@ -174,7 +222,8 @@ function GetSelectMember() {
 
         //  获取选择的成员id和name串
         let tdChildre = _td.children();
-        for (let i = 1; i <= tdChildre.length; i++) {
+        console.log(tdChildre);
+        for (let i = 0; i < tdChildre.length; i++) {
             let id = tdChildre[i].childNodes[0].id; //成员id
             let text = tdChildre[i].childNodes[0].textContent; //成员名
             idStr += id + ',';
@@ -193,8 +242,6 @@ function GetSelectMember() {
         item.POSITIONNAME = configData[i]['POSITIONNAME'];
         item.PERSONCODE = idStr;
         item.PERSONNAME = nameStr;
-        //item.PERSONNAME = 'TOM,CAT';
-        //item.PERSONCODE = 'me-001,me-002';
         item.Responsibility = configData[i]['Responsibility'];
         item.OrderBy = configData[i]['OrderBy'];
 
@@ -203,3 +250,4 @@ function GetSelectMember() {
 
     return obj;
 }
+
