@@ -68,11 +68,11 @@
 <body class="Loginbody">
     <form id="form1" runat="server" autocomplete="off">
 
-        <div class="logo">
+        <div class="logo" style="visibility:hidden;height:30px">
             <img src="App_Themes/Flat/login/logo.png" />
 
         </div>
-        <div class="content">
+        <div class="content" style="width:389px">
             <div class="Loginform">
                 <div class="form-message">
                     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>

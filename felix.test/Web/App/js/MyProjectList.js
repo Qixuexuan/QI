@@ -62,7 +62,7 @@ function PrjDetail() {
         else {
 
             var PGuid = rowData.PEGUID;
-            window.parent.parent.createTab("tab_info_1", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
+            window.parent.parent.createTab("tab_info_0", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
         }
     });
 
@@ -80,6 +80,22 @@ function APQPGroup() {
             let PEGuid = rowData.PEGUID;
             let IsCanEditn = rowData.IsCanEdit;
             window.parent.parent.createTab("tab_info_1", "APQP小组", "../Web/ProjectManagent/APQPGroup.aspx?s=" + Math.random() + "&PEGuid=" + PEGuid + "&IsCanEditn=" + IsCanEditn);
+        }
+    });
+}
+
+// APQP小组任务列表
+function APQPTaskList() {
+    SessionIsOverTime(function () {
+        var rowData = $("#gd_url").datagrid("getSelected");
+        if (rowData == undefined || rowData == null) {
+            $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
+        }
+
+        else {
+            let PEGuid = rowData.PEGUID;
+            let IsCanEditn = rowData.IsCanEdit;
+            window.parent.parent.createTab("tab_info_2", "APQP任务列表", "../Web/ProjectManagent/APQPTaskList.aspx?s=" + Math.random() + "&PEGuid=" + PEGuid + "&IsCanEditn=" + IsCanEditn);
         }
     });
 }
@@ -140,7 +156,7 @@ function ChangePrjStatus(peguid, val) {
  ticket,
   function (XMLHttpRequest, textStatus, errorThrown) {
       $.messager.alert("提示：", result.Message, "info");
-  })
+  });
 
 }
 

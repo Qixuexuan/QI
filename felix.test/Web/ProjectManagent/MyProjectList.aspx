@@ -26,6 +26,8 @@
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="APQPGroup()">APQP小组</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+                onclick="APQPTaskList()">APQP任务列表</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="ActivatePrj()">激活</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="CancelPrj()">作废</a>
