@@ -50,7 +50,16 @@ function prjDetail() {
     });
 }
 
-//  刷新内容
+//重新加载，必须
 function reload() {
-    window.location.reload();
+    $('#gd_url').datagrid('load', GetQueryData());
+}
+//获取查询条件, 必须
+function GetQueryData() {
+    return {
+        queryCondition: $("#txtQueryCondition").val(),
+        userCode: '',
+        PageNumber: _pageIndex,
+        PageSize: _pageSize
+    };
 }

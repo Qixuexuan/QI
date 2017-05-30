@@ -77,9 +77,9 @@ function APQPGroup() {
         }
 
         else {
-            let PEGuid = rowData.PEGUID;
+            let PGuid = rowData.PGUID;
             let IsCanEditn = rowData.IsCanEdit;
-            window.parent.parent.createTab("tab_info_1", "APQP小组", "../Web/ProjectManagent/APQPGroup.aspx?s=" + Math.random() + "&PEGuid=" + PEGuid + "&IsCanEditn=" + IsCanEditn);
+            window.parent.parent.createTab("tab_info_apqp", "APQP小组", "../Web/ProjectManagent/APQPGroup.aspx?s=" + Math.random() + "&PGuid=" + PGuid + "&IsCanEditn=" + IsCanEditn);
         }
     });
 }
@@ -93,9 +93,9 @@ function APQPTaskList() {
         }
 
         else {
-            let PEGuid = rowData.PEGUID;
+            let PGuid = rowData.PGUID;
             let IsCanEditn = rowData.IsCanEdit;
-            window.parent.parent.createTab("tab_info_2", "APQP任务列表", "../Web/ProjectManagent/APQPTaskList.aspx?s=" + Math.random() + "&PEGuid=" + PEGuid + "&IsCanEditn=" + IsCanEditn);
+            window.parent.parent.createTab("tab_info_2", "APQP任务列表", "../Web/ProjectManagent/APQPTaskList.aspx?s=" + Math.random() + "&PGuid=" + PGuid + "&IsCanEditn=" + IsCanEditn);
         }
     });
 }
@@ -114,8 +114,8 @@ function ActivatePrj() {
 
             $.messager.confirm('提示', '确认激活该项目吗?', function (result) {
                 if (result) {
-                    var PEGuid = rowData.PEGUID;
-                    ChangePrjStatus(PEGuid,1);
+                    var PGuid = rowData.PGUID;
+                    ChangePrjStatus(PGuid, 1);
                 }
             });
             
@@ -136,8 +136,8 @@ function CancelPrj() {
         else {
             $.messager.confirm('提示', '确认作废该项目吗?', function (result) {
                 if (result) {
-                    var PEGuid = rowData.PEGUID;
-                    ChangePrjStatus(PEGuid, 0);
+                    var PGuid = rowData.PGUID;
+                    ChangePrjStatus(PGuid, -1);
                 }
             });
            
@@ -147,10 +147,11 @@ function CancelPrj() {
 }
 
 //  更新项目状态
-function ChangePrjStatus(peguid, val) {
-
-    AjaxPostAuthNew(config_service_url + "Project/update/" + peguid + "/" + val, jsonObj, function (result) {
+function ChangePrjStatus(pguid, val) {
+    let jsonObj = null;
+    AjaxPostAuthNew(config_service_url + "Project/update/" + pguid + "/" + val, jsonObj, function (result) {
         $.messager.alert("提示：", result.Message, "info");
+        reload();
     },
  true,
  ticket,
@@ -160,7 +161,16 @@ function ChangePrjStatus(peguid, val) {
 
 }
 
-//  刷新内容
+//重新加载，必须
 function reload() {
-    window.location.reload();
+    $('#gd_url').datagrid('load', GetQueryData());
+}
+//获取查询条件, 必须
+function GetQueryData() {
+    return {
+        queryCondition: $("#txtQueryCondition").val(),
+        userCode: '',
+        PageNumber: _pageIndex,
+        PageSize: _pageSize
+    };
 }

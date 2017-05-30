@@ -1164,6 +1164,7 @@
     <Content Include="Web\App\icon\icon_unactive.png" />
     <Content Include="Web\App\icon\icon_warn.png" />
     <Content Include="Web\App\js\APQPGroup.js" />
+    <Content Include="Web\App\js\APQPTaskList.js" />
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\MyProjectList.js" />
     <Content Include="Web\App\js\MyProjectListHistory.js" />
@@ -1172,6 +1173,7 @@
     <Content Include="Web\App\js\ProjectApplyAddList.js" />
     <Content Include="Web\App\js\ProjectApplyHistoryList.js" />
     <Content Include="Web\App\js\ProjectApplyList.js" />
+    <Content Include="Web\App\js\TaskList.js" />
     <Content Include="Web\App\js\validate.js" />
     <Content Include="Web\Index\HtmlPage1.html">
       <SubType>Designer</SubType>
@@ -1193,6 +1195,9 @@
     <Content Include="Web\ProjectManagent\APQPTaskList.aspx" />
     <Content Include="Web\ProjectManagent\MyProjectList.aspx" />
     <Content Include="Web\ProjectManagent\MyProjectListHistory.aspx" />
+    <Content Include="Web\ProjectManagent\TaskApprove.html" />
+    <Content Include="Web\ProjectManagent\TaskList.aspx" />
+    <Content Include="Web\ProjectManagent\TaskProcessLog.html" />
     <Content Include="Web\TaskManagent\TaskManagent.aspx" />
     <Content Include="Web\UserCenter\UserCenter.aspx" />
     <Content Include="zTree\css\demo.css" />
@@ -1348,6 +1353,13 @@
     </Compile>
     <Compile Include="Web\ProjectManagent\MyProjectListHistory.aspx.designer.cs">
       <DependentUpon>MyProjectListHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\TaskList.aspx.cs">
+      <DependentUpon>TaskList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\TaskList.aspx.designer.cs">
+      <DependentUpon>TaskList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web\TaskManagent\TaskManagent.aspx.cs">
       <DependentUpon>TaskManagent.aspx</DependentUpon>

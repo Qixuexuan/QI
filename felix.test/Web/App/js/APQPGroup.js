@@ -1,5 +1,5 @@
 ﻿let ticket;
-let peguid;//项目的peguid
+let pguid;//项目的pguid
 let configData;//APQP小组配置项
 let configDataLength;//配置项的长度
 let treeData;// 成员树的数据
@@ -10,7 +10,7 @@ $(document).ready(function () {
         ticket = t;
     });
 
-    peguid = getQueryString("PEGuid");
+    pguid = getQueryString("PGuid");
     IsCanEditn = getQueryString("IsCanEditn");
 
     GetAPQPData();
@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 //  获取AQPQ小组配置项
 function GetAPQPData() {
-    AjaxGetAuth(config_service_url + "Project/apqp/" + peguid, function (result) {
+    AjaxGetAuth(config_service_url + "Project/apqp/" + pguid, function (result) {
 
         configData = result.Data;
         configDataLength = configData.length;
@@ -37,7 +37,7 @@ function GetTreeData() {
     AjaxGetAuth(config_service_url + "Account/PersonTree", function (result) {
 
         treeData = result.Data;
-        $("#APQTree").tree({ data: treeData, onlyLeafCheck: $(this).is(':checked') });
+        $("#APQTree").tree({ data: treeData });
         //$('#APQTree').tree({ onlyLeafCheck: $(this).is(':checked') })
 
     }, true, ticket, function () {
@@ -107,7 +107,7 @@ function GetTreeSelectNode() {
 
     ClearSelectNode();
     let dataArr = [];
-    
+
     let nodes = $('#APQTree').tree('getChecked');
     for (let i = 0; i < nodes.length; i++) {
         if (nodes[i].children == null) {
@@ -116,7 +116,7 @@ function GetTreeSelectNode() {
             obj.name = nodes[i].text;
             dataArr.push(obj);
         }
-        
+
     }
     return dataArr;
 }
@@ -140,7 +140,7 @@ function ClearSelectNode() {
 }
 
 //  在界面中填入选择好的成员元素
-function AddMembersTo(dataList,ele) {
+function AddMembersTo(dataList, ele) {
     for (let i = 0; i < dataList.length; i++) {
         let newid = dataList[i].id;
         let name = dataList[i].name;
@@ -151,7 +151,7 @@ function AddMembersTo(dataList,ele) {
         let flag = $(pretd).find($allsapn); //根据$allsapn获取pretd元素中的所有span
         //  遍历pretd元素中的所有span  判断是否存在id为newid的span
 
-        let isExist=false;
+        let isExist = false;
 
         for (let i = 0; i < flag.length; i++) {
             if (flag[i].id == newid) {
@@ -165,7 +165,7 @@ function AddMembersTo(dataList,ele) {
             pretd.append(newmember);
         }
 
-        
+
     }
 }
 
@@ -184,7 +184,7 @@ function MinusMember(ele) {
 function Reset() {
 
     for (let i = 0; i < configDataLength; i++) {
-         $(`#${i}`).children().remove(); //成员所在的td
+        $(`#${i}`).children().remove(); //成员所在的td
     }
 }
 
@@ -197,7 +197,13 @@ function Submit() {
     //console.log(jsonObj);
 
     AjaxPostAuthNew(config_service_url + "Project/APQP/save", jsonObj, function (result) {
-        $.messager.alert("提示：", result.Message, "info");
+        $.messager.confirm('提示', result.Message, function (result) {
+            if (result) {
+                //关闭页面
+                window.parent.parent.closeTab("tab_info_apqp");
+            }
+        });
+        
     },
   true,
   ticket,
@@ -211,10 +217,10 @@ function Submit() {
 function GetSelectMember() {
     let obj = { ProjectAPQP: [] };
 
-    for (let i = 0; i < configDataLength; i++) {
+    for (let data of configData) {
         let item = {};
 
-        let _td = $(`#${i}`); //成员所在的td
+        let _td = $(`#${data.POSITIONCODE}`); //成员所在的td
         let cguid = $(_td).parent().attr("id");
 
         let idStr = '';
@@ -222,7 +228,6 @@ function GetSelectMember() {
 
         //  获取选择的成员id和name串
         let tdChildre = _td.children();
-        console.log(tdChildre);
         for (let i = 0; i < tdChildre.length; i++) {
             let id = tdChildre[i].childNodes[0].id; //成员id
             let text = tdChildre[i].childNodes[0].textContent; //成员名
@@ -233,17 +238,16 @@ function GetSelectMember() {
         idStr = idStr.substring(0, idStr.length - 1);
         nameStr = nameStr.substring(0, nameStr.length - 1);
 
-        let test = configData[2].POSITIONNAME;
 
-        item.AGUID = configData[i]['AGUID'];
-        item.PGUID = peguid;
-        item.CGUID = configData[i]['CGUID'];
-        item.POSITIONCODE = i;
-        item.POSITIONNAME = configData[i]['POSITIONNAME'];
+        item.AGUID = data['AGUID'];
+        item.PGUID = data['PGUID'];
+        item.CGUID = data['CGUID'];
+        item.POSITIONCODE = data['POSITIONCODE'];
+        item.POSITIONNAME = data['POSITIONNAME'];
         item.PERSONCODE = idStr;
         item.PERSONNAME = nameStr;
-        item.Responsibility = configData[i]['Responsibility'];
-        item.OrderBy = configData[i]['OrderBy'];
+        item.Responsibility = data['Responsibility'];
+        item.OrderBy = data['OrderBy'];
 
         obj.ProjectAPQP.push(item);
     }

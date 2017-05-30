@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>任务流程处理日志</title>
+	<meta charset="utf-8" />
+    <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/config.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
+
+    <style>
+         table {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 1px solid black;
+        }
+
+           
+             th,td {
+                border: 1px solid #f2f0f1;
+            }
+
+        tr {
+            height: 40px;
+            line-height: 40px;
+        }
+        th {
+            text-align:center
+        }
+        .sptr {
+            height:25px;
+        }
+            .sptr td:nth-child(1) {
+                background-color:#F6F6F6;
+                width:15%;
+                text-align:center
+            }
+             .sptr td:nth-child(2) {
+                background-color:white;
+                /*width:15%;*/
+                text-align:center
+            }
+              .sptr td:nth-child(3) {
+                background-color:white;
+                /*width:20%;*/
+                text-align:center
+            }
+               .sptr td:nth-child(4) {
+                background-color:white;
+                /*width:15%;*/
+                text-align:center
+            } .sptr td:nth-child(5) {
+                background-color:white;
+                /*width:15%;*/
+                text-align:center
+            }.sptr td:nth-child(6) {
+                background-color:white;
+                /*width:15%;*/
+                text-align:center
+            }.sptr td:nth-child(7) {
+                background-color:white;
+                /*width:15%;*/
+                text-align:center
+            }
+    </style>
+
+    <script type="text/javascript">
+        var ticket;
+        var pguid;
+        $(document).ready(function () {
+            GetTicket(function (t) {
+                ticket = t;
+            });
+            tguid = getQueryString("TGuid");
+
+
+            //  获取流程日志
+            AjaxGetAuth(config_service_url + "TaskList/WFProcess/" + tguid, function (result) {
+                console.log(result);
+
+                for(let data of result.Data) {
+                    let trhtml = `<tr class="sptr"><td>${data.CURRENTNODEDESC}</td><td>${data.OPERUSERNAME}</td><td>${data.HCOMMENT}</td><td>${data.HRESULT}</td><td>${data.OPERSTARTTIME}</td><td>${data.OPERENDTIME}</td><td>${data.DURINGTIME}</td></tr>`;
+                    $("#WFTable").append(trhtml);
+                }
+
+            }, true, ticket, function () {
+                $.messager.alert("提示：", "获取流程日志数据失败.", "info");
+            });
+        })
+
+
+    </script>
+</head>
+<body>
+    <table id="WFTable">
+        <tr>
+            <td colspan="7" style="text-align:center;background-color:white;height:50px;font-weight:bold">审批流程日志</td>
+        </tr>
+        <tr class="sptr">
+            <th>节点</th>
+            <th>操作人</th>
+            <th>处理描述</th>
+            <th>处理结果</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th>总时长</th>
+        </tr>
+        
+
+    </table>
+</body>
+</html>

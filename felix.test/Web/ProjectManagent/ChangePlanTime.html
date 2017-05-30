@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>修改计划时间</title>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/easyUI/themes/icon.css" rel="stylesheet" />
+    <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../Scripts/config.js"></script>
+    <script type="text/javascript" src="../../Js/modalWindow.js"></script>
+
+    <script type="text/javascript">
+        let ticket;
+        let TGuid;
+        let FInstanceId;
+        $(document).ready(function () {
+            //每个需要访问服务的页面都要
+            GetTicket(function (t) {
+                ticket = t;
+            });
+
+            TGuid = getQueryString("TGuid");
+            FInstanceId = getQueryString("FInstanceId");
+
+        })
+
+        function Submit() {
+            //表单验证
+            let msg = CheckData();
+            if (msg != undefined && msg != null) {
+                $.messager.alert("提示：", msg, "info");
+                return;
+            }
+            let jsonStr = GetParmsData();
+
+            AjaxPostAuthNew(config_service_url + "TaskList/Update/" + TGuid, jsonStr, function (result) {
+                $.messager.confirm('提示', result.Message, function (result) {
+
+                    closeModalWindow(getQueryString("cz_index"));
+                });
+            },
+            true,
+            ticket,
+             function (XMLHttpRequest, textStatus, errorThrown) {
+                 $.messager.confirm('提示', result.Message, function (result) {
+                     if (result) {
+                         closeModalWindow(getQueryString("cz_index"));
+                     }
+                 });
+             })
+        }
+
+        //  获取表单数据
+        function GetParmsData() {
+
+            let jsonObj = {
+                FInstanceId: FInstanceId,//流程实例id
+                PlanTime: $("#PlanTime").val(),// 同意：1 不同意：0
+                Comment: $("#Comment").val()
+            };
+            let jsonStr = JSON.stringify(jsonObj);
+            return jsonStr;
+
+        }
+
+        //  检查用户选择的时间数据
+        function CheckData() {
+            let msg;
+            let DateObj = new Date();
+            let currentDate = new Date(DateObj.toLocaleDateString());
+
+            let selectTimeStr = $("#PlanTime").val();
+
+            if (selectTimeStr == '' || selectTimeStr == undefined) {
+                msg = '请选择计划完成的时间.';
+                return msg;
+            }
+
+            let PlanTime = new Date(selectTimeStr);
+
+            if (currentDate > PlanTime) {
+                msg = '计划时间不能早于当前时间.';
+                return msg;
+            }
+
+            return msg;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="content" style="margin-top:10px">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="PlanTime" class="col-sm-3 control-label">计划完成时间</label>
+                    <div class="col-sm-6 formJson">
+                        <input id="PlanTime" name="PlanTime" type="date" class="form-control" placeholder="--必填--" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Comment" class="col-sm-3 control-label">备注 </label>
+                    <div class="col-sm-6 formJson">
+                        <textarea id="Comment" name="Comment" class="form-control" rows="3"></textarea>
+
+                    </div>
+                </div>
+                <div class="form-group" style="text-align:right;margin-right:20px">
+                    <button type="button" class="btn btn-success" onclick="Submit()">Approve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

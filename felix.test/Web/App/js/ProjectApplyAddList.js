@@ -64,18 +64,25 @@ function submitPrjApply() {
             $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
         }
         else {
+            $.messager.confirm('提示', '确认提交吗?', function (result) {
+                if (result) {
 
-            let PGuid = rowData.PGUID;
-            let jsonObj = { "PGUID ": PGuid };
+                    let PGuid = rowData.PGUID;
+                    let jsonObj = { "PGUID ": PGuid };
+                    let jsonStr = JSON.stringify(jsonObj);
 
-            AjaxPostAuthNew(config_service_url + "PrjEstablish/ApplySubmit/" + PGuid, jsonObj, function (result) {
-                $.messager.alert("提示：", result.Message, "info");
-            },
-            true,
-            ticket,
-             function () {
-                 $.messager.alert("提示：", "提交失败.", "info");
-             })
+                    AjaxPostAuthNew(config_service_url + "PrjEstablish/ApplySubmit/" + PGuid, jsonStr, function (result) {
+                        $.messager.alert("提示：", result.Message, "info");
+                        reload();
+                    },
+                    true,
+                    ticket,
+                     function () {
+                         $.messager.alert("提示：", "提交失败.", "info");
+                     })
+
+                }
+            });
         }
     });
 }
@@ -89,26 +96,40 @@ function deletePrjApply() {
             $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
         }
         else {
+            $.messager.confirm('提示', '确认删除吗?', function (result) {
+                if (result) {
 
-            let PGuid = rowData.PGUID;
-            let jsonObj = { "PGUID ": PGuid };
-            let jsonStr = JSON.stringify(jsonObj);
+                    let PGuid = rowData.PGUID;
+                    let jsonObj = { "PGUID ": PGuid };
+                    let jsonStr = JSON.stringify(jsonObj);
 
-            AjaxPostAuthNew(config_service_url + "PrjEstablish/delete/" + PGuid, jsonStr, function (result) {
-                $.messager.alert("提示：", result.Message, "info");
-            },
-            true,
-            ticket,
-             function () {
-                 $.messager.alert("提示：", "提交失败.", "info");
-             })
+                    AjaxPostAuthNew(config_service_url + "PrjEstablish/delete/" + PGuid, jsonStr, function (result) {
+                        $.messager.alert("提示：", result.Message, "info");
+                        reload();
+                    },
+                    true,
+                    ticket,
+                     function () {
+                         $.messager.alert("提示：", "提交失败.", "info");
+                     })
 
-           
+                }
+            });
+
         }
     });
 }
 
-//  刷新内容
+//重新加载，必须
 function reload() {
-    window.location.reload();
+    $('#gd_url').datagrid('load', GetQueryData());
+}
+//获取查询条件, 必须
+function GetQueryData() {
+    return {
+        queryCondition: $("#txtQueryCondition").val(),
+        userCode: '',
+        PageNumber: _pageIndex,
+        PageSize: _pageSize
+    };
 }
