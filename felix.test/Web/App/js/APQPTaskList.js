@@ -98,10 +98,24 @@ function AddAttachment() {
 
         else {
 
-            var TGuid = rowData.TGUID;
-            var FInstanceId = rowData.FINSTANCEID;
+            let TGuid = rowData.TGUID;
+            showModalWindow("上传附件", 550, 230, "../Web/ProjectManagent/UploadAttachment.html?s=" + Math.random() + "&TGuid=" + TGuid);
+        }
+    });
+}
 
-            //  TODO:   添加附件
+//  获取附件
+function GetAttachment() {
+    SessionIsOverTime(function () {
+        var rowData = $("#gd_url").datagrid("getSelected");
+        if (rowData == undefined || rowData == null) {
+            $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
+        }
+
+        else {
+
+            let TGuid = rowData.TGUID;
+            showModalWindow("获取附件", 550, 230, "../Web/ProjectManagent/GetAttachment.html?s=" + Math.random() + "&TGuid=" + TGuid);
         }
     });
 }

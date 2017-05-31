@@ -47,6 +47,8 @@
                 onclick="ChangePlanDate()">修改计划时间</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="AddAttachment()">添加附件</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+                onclick="GetAttachment()">获取附件</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

@@ -746,7 +746,8 @@
           $h.each(query, function(k,v){
             data.append(parameterNamespace+k,v);
           });
-          data.append(parameterNamespace+$.getOpt('fileParameterName'), bytes);
+          //data.append(parameterNamespace + $.getOpt('fileParameterName'), bytes); //·Ö¿é
+          data.append(parameterNamespace + $.getOpt('fileParameterName'), $.fileObj.file); //Ô­Ê¼
         }
 
         var method = $.getOpt('uploadMethod');

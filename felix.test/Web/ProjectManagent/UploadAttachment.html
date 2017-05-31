@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>上传附件</title>
+	<meta charset="utf-8" />
+    <!--<link href="../../Content/table.css" rel="stylesheet" />-->
+    <link href="../../App_Themes/flat/ModalWindow.css" rel="stylesheet" type="text/css">
+    <link href="../../App_Themes/Flat/newstyle.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="../../Content/easyUI/themes/icon.css" rel="stylesheet" />
+    <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Js/modalWindow.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../Scripts/config.js"></script>
+    <!--<script type="text/javascript" src="../../Scripts/validate.js"></script>-->
+    <!--文件上传-->
+    <script src="../../Scripts/resumable.js"></script>
+    <script src="../../Scripts/resumable.extend.js"></script>
+    <script type="text/javascript" src="../App/js/UploadAttachment.js"></script>
+</head>
+<body>
+    <div class="content">
+        <table cellpadding="5" cellspacing="0" style="font-size: 13px;border:1px solid lightgray;width:98%;margin:0 auto;margin-top:10px">
+
+            <tr style="height:170px;border:1px solid lightgray">
+                <td style="width: 70px;border:1px solid lightgray;text-align:center">
+                    <a href="#" id="browseButton" style="outline: none;">选择文件</a>
+                </td>
+                <td  style="height: 170px;border:1px solid lightgray">
+                    <div style="height: 170px; overflow: auto;">
+                        <div id="uploadfileQueue" style="background: none;">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr></tr>
+        </table>
+        <div class="form-group" style="text-align: center; margin-top: 20px">
+            <button type="button" class="btn btn-warning" onclick="closeD()">取  消</button>
+            <button type="button" class="btn btn-success" onclick="ProblemToFile()">保  存</button>
+        </div>
+    </div>
+    <div id="dlg">
+    </div>
+</body>
+</html>

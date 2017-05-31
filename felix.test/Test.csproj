@@ -1020,6 +1020,7 @@
     <Content Include="Scripts\jquery.easyui.sltdialog.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\resumable.extend.js" />
     <Content Include="Scripts\resumable.js" />
     <Content Include="Scripts\tools.js" />
     <Content Include="Scripts\uploadify\browse-btn.png" />
@@ -1166,6 +1167,7 @@
     <Content Include="Web\App\js\APQPGroup.js" />
     <Content Include="Web\App\js\APQPTaskList.js" />
     <Content Include="Web\App\js\geone.datagrid.js" />
+    <Content Include="Web\App\js\GetAttachment.js" />
     <Content Include="Web\App\js\MyProjectList.js" />
     <Content Include="Web\App\js\MyProjectListHistory.js" />
     <Content Include="Web\App\js\ProjectApplyEdit.js" />
@@ -1174,6 +1176,7 @@
     <Content Include="Web\App\js\ProjectApplyHistoryList.js" />
     <Content Include="Web\App\js\ProjectApplyList.js" />
     <Content Include="Web\App\js\TaskList.js" />
+    <Content Include="Web\App\js\UploadAttachment.js" />
     <Content Include="Web\App\js\validate.js" />
     <Content Include="Web\Index\HtmlPage1.html">
       <SubType>Designer</SubType>
@@ -1191,6 +1194,8 @@
     <Content Include="Web\ProjectApply\ProjectDetail.aspx" />
     <Content Include="Web\ProjectApply\ProjectDetail.html" />
     <Content Include="Web\ProjectManagent\APQPGroup.aspx" />
+    <Content Include="Web\ProjectManagent\ChangePlanTime.html" />
+    <Content Include="Web\ProjectManagent\GetAttachment.html" />
     <Content Include="Web\ProjectManagent\MemberSelect.aspx" />
     <Content Include="Web\ProjectManagent\APQPTaskList.aspx" />
     <Content Include="Web\ProjectManagent\MyProjectList.aspx" />
@@ -1198,6 +1203,7 @@
     <Content Include="Web\ProjectManagent\TaskApprove.html" />
     <Content Include="Web\ProjectManagent\TaskList.aspx" />
     <Content Include="Web\ProjectManagent\TaskProcessLog.html" />
+    <Content Include="Web\ProjectManagent\UploadAttachment.html" />
     <Content Include="Web\TaskManagent\TaskManagent.aspx" />
     <Content Include="Web\UserCenter\UserCenter.aspx" />
     <Content Include="zTree\css\demo.css" />
