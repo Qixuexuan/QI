@@ -16,6 +16,18 @@ $(document).ready(function () {
         { field: 'PlanTime', title: '计划结束时间', width: 100, sortable: false },
         { field: 'ActualTime', title: '实际完成时间', width: 100, sortable: false },
         { field: 'CURRENTNODEDESC', title: '当前状态', width: 100, sortable: false },
+        { field: 'IsHaveAttach', title: '附件', width: 50, sortable: false,
+            styler: function (value, row, index) { },
+            formatter: function (value, row, index) {
+                if (value == "1") {
+
+                    return '有'
+                }
+                else if (value == "0") {
+                    return '无';
+                }
+            }
+        },
         { field: 'Remark', title: '备注', width: 150, sortable: false }
     ]];
 
@@ -69,6 +81,21 @@ function GetPrecessLog() {
     });
 }
 
+//  获取附件
+function GetAttachment() {
+    SessionIsOverTime(function () {
+        var rowData = $("#gd_url").datagrid("getSelected");
+        if (rowData == undefined || rowData == null) {
+            $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
+        }
+
+        else {
+
+            let TGuid = rowData.TGUID;
+            showModalWindow("获取附件", 550, 230, "../Web/ProjectManagent/GetAttachment.html?s=" + Math.random() + "&TGuid=" + TGuid);
+        }
+    });
+}
 
 
 

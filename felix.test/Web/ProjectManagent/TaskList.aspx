@@ -25,7 +25,8 @@
                 onclick="SubmitApprove()">提交审批</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="GetPrecessLog()">流程日志</a>
-           
+           <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+                onclick="GetAttachment()">查看附件</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

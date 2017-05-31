@@ -38,7 +38,7 @@ function ProblemToFile() {
         r.upload();
     }
     else {
-        $.messager.alert("提示：", "没有可上传的附件.", "info");
+        $.messager.alert("提示：", "没有新增的附件.", "info");
     }
                   
 }

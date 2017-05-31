@@ -18,6 +18,18 @@ $(document).ready(function () {
         { field: 'PlanTime', title: '计划结束时间', width: 100, sortable: false },
         { field: 'ActualTime', title: '实际完成时间', width: 100, sortable: false },
         { field: 'CURRENTNODEDESC', title: '当前状态', width: 100, sortable: false },
+        { field: 'IsHaveAttach', title: '附件', width: 50, sortable: false,
+            styler: function (value, row, index) { },
+            formatter: function (value, row, index) {
+                if (value == "1") {
+
+                    return '有'
+                }
+                else if (value == "0") {
+                    return '无';
+                }
+            }
+        },
         { field: 'Remark', title: '备注', width: 150, sortable: false },
         
     ]];
