@@ -39,7 +39,7 @@ $(document).ready(function () {
 function PageEvent(pageNumber, pageSize) {
     _pageIndex = pageNumber;
     _pageSize = pageSize;
-    $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, keyWord: "ddd" });
+    $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, KeyWord: "" });
 
 }
 
@@ -106,9 +106,14 @@ function reload() {
 //获取查询条件, 必须
 function GetQueryData() {
     return {
-        queryCondition: $("#txtQueryCondition").val(),
+        KeyWord: $("#txtQueryCondition").val(),
         userCode: '',
         PageNumber: _pageIndex,
         PageSize: _pageSize
     };
+}
+
+//  搜索
+function Search() {
+    reload();
 }

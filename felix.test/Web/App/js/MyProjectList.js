@@ -15,23 +15,29 @@ $(document).ready(function () {
         { field: 'PM', title: 'PM', width: 100, sortable: false },
 
         {
-            field: 'PStatus', title: '状态', width: 100, sortable: false,
+            field: 'Pstatus', title: '状态', width: 100, sortable: false,
             styler: function (value, row, index) {
 
             },
             formatter: function (value, row, index) {
 
-                if (value == "已激活") {
+                if (value == "1") {
                     return '<div><img src="../App/icon/icon_active.png" style="height:18px;width:18px;margin-left:30px"/></div>';
                 }
-                else if (value == "未激活") {
-                    
+                else if (value == "0") {
+
                     return '<div><img src="../App/icon/icon_unactive.png" style="height:18px;width:18px;margin-left:30px"/></div>';
+                }
+                else if (value == "-1") {
+                    return '<div><img src="../App/icon/icon_canceled.png" style="height:18px;width:18px;margin-left:30px"/></div>';
+                }
+                else {
+                    return '<div><img src="../App/icon/icon_warn.png" style="height:18px;width:18px;margin-left:30px"/></div>';
                 }
 
             }
         },
-
+        { field: 'PStatusDesc', title: '状态描述', width: 100, sortable: false },
         { field: 'StartTime', title: '开始时间', width: 100, sortable: false },
         { field: 'CurrentStage', title: '阶段', width: 100, sortable: false },
         { field: 'Schedule', title: '进度', width: 100, sortable: false },
@@ -46,7 +52,7 @@ $(document).ready(function () {
 function PageEvent(pageNumber, pageSize) {
     _pageIndex = pageNumber;
     _pageSize = pageSize;
-    $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, keyWord: "ddd" });
+    $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, KeyWord: "" });
 
 }
 
@@ -147,9 +153,9 @@ function CancelPrj() {
 }
 
 //  更新项目状态
-function ChangePrjStatus(pguid, val) {
+function ChangePrjStatus(pguid, status) {
     let jsonObj = null;
-    AjaxPostAuthNew(config_service_url + "Project/update/" + pguid + "/" + val, jsonObj, function (result) {
+    AjaxPostAuthNew(config_service_url + "Project/update/" + pguid + "/" + status, jsonObj, function (result) {
         $.messager.alert("提示：", result.Message, "info");
         reload();
     },
@@ -168,9 +174,14 @@ function reload() {
 //获取查询条件, 必须
 function GetQueryData() {
     return {
-        queryCondition: $("#txtQueryCondition").val(),
+        KeyWord: $("#txtQueryCondition").val(),
         userCode: '',
         PageNumber: _pageIndex,
         PageSize: _pageSize
     };
+}
+
+//  搜索
+function Search() {
+    reload();
 }

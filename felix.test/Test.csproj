@@ -600,19 +600,32 @@
     <Content Include="Content\easyUI\themes\bootstrap\validatebox.css" />
     <Content Include="Content\easyUI\themes\bootstrap\window.css" />
     <Content Include="Content\easyUI\themes\color.css" />
-    <Content Include="Content\easyUI\themes\icon.css" />
+    <Content Include="Content\easyUI\themes\icon-old.css" />
+    <Content Include="Content\easyUI\themes\icons\active.png" />
+    <Content Include="Content\easyUI\themes\icons\add-attachment.png" />
+    <Content Include="Content\easyUI\themes\icons\application_view_details.png" />
+    <Content Include="Content\easyUI\themes\icons\apply-approve.png" />
+    <Content Include="Content\easyUI\themes\icons\attachment-add.png" />
+    <Content Include="Content\easyUI\themes\icons\attachment-get.png" />
     <Content Include="Content\easyUI\themes\icons\back.png" />
     <Content Include="Content\easyUI\themes\icons\blank.gif" />
     <Content Include="Content\easyUI\themes\icons\cancel.png" />
     <Content Include="Content\easyUI\themes\icons\clear.png" />
     <Content Include="Content\easyUI\themes\icons\cut.png" />
+    <Content Include="Content\easyUI\themes\icons\ddetail.png" />
+    <Content Include="Content\easyUI\themes\icons\ddtail.png" />
     <Content Include="Content\easyUI\themes\icons\detail.png" />
     <Content Include="Content\easyUI\themes\icons\download.png" />
+    <Content Include="Content\easyUI\themes\icons\edit.png" />
     <Content Include="Content\easyUI\themes\icons\edit_add.png" />
     <Content Include="Content\easyUI\themes\icons\edit_remove.png" />
+    <Content Include="Content\easyUI\themes\icons\file.png" />
     <Content Include="Content\easyUI\themes\icons\filesave.png" />
     <Content Include="Content\easyUI\themes\icons\filter.png" />
+    <Content Include="Content\easyUI\themes\icons\get-attachment.png" />
+    <Content Include="Content\easyUI\themes\icons\group.png" />
     <Content Include="Content\easyUI\themes\icons\help.png" />
+    <Content Include="Content\easyUI\themes\icon.css" />
     <Content Include="Content\easyUI\themes\icons\landscape.png" />
     <Content Include="Content\easyUI\themes\icons\large_chart.png" />
     <Content Include="Content\easyUI\themes\icons\large_clipart.png" />
@@ -640,7 +653,10 @@
     <Content Include="Content\easyUI\themes\icons\search.png" />
     <Content Include="Content\easyUI\themes\icons\sum.png" />
     <Content Include="Content\easyUI\themes\icons\table_add.png" />
+    <Content Include="Content\easyUI\themes\icons\task-list.png" />
+    <Content Include="Content\easyUI\themes\icons\time.png" />
     <Content Include="Content\easyUI\themes\icons\tip.png" />
+    <Content Include="Content\easyUI\themes\icons\unactive.png" />
     <Content Include="Content\easyUI\themes\icons\undo.png" />
     <Content Include="Content\form.css" />
     <Content Include="Content\grid.css" />
@@ -1169,6 +1185,7 @@
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\GetAttachment.js" />
     <Content Include="Web\App\js\MyProjectList.js" />
+    <Content Include="Web\App\js\MyProjectListCanceled.js" />
     <Content Include="Web\App\js\MyProjectListHistory.js" />
     <Content Include="Web\App\js\ProjectApplyEdit.js" />
     <Content Include="Web\App\js\ProjectApply.js" />
@@ -1199,6 +1216,7 @@
     <Content Include="Web\ProjectManagent\MemberSelect.aspx" />
     <Content Include="Web\ProjectManagent\APQPTaskList.aspx" />
     <Content Include="Web\ProjectManagent\MyProjectList.aspx" />
+    <Content Include="Web\ProjectManagent\MyProjectListCanceled.aspx" />
     <Content Include="Web\ProjectManagent\MyProjectListHistory.aspx" />
     <Content Include="Web\ProjectManagent\TaskApprove.html" />
     <Content Include="Web\ProjectManagent\TaskList.aspx" />
@@ -1352,6 +1370,13 @@
     </Compile>
     <Compile Include="Web\ProjectManagent\MyProjectList.aspx.designer.cs">
       <DependentUpon>MyProjectList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProjectListCanceled.aspx.cs">
+      <DependentUpon>MyProjectListCanceled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\ProjectManagent\MyProjectListCanceled.aspx.designer.cs">
+      <DependentUpon>MyProjectListCanceled.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web\ProjectManagent\MyProjectListHistory.aspx.cs">
       <DependentUpon>MyProjectListHistory.aspx</DependentUpon>

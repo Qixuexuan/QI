@@ -21,12 +21,12 @@
 <body class="GridBody">
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">
         <div style="float: left;">
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="SubmitApprove()">提交审批</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="GetPrecessLog()">流程日志</a>
-           <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-apply-approve',plain:true"
+                onclick="SubmitApprove()">审批</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-get-attachment',plain:true"
                 onclick="GetAttachment()">查看附件</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-log',plain:true"
+                onclick="GetPrecessLog()">流程日志</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

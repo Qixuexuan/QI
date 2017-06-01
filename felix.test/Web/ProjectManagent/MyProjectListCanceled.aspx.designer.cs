@@ -10,6 +10,6 @@
 namespace test.Web.ProjectManagent {
     
     
-    public partial class MyProjectListHistory {
+    public partial class MyProjectListCanceled {
     }
 }

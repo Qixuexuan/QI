@@ -1,23 +1,28 @@
-
-
-/**新增申请**/
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+}
 .icon-add{
 	background:url('icons/edit_add.png') no-repeat center center;
 }
-
-/**编辑**/
 .icon-edit{
 	background:url('icons/pencil.png') no-repeat center center;
 }
-
-/**详情**/
-.icon-detail{
-	background:url('icons/ddtail.png') no-repeat center center;
+.icon-approve{
+	background:url('icons/roll_manage.png') no-repeat center center;
 }
 
-/**删除申请**/
+.icon-detail{
+	background:url('icons/detail.png') no-repeat center center;
+}
+.icon-clear{
+	background:url('icons/clear.png') no-repeat center center;
+}
 .icon-remove{
 	background:url('icons/edit_remove.png') no-repeat center center;
+}
+.icon-delete{
+	background:url('icons/cancel.png') no-repeat left center;
+    padding-left:20px;
 }
 .icon-save{
 	background:url('icons/filesave.png') no-repeat center center;
@@ -34,8 +39,6 @@
 .icon-cancel{
 	background:url('icons/cancel.png') no-repeat center center;
 }
-
-/**刷新**/
 .icon-reload{
 	background:url('icons/reload.png') no-repeat center center;
 }
@@ -119,54 +122,7 @@
 }.icon-download {
     background:url('icons/download.png') no-repeat center center;
 }
-
-/**流程日志**/
  .icon-log {
     background:url('icons/log.png') no-repeat center center;
 }
-
-/**激活**/
- .icon-active {
-    background:url('icons/active.png') no-repeat center center;
-}
-/**作废**/
- .icon-unactive {
-    background:url('icons/unactive.png') no-repeat center center;
-}
-
-/**添加附件**/
- .icon-add-attachment {
-    background:url('icons/add-attachment.png') no-repeat center center;
-}
-
-/**获取附件**/
- .icon-get-attachment {
-    background:url('icons/get-attachment.png') no-repeat center center;
-}
-
-/**审核**/
- .icon-apply-approve {
-    background:url('icons/apply-approve.png') no-repeat center center;
-}
-
-/**编辑申请**/
- .icon-apply-edit {
-    background:url('icons/edit.png') no-repeat center center;
-}
-
-/**APQP小组**/
- .icon-group {
-    background:url('icons/group.png') no-repeat center center;
-}
-
-/**任务列表**/
- .icon-task-list {
-    background:url('icons/task-list.png') no-repeat center center;
-}
-
-/**时间**/
- .icon-time {
-    background:url('icons/time.png') no-repeat center center;
-}
-
  

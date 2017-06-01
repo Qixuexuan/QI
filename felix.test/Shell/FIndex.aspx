@@ -318,7 +318,7 @@
 
                     <div id="north_right1">
                         <div id="datetime">
-                            <a id="log" title="系统日志" href="javascript:return false;"><span class="c10"></span>系统日志</a>
+                            <a id="log" title="系统日志" href="javascript:return false;" style="display:none"><span class="c10"></span>系统日志</a>
                             <a id="nav_person" title="个人中心" href="#" onclick="UserCenter();"><span class="c12"></span>个人中心</a>
                             <asp:LinkButton ID="nav_exit" runat="server" OnClientClick="return confirm('确定要注销吗？');" OnClick="nav_exit_Click"><span class="c11"></span>退出</asp:LinkButton>
                         </div>

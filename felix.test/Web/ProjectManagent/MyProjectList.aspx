@@ -23,13 +23,13 @@
         <div style="float: left;">
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="PrjDetail()">项目详情</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-group',plain:true"
                 onclick="APQPGroup()">APQP小组</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-task-list',plain:true"
                 onclick="APQPTaskList()">APQP任务列表</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-active',plain:true"
                 onclick="ActivatePrj()">激活</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-unactive',plain:true"
                 onclick="CancelPrj()">作废</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
@@ -37,7 +37,7 @@
     </div>
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc;">
         <span style="font-size: 12px;">关键字：</span>
-        <input class="easyui-textbox" data-options="prompt:'输入内容..',validType:''"
+        <input class="easyui-textbox" data-options="prompt:'输入项目名称...',validType:''"
             style="width: 200px; height: 25px; font-size: inherit;" id="txtQueryCondition" />
         <a href="javascript:void(0)" onclick="Search()" class="easyui-linkbutton" style="width: 50px; margin-top: 1px; height: 25px;">搜索</a>
     </div>

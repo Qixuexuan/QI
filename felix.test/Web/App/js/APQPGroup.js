@@ -71,7 +71,8 @@ function BindData(DataList) {
 function PlusMember(ele) {
 
     if (IsCanEditn != "1") {
-        $.messager.alert("提示：", "当前状态不可添加成员.", "info");
+        //$.messager.alert("提示：", "当前状态不可添加成员.", "info");
+        alert("当前状态不可添加成员.");
         return;
     }
 
@@ -173,7 +174,8 @@ function AddMembersTo(dataList, ele) {
 function MinusMember(ele) {
 
     if (IsCanEditn != "1") {
-        $.messager.alert("提示：", "当前状态不可删除成员.", "info");
+        //$.messager.alert("提示：", "当前状态不可删除成员.", "info");
+        alert("当前状态不可删除成员.");
         return;
     }
 

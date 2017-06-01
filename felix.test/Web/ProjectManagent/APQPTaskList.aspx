@@ -41,13 +41,13 @@
 <body class="GridBody">
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">
         <div style="float: left;">
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
-                onclick="Submit()">提交</a>
-             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok',plain:true"
+                onclick="Submit()">提交审批</a>
+             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-time',plain:true"
                 onclick="ChangePlanDate()">修改计划时间</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add-attachment',plain:true"
                 onclick="AddAttachment()">添加附件</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-get-attachment',plain:true"
                 onclick="GetAttachment()">查看附件</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>

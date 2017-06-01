@@ -42,7 +42,7 @@ $(document).ready(function () {
 function PageEvent(pageNumber, pageSize) {
     _pageIndex = pageNumber;
     _pageSize = pageSize;
-    $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, keyWord: "ddd" });
+    $('#gd_url').datagrid('load', { PageNumber: pageNumber, PageSize: pageSize, KeyWord: "" });
 
 }
 
@@ -92,10 +92,11 @@ function ChangePlanDate() {
 
         else {
 
-            var TGuid = rowData.TGUID;
-            var FInstanceId = rowData.FINSTANCEID;
+            let TGuid = rowData.TGUID;
+            let FInstanceId = rowData.FINSTANCEID;
+            let PlanTime = rowData.PlanTime;
 
-            showModalWindow("修改计划完成时间", 550, 230, "../Web/ProjectManagent/ChangePlanTime.html?s=" + Math.random() + "&TGuid=" + TGuid + "&FInstanceId=" + FInstanceId);
+            showModalWindow("修改计划完成时间", 550, 230, "../Web/ProjectManagent/ChangePlanTime.html?s=" + Math.random() + "&TGuid=" + TGuid + "&FInstanceId=" + FInstanceId + "&PlanTime=" + PlanTime);
         }
     });
 }
@@ -140,7 +141,7 @@ function reload() {
 //获取查询条件, 必须
 function GetQueryData() {
     return {
-        queryCondition: $("#txtQueryCondition").val(),
+        KeyWord: $("#txtQueryCondition").val(),
         userCode: '',
         PageNumber: _pageIndex,
         PageSize: _pageSize

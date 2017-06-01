@@ -23,7 +23,7 @@
         <div style="float: left;">
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="PrjDetail()">项目详情</a>
-            <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a id="Approve" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-apply-approve',plain:true"
                 onclick="Approve()">审核</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>

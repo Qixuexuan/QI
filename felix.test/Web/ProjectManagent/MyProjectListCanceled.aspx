@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyProjectListHistory.aspx.cs" Inherits="test.Web.ProjectManagent.MyProjectListHistory" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyProjectListCanceled.aspx.cs" Inherits="test.Web.ProjectManagent.MyProjectListCanceled" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>历史项目</title>
+    <title>作废的项目列表</title>
 <link href="../../Content/easyUI/themes/icon.css" rel="stylesheet" />
     <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
     <link href="../../Content/common.css" rel="stylesheet" />
@@ -16,7 +16,7 @@
     <script type="text/javascript" src="../../Scripts/config.js"></script>
     <script type="text/javascript" src="../../Js/modalWindow.js"></script>
     <script type="text/javascript" src="../App/js/geone.datagrid.js"></script>
-    <script type="text/javascript" src="../App/js/MyProjectListHistory.js"></script>
+    <script type="text/javascript" src="../App/js/MyProjectListCanceled.js"></script>
 </head>
 <body class="GridBody">
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">

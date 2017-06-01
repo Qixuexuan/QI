@@ -21,13 +21,13 @@
 <body class="GridBody">
     <div style="height: 35px; padding-top: 6px; padding-left: 10px; border-top: 1px solid #ccc; margin-top: 2px;">
         <div style="float: left;">
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
                 onclick="addNewPrjApply()">新增申请</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-apply-edit',plain:true"
                 onclick="editPrjApply()">编辑</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok',plain:true"
                 onclick="submitPrjApply()">提交申请</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true"
                 onclick="deletePrjApply()">删除</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>

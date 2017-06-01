@@ -18,6 +18,7 @@
         let ticket;
         let TGuid;
         let FInstanceId;
+        let PlanTime;
         $(document).ready(function () {
             //每个需要访问服务的页面都要
             GetTicket(function (t) {
@@ -26,6 +27,8 @@
 
             TGuid = getQueryString("TGuid");
             FInstanceId = getQueryString("FInstanceId");
+            PlanTime = getQueryString("PlanTime");
+            $("#PlanTime").val(PlanTime)
 
         })
 
