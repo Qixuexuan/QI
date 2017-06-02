@@ -16,7 +16,7 @@
 
         <div class="row ibox">
             <div class="col-md-8">
-                <div class="title">
+                <div class="title" style="border-top:3px solid #CCCC99">
                     <span class="glyphicon glyphicon-user" style="color: cadetblue"></span>
                     <h5>登陆信息</h5>
                 </div>
@@ -26,22 +26,22 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="title">
-                    <span class="glyphicon glyphicon-wrench" style="color: cadetblue"></span>
+                    <span class="glyphicon glyphicon-wrench" style="color: cadetblue;margin-left:10px"></span>
                     <h5>轻松办公</h5>
                 </div>
-                <div class="content" style="min-height: 100px; border: 1px solid lightgray">
-                    <p><span class="glyphicon glyphicon-hand-right" /><a>任务清单</a></p>
-                    <p><span class="glyphicon glyphicon-hand-right" /><a>密码修改</a></p>
-                    <p><span class="glyphicon glyphicon-hand-right" /><a>退出登陆</a></p>
+                <div class="content" style="min-height: 100px;">
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#336633"/><a class="mya">任务清单</a></p>
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#990033"/><a class="mya">密码修改</a></p>
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#0099CC"/><a class="mya">退出登陆</a></p>
                 </div>
             </div>
         </div>
 
         <div class="row ibox">
             <div class="col-md-8">
-                <div class="title">
+                <div class="title" style="border-top:3px solid #CCCC99">
                     <span class="glyphicon glyphicon-bullhorn" style="color: red;line-height: 48px;margin-left: 10px"></span>
                     <h5>Andon警告</h5>
                 </div>
@@ -49,35 +49,25 @@
                     <p>项目申请单P10001等待审核 已逾期5天    申请人:Kiven,申请时间：2017/03/10</p>
                     <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
                     <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="title">
-                    <span class="glyphicon glyphicon-phone-alt" style="color: cadetblue"></span>
+                    <span class="glyphicon glyphicon-phone-alt" style="color: cadetblue;margin-left:10px"></span>
                     <h5>服务支持</h5>
                 </div>
-                <div class="content" style="min-height: 100px; border: 1px solid lightgray">
-                    <p><span class="glyphicon glyphicon-hand-right" />All services are currently running</p>
-                    <p><span class="glyphicon glyphicon-hand-right" />0512-65928988/836</p>
-                    <p><span class="glyphicon glyphicon-hand-right" />Justin.wang@sinno-tech.com</p>
+                <div class="content" style="min-height: 100px;">
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#990033" /><span class="mysp">All services are currently running</span></p>
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#009966" /><span class="mysp">0512-65928988/836</span></p>
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#33CC33" /><span class="mysp">Justin.wang@sinno-tech.com</span></p>
                 </div>
             </div>
         </div>
 
         <div class="row ibox">
             <div class="col-md-8">
-                <div class="title">
+                <div class="title" style="border-top:3px solid #CCCC99">
                     <span class="glyphicon glyphicon-pushpin" style="color: brown"></span>
                     <h5>未完成进度</h5>
                 </div>
@@ -89,7 +79,7 @@
 
         <div class="row ibox">
             <div class="col-md-8">
-                <div class="title">
+                <div class="title" style="border-top:3px solid #CCCC99">
                     <span class="glyphicon glyphicon-info-sign" style="color: cadetblue"></span>
                     <h5>在制项目的生产状况</h5>
                 </div>

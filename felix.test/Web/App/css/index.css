@@ -16,7 +16,7 @@ body {
     width: 100%;
     background-color: #fff;
     /*text-align: center;*/
-    border-top: 3px solid #e7eaec;
+    border-top: 3px solid #58bcff;
 }
 
     .title > h5 {
@@ -39,6 +39,17 @@ body {
 .icon {
     margin-left: 3px;
     color: royalblue;
+}
+
+.mya {
+    margin-left:10px;
+    cursor:pointer;
+}
+
+.mysp {
+     margin-left:10px;
+     color:#0066CC;
+     font-style:italic;
 }
 
 .content {
