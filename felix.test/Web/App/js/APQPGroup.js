@@ -85,14 +85,14 @@ function PlusMember(ele) {
         modal: true,
         title: "选择成员",
         buttons: [{
-            text: "Save",
+            text: "确  认",
             click: function () {
                 let dataList = GetTreeSelectNode();
                 AddMembersTo(dataList, ele);
                 $(this).dialog("close");
             }
         }, {
-            text: "Cancel",
+            text: "取  消",
             click: function () {
                 $(this).dialog("close");
             }

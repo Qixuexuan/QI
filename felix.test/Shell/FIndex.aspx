@@ -29,7 +29,7 @@
     <script src="../Js/jQueryUI/jquery.ui.resizable.js"></script> 
     <script type="text/javascript" src="../JS/Shell/jQuery.plugins.js"></script>
     <script type="text/javascript" src="../JS/Shell/FIndex.js"></script>
-    <script type="text/javascript" src="../js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <%--<script type="text/javascript" src="../js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>--%>
     <script type="text/javascript" src="../zTree/js/jquery.ztree.core-3.5.js"></script>
 
     <script type="text/javascript">
@@ -239,7 +239,7 @@
                     {
                         var ss = jQuery(jQuery("iframe")[i]).attr("src").toLowerCase();
 
-                        if (ss.indexOf(treeNode.targetURL.toLowerCase()) > -1)
+                        if (treeNode.targetURL != null && treeNode.targetURL != undefined && ss.indexOf(treeNode.targetURL.toLowerCase()) > -1)
                         {
                             flag = 1;
                             var zIndex = getGlobalZIndex();

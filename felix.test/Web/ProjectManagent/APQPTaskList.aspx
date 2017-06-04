@@ -49,6 +49,8 @@
                 onclick="AddAttachment()">添加附件</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-get-attachment',plain:true"
                 onclick="GetAttachment()">查看附件</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-log',plain:true"
+                onclick="GetPrecessLog()">流程日志</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

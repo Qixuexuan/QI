@@ -77,14 +77,26 @@ BindSltAuth($("#CustomName"), config_service_url + "Account/Customer", function 
 //  提交立项申请
 function Submit() {
     //表单验证
-    //if (!CheckValidate($(".content"))) return false;
+    if (!CheckValidate($(".content"))) return false;
+
+    let msg = CheckData();
+    if (msg != undefined && msg != null) {
+        $.messager.alert("提示：", msg, "info");
+        return;
+    }
 
     var jsonObj = initStrJson($(".content"));
     console.log(jsonObj);
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Submit", jsonObj, function (result) {
         //console.log(result);
-        $.messager.alert("提示：", result.Message, "info");
+        //$.messager.alert("提示：", result.Message, "info");
+        $.messager.confirm('提示', "提交成功，关闭新增页面吗？", function (result) {
+            if (result) {
+                //关闭页面
+                window.parent.parent.closeTab("tab_info_addapply");
+            }
+        });
     }, 
     true, 
     ticket,
@@ -108,8 +120,13 @@ function Save() {
     var jsonObj = initStrJson($(".content"));
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Save", jsonObj, function (result) {
-        //console.log(result);
-        $.messager.alert("提示：", result.Message, "info");
+        //$.messager.alert("提示：", result.Message, "info");
+        $.messager.confirm('提示', "保存成功，关闭新增页面吗？", function (result) {
+            if (result) {
+                //关闭页面
+                window.parent.parent.closeTab("tab_info_addapply");
+            }
+        });
     },
     true,
     ticket,

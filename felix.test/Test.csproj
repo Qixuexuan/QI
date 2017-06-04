@@ -1142,6 +1142,7 @@
     <Content Include="Web\App\js\APQPTaskList.js" />
     <Content Include="Web\App\js\geone.datagrid.js" />
     <Content Include="Web\App\js\GetAttachment.js" />
+    <Content Include="Web\App\js\index.js" />
     <Content Include="Web\App\js\MyProjectList.js" />
     <Content Include="Web\App\js\MyProjectListCanceled.js" />
     <Content Include="Web\App\js\MyProjectListHistory.js" />
@@ -1153,9 +1154,6 @@
     <Content Include="Web\App\js\TaskList.js" />
     <Content Include="Web\App\js\UploadAttachment.js" />
     <Content Include="Web\App\js\validate.js" />
-    <Content Include="Web\Index\HtmlPage1.html">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Web\Index\index.aspx" />
     <Content Include="Web\ProjectApply\Evaluate\MDeptEvaluate.html" />
     <Content Include="Web\ProjectApply\Evaluate\PrjDeptEvaluate.html" />

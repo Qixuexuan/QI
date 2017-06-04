@@ -97,15 +97,27 @@
             font-weight: bold;
             cursor: pointer;
         }
+         .lication {
+            height:30px;
+            border-bottom:1px solid lightgray;
+        }
+            .lication > span {
+                line-height:30px;
+                margin-left:20px;
+            }
     </style>
 </head>
 
 <body>
+     <div class="lication" style="width:100%;margin-top:0px">
+        <span>当前位置：项目管理 > 我的项目 > APQP小组</span>
+    </div>
     <div id="dialog-confirm">
         <div id="treeBox" class="easyui-panel" style="padding: 5px;display:none;width:510px">
             <ul id="APQTree" class="easyui-tree" data-options="animate:true,checkbox:true"></ul>
         </div>
     </div>
+   
     <div class="content">
         <p><span style="color:red">*</span>Remarks: If there are more than one member from same department, then the first member represent their department and take the responsibility</p>
         <p>注：以上成员每个部门若有多名成员构成，则排在第一位的人员是此部门对此案的领导和代表人员.</p>

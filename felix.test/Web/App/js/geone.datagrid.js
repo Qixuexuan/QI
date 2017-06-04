@@ -15,7 +15,7 @@ function InitDataGrid(_url, columnsObj, callback) {
                 total: 0,
                 rows: []
             };
-            if (data) {
+            if (data && data.Data.length>0) {
                 value.total = data.Data.Total;
                 $(data.Data.DataTable).each(function (idx) {
                     data.Data.DataTable[idx].rows = data.Data.Rows;
@@ -103,7 +103,7 @@ function InitDataGridTest(_url, columnsObj, callback,callback_click) {
                 total: 0,
                 rows: []
             };
-            if (data) {
+            if (data && data.Data.length > 0) {
                 value.total = data.Data[0].Total;
                 $(data.Data).each(function (idx) {
                     data.Data[idx].rows = data.Data[0].Rows;

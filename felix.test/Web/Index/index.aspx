@@ -9,9 +9,18 @@
 
     <link href="../../Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../App/css/index.css" rel="stylesheet" />
+    <link href="../../Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Js/modalWindow.js"></script>
+    <script type="text/javascript" src="../../Scripts/easyUI/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/tools.js"></script>
+    <script type="text/javascript" src="../../Scripts/config.js"></script>
+    <script src="../App/js/index.js"></script>
     
 </head>
 <body>
+    <form id="form1" runat="server">
     <div class="container-fluid">
 
         <div class="row ibox">
@@ -21,8 +30,8 @@
                     <h5>登陆信息</h5>
                 </div>
                 <div class="content">
-                    <p>登陆用户：星诺奇科技</p>
-                    <p>上次登陆时间：2017-05-07 13：23：20</p>
+                    <p>登陆用户：<span id="realname"></span></p>
+                    <p>上次登陆时间：<span id="LastLoginTime"></span></p>
                 </div>
             </div>
 
@@ -32,9 +41,9 @@
                     <h5>轻松办公</h5>
                 </div>
                 <div class="content" style="min-height: 100px;">
-                    <p><span class="glyphicon glyphicon-hand-right" style="color:#336633"/><a class="mya">任务清单</a></p>
-                    <p><span class="glyphicon glyphicon-hand-right" style="color:#990033"/><a class="mya">密码修改</a></p>
-                    <p><span class="glyphicon glyphicon-hand-right" style="color:#0099CC"/><a class="mya">退出登陆</a></p>
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#336633"/><a class="mya" onclick="TaskList()">任务清单</a></p>
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#990033"/><a class="mya" onclick="ChangePWD()">密码修改</a></p>
+                    <p><span class="glyphicon glyphicon-hand-right" style="color:#0099CC"/><a class="mya" onclick="SignOut()">退出登陆</a></p>
                 </div>
             </div>
         </div>
@@ -93,5 +102,6 @@
 
 
     </div>
+        </form>
 </body>
 </html>

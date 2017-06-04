@@ -148,7 +148,7 @@ function PrjDetail() {
         else {
 
             var PGuid = rowData.PGUID;
-            window.parent.parent.createTab("tab_info_1", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
+            window.parent.parent.createTab("tab_info_prj" + PGuid, "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
         }
     });
 

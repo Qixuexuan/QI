@@ -9,14 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <link href="App_Themes/Flat/Login/learunui-framework.css" rel="stylesheet" />
     <link href="App_Themes/Flat/login/loginnew.css" rel="stylesheet" type="text/css" />
-    <link href="App_Themes/Flat/Login/zzsc.css" rel="stylesheet" />
+    <%--<link href="App_Themes/Flat/Login/zzsc.css" rel="stylesheet" />--%>
     <link href="Js/jQueryTheme/jquery.ui.all.css" rel="stylesheet" />
     <link href="Js/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="Js/jQueryUI/jquery-1.7.1.min.js"></script>
-    <script src="Js/jQueryUI/jquery.ui.core.js"></script>
-    <script src="Js/jQueryUI/jquery-ui.custom.min.js"></script>
-    <script src="Js/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-    <script src="Js/bootstrap-3.2.0-dist/js/bootstrap-treeview.js"></script>
+    <script type="text/javascript" src="Js/jQueryUI/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="Js/jQueryUI/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="Js/jQueryUI/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="Js/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Js/bootstrap-3.2.0-dist/js/bootstrap-treeview.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -69,7 +69,7 @@
     <form id="form1" runat="server" autocomplete="off">
 
         <div class="logo" style="visibility:hidden;height:30px">
-            <img src="App_Themes/Flat/login/logo.png" />
+            <img src="App_Themes/Flat/login/logo.png" alt=""/>
 
         </div>
         <div class="content" style="width:389px">
@@ -104,7 +104,7 @@
         <asp:HiddenField ID="hidAccount" runat="server" />
     </form>
 
-    <div id="hDivDialog" style="display: none; background: url(App_Themes/Flat/Login/phone.png)">
-    </div>
+   <%-- <div id="hDivDialog" style="display: none; background: url(App_Themes/Flat/Login/phone.png)">
+    </div>--%>
 </body>
 </html>

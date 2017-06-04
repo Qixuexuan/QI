@@ -1,4 +1,5 @@
-body{font-family:"微软雅黑";background:url(../images/body-bj.png) repeat left top;font-size:14px;margin:0;}
+/*body{font-family:"微软雅黑";background:url(../images/body-bj.png) repeat left top;font-size:14px;margin:0;}*/
+body{font-family:"微软雅黑";font-size:14px;margin:0;}
 
 
 .container_div {padding:20px;}

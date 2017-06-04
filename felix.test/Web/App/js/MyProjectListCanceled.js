@@ -65,9 +65,45 @@ function PrjDetail() {
         else {
 
             var PGuid = rowData.PEGUID;
-            window.parent.parent.createTab("tab_info_0", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
+            window.parent.parent.createTab("tab_info_prj" + PGuid, "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
         }
     });
+
+}
+
+//  恢复项目
+function RecoveryPrj() {
+    SessionIsOverTime(function () {
+        var rowData = $("#gd_url").datagrid("getSelected");
+        if (rowData == undefined || rowData == null) {
+            $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
+        }
+
+        else {
+
+            $.messager.confirm('提示', '确认恢复该项目吗?', function (result) {
+                if (result) {
+                    var PGuid = rowData.PGUID;
+                    ChangePrjStatus(PGuid, 0);
+                }
+            });
+
+        }
+    });
+}
+
+//  更新项目状态
+function ChangePrjStatus(pguid, status) {
+    let jsonObj = null;
+    AjaxPostAuthNew(config_service_url + "Project/update/" + pguid + "/" + status, jsonObj, function (result) {
+        $.messager.alert("提示：", "项目恢复成功", "info");
+        reload();
+    },
+ true,
+ ticket,
+  function (XMLHttpRequest, textStatus, errorThrown) {
+      $.messager.alert("提示：", "项目恢复失败.", "info");
+  });
 
 }
 

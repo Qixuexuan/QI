@@ -21,7 +21,7 @@
         table {
             width: 80%;
             margin: 0 auto;
-            margin-top: 20px;
+            margin-top: 10px;
             border: 1px solid lightgray;
         }
         
@@ -48,9 +48,20 @@
             padding-left: 20px;
             padding-right: 15px;
         }
+        .lication {
+            height:30px;
+            border-bottom:1px solid lightgray;
+        }
+            .lication > span {
+                line-height:30px;
+                margin-left:20px;
+            }
     </style>
 </head>
 <body>
+    <div class="lication">
+        <span>当前位置：立项管理 > 新增项目申请 > 添加项目申请</span>
+    </div>
     <div class="content">
         <table>
         <tr>

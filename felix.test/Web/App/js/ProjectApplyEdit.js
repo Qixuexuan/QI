@@ -107,17 +107,26 @@ function Submit() {
     //表单验证
     if (!CheckValidate($(".content"))) return false;
 
+    let msg = CheckData();
+    if (msg != undefined && msg != null) {
+        $.messager.alert("提示：", msg, "info");
+        return;
+    }
+
     let jsonObj1 = initStrJson($(".content"));
     let Obj = JSON.parse(jsonObj1);
     Obj.PGUID = pguid;
     let jsonObj = JSON.stringify(Obj);
-    console.log(jsonObj);
-
-    console.log(jsonObj);
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Submit", jsonObj, function (result) {
         //console.log(result);
-        $.messager.alert("提示：", result.Message, "info");
+        //$.messager.alert("提示：", result.Message, "info");
+        $.messager.confirm('提示', "提交成功，关闭编辑页面吗？", function (result) {
+            if (result) {
+                //关闭页面
+                window.parent.parent.closeTab("tab_info_editapply");
+            }
+        });
     }, 
     true, 
     ticket,
@@ -144,7 +153,13 @@ function Save() {
 
     AjaxPostAuthNew(config_service_url + "PrjEstablish/Save", jsonObj, function (result) {
         //console.log(result);
-        $.messager.alert("提示：", result.Message, "info");
+        //$.messager.alert("提示：", result.Message, "info");
+        $.messager.confirm('提示', "保存成功，关闭编辑页面吗？", function (result) {
+            if (result) {
+                //关闭页面
+                window.parent.parent.closeTab("tab_info_editapply");
+            }
+        });
     },
     true,
     ticket,

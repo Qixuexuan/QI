@@ -38,7 +38,7 @@ function PageEvent(pageNumber, pageSize) {
 //  新增项目申请
 function addNewPrjApply() {
     //showModalWindow('项目详情', 550, 220, "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
-    window.parent.parent.createTab("tab_info_2", "添加项目申请", "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
+    window.parent.parent.createTab("tab_info_addapply", "添加项目申请", "../Web/ProjectApply/ProjectApply.aspx?s=" + Math.random());
 }
 
 //  编辑项目申请内容
@@ -50,7 +50,7 @@ function editPrjApply() {
         }
         else {
             var PGuid = rowData.PGUID;
-            window.parent.parent.createTab("tab_info_1", "项目编辑", "../Web/ProjectApply/ProjectApplyEdit.aspx?s=" + Math.random() + "&PGuid=" + PGuid);
+            window.parent.parent.createTab("tab_info_editapply", "项目编辑", "../Web/ProjectApply/ProjectApplyEdit.aspx?s=" + Math.random() + "&PGuid=" + PGuid);
 
         }
     });

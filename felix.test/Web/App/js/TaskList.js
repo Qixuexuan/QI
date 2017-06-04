@@ -76,7 +76,7 @@ function GetPrecessLog() {
 
             var TGuid = rowData.TGUID;
             //  流程处理日志
-            window.parent.parent.createTab("tab_info_prolog", "任务流程日志", "../Web/ProjectManagent/TaskProcessLog.html?s=" + Math.random() + "&TGuid=" + TGuid);
+            window.parent.parent.createTab("tab_info_prolog" + TGuid, "任务流程日志", "../Web/ProjectManagent/TaskProcessLog.html?s=" + Math.random() + "&TGuid=" + TGuid);
         }
     });
 }

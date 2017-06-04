@@ -60,10 +60,6 @@
                 background-color:white;
                 /*width:15%;*/
                 text-align:center
-            }.sptr td:nth-child(7) {
-                background-color:white;
-                /*width:15%;*/
-                text-align:center
             }
     </style>
 
@@ -82,7 +78,7 @@
                 console.log(result);
 
                 for(let data of result.Data) {
-                    let trhtml = `<tr class="sptr"><td>${data.CURRENTNODEDESC}</td><td>${data.OPERUSERNAME}</td><td>${data.HCOMMENT}</td><td>${data.HRESULT}</td><td>${data.OPERSTARTTIME}</td><td>${data.OPERENDTIME}</td><td>${data.DURINGTIME}</td></tr>`;
+                    let trhtml = `<tr class="sptr"><td>${data.CURRENTNODEDESC}</td><td>${data.OPERUSERNAME}</td><td>${data.HCOMMENT}</td><td>${data.HRESULT}</td><td>${data.OPERSTARTTIME}</td><td>${data.OPERENDTIME}</td></tr>`;
                     $("#WFTable").append(trhtml);
                 }
 
@@ -106,7 +102,6 @@
             <th>处理结果</th>
             <th>开始时间</th>
             <th>结束时间</th>
-            <th>总时长</th>
         </tr>
         
 

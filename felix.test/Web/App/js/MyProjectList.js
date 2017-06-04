@@ -68,7 +68,7 @@ function PrjDetail() {
         else {
 
             var PGuid = rowData.PEGUID;
-            window.parent.parent.createTab("tab_info_0", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
+            window.parent.parent.createTab("tab_info_prj" + PGuid, "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
         }
     });
 
@@ -85,6 +85,8 @@ function APQPGroup() {
         else {
             let PGuid = rowData.PGUID;
             let IsCanEditn = rowData.IsCanEdit;
+
+            
             window.parent.parent.createTab("tab_info_apqp", "APQP小组", "../Web/ProjectManagent/APQPGroup.aspx?s=" + Math.random() + "&PGuid=" + PGuid + "&IsCanEditn=" + IsCanEditn);
         }
     });
@@ -101,7 +103,13 @@ function APQPTaskList() {
         else {
             let PGuid = rowData.PGUID;
             let IsCanEditn = rowData.IsCanEdit;
-            window.parent.parent.createTab("tab_info_2", "APQP任务列表", "../Web/ProjectManagent/APQPTaskList.aspx?s=" + Math.random() + "&PGuid=" + PGuid + "&IsCanEditn=" + IsCanEditn);
+            if (rowData.Pstatus != "1") {
+                $.messager.alert("提示：", "该项目未激活，不可操作.", "info");
+            }
+            else {
+                window.parent.parent.createTab("tab_info_apqptasklist" + PGuid, "APQP任务列表", "../Web/ProjectManagent/APQPTaskList.aspx?s=" + Math.random() + "&PGuid=" + PGuid + "&IsCanEditn=" + IsCanEditn);
+            }
+            
         }
     });
 }

@@ -55,6 +55,12 @@ function Submit() {
         }
 
         else {
+            console.log(rowData.CURRENTNODEDESC);
+            if (rowData.CURRENTNODEDESC != "null" && rowData.CURRENTNODEDESC != null) {
+                $.messager.alert("提示：", "该任务已被审批，不可再次提交.", "info");
+                return;
+            }
+
             $.messager.confirm('提示', '确认提交吗?', function (result) {
                 if (result) {
                     let TGuid = rowData.TGUID;
@@ -129,6 +135,24 @@ function GetAttachment() {
 
             let TGuid = rowData.TGUID;
             showModalWindow("获取附件", 550, 230, "../Web/ProjectManagent/GetAttachment.html?s=" + Math.random() + "&TGuid=" + TGuid);
+        }
+    });
+}
+
+
+//  获取流程处理日志
+function GetPrecessLog() {
+    SessionIsOverTime(function () {
+        var rowData = $("#gd_url").datagrid("getSelected");
+        if (rowData == undefined || rowData == null) {
+            $.messager.alert("提示：", "您没有选中任何记录，请选中后再操作.", "info");
+        }
+
+        else {
+
+            var TGuid = rowData.TGUID;
+            //  流程处理日志
+            window.parent.parent.createTab("tab_info_prolog" + TGuid, "任务流程日志", "../Web/ProjectManagent/TaskProcessLog.html?s=" + Math.random() + "&TGuid=" + TGuid);
         }
     });
 }

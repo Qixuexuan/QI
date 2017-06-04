@@ -65,7 +65,7 @@ function PrjDetail() {
         else {
 
             var PGuid = rowData.PEGUID;
-            window.parent.parent.createTab("tab_info_0", "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
+            window.parent.parent.createTab("tab_info_prj" + PGuid, "项目详情", "../Web/ProjectApply/ProjectDetail.html?s=" + Math.random() + "&PGuid=" + PGuid);
         }
     });
 
