@@ -72,7 +72,7 @@
         }
 
         div p:nth-child(1) {
-            margin-top: 15px;
+            margin-top: 5px;
         }
 
         .member-name {
@@ -109,7 +109,7 @@
 </head>
 
 <body>
-     <div class="lication" style="width:100%;margin-top:0px">
+     <div class="lication" style="width:100%;margin-top:15px">
         <span>当前位置：项目管理 > 我的项目 > APQP小组</span>
     </div>
     <div id="dialog-confirm">

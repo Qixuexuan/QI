@@ -54,10 +54,10 @@
                     <span class="glyphicon glyphicon-bullhorn" style="color: red;line-height: 48px;margin-left: 10px"></span>
                     <h5>Andon警告</h5>
                 </div>
-                <div class="content">
-                    <p>项目申请单P10001等待审核 已逾期5天    申请人:Kiven,申请时间：2017/03/10</p>
+                <div id="warn" class="content">
+                   <%-- <p>项目申请单P10001等待审核 已逾期5天    申请人:Kiven,申请时间：2017/03/10</p>
                     <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
-                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>
+                    <p>项目P10001等待您成立APQP小组 已逾期7天    申请人:Terry,申请时间：2017/03/07</p>--%>
                 </div>
             </div>
 

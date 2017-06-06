@@ -38,7 +38,6 @@ function GetTreeData() {
 
         treeData = result.Data;
         $("#APQTree").tree({ data: treeData });
-        //$('#APQTree').tree({ onlyLeafCheck: $(this).is(':checked') })
 
     }, true, ticket, function () {
         $.messager.alert("提示：", "获取部门成员数据失败.", "info");
@@ -76,6 +75,8 @@ function PlusMember(ele) {
         return;
     }
 
+    ClearSelectNode();
+
     $("#treeBox").show();
 
     $("#dialog-confirm").dialog({
@@ -106,7 +107,6 @@ function PlusMember(ele) {
 //  获取成员树中选择的成员节点
 function GetTreeSelectNode() {
 
-    ClearSelectNode();
     let dataArr = [];
 
     let nodes = $('#APQTree').tree('getChecked');
@@ -122,22 +122,15 @@ function GetTreeSelectNode() {
     return dataArr;
 }
 
-//  TOTO:清楚树中选择的节点
+//  清除树中选中的节点
 function ClearSelectNode() {
+
     let nodes = $('#APQTree').tree('getChecked');
-    console.log(nodes);
-
-
-    //var root = $("#APQTree").tree('getRoot');
-    //$("#APQTree").tree('uncheck', root.target);
-
     for (let i = 0; i < nodes.length; i++) {
         nodes[i].checked = false;
-
     }
 
-    console.log($('#APQTree').tree('getChecked'));
-
+    let shit = $('#APQTree').tree();//这样也能起到刷新作用？  不然节点依然是选中状态
 }
 
 //  在界面中填入选择好的成员元素

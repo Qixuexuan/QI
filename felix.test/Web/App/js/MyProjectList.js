@@ -41,7 +41,19 @@ $(document).ready(function () {
         { field: 'StartTime', title: '开始时间', width: 100, sortable: false },
         { field: 'CurrentStage', title: '阶段', width: 100, sortable: false },
         { field: 'Schedule', title: '进度', width: 100, sortable: false },
-        { field: 'IsCanEdit', title: '是否可以编辑', width: 100, sortable: false }
+        {
+            field: 'IsCanEdit', title: '是否可以编辑', width: 100, sortable: false,
+            formatter: function (value, row, index) {
+
+                if (value == "1") {
+                    return '是';
+                }
+                else if (value == "0") {
+
+                    return '否';
+                }
+            }
+        }
     ]];
 
     InitDataGridTest(config_service_url + "Project", columnsObj, null, function () { });

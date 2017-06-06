@@ -30,7 +30,13 @@ function GetAlertData() {
 
     AjaxGetAuth(config_service_url + "public/alert", function (result) {
 
-        console.log(result);
+        //console.log(result);
+        if (result.Data.length > 0) {
+            for(let data of result.Data) {
+                let html = `<p>项目编号${data.ProjectNo}，${data.FrmType}，已逾期<span class="warnTime">${data.OverDay}天</span>，申请人：${data.Applyame}，开始时间：${data.StartTime}</p>`
+                $("#warn").append(html);
+            }
+        }
     }, true, ticket, function () {
         $.messager.alert("提示：", "获取警告信息数据失败.", "info");
     });
@@ -44,10 +50,19 @@ function TaskList() {
 //  修改密码
 function ChangePWD() {
     //TODO:更换密码
-    showModalWindow("修改密码", width, height, pageUrl + "?s=" + Math.random() + "&CurrentNode=" + CurrentNode + "&PGuid=" + PGuid);
+    showModalWindow("修改密码", 550, 270, "../Web/UserCenter/ChangePWD.html" + "?s=" + Math.random());
 }
 
 //  退出登陆
 function SignOut() {
-    window.navigate("../../../Default.aspx");
+   
+    $.messager.confirm('提示', '确认退出登陆吗?', function (result) {
+        if (result) {
+            //window.navigate("../../../Default.aspx");
+            window.history.back(-1)
+        }
+    });
+}
+
+function reload() {
 }

@@ -44,11 +44,17 @@
             //表单验证
             if (!CheckValidate($(".content"))) return false;
 
+            let msg = CheckData();
+            if (msg != undefined && msg != null) {
+                $.messager.alert("提示：", msg, "info");
+                return;
+            }
+
 
             let jsonStr = GetParmsData();
 
-            AjaxPostAuthNew(config_service_url + "PrjEstablish/" + currentnode + "/" + pguid, jsonStr, function (result) {
-                $.messager.confirm('提示', result.Message, function (result) {
+            AjaxPostAuthNew(config_service_url + "PrjEstablish/", jsonStr, function (result) {
+                $.messager.confirm('提示', "密码修改成功，下次登陆有效", function (result) {
                     if (result) {
                         closeModalWindow(getQueryString("cz_index"));
                     }
@@ -58,7 +64,7 @@
             true,
             ticket,
              function (XMLHttpRequest, textStatus, errorThrown) {
-                 $.messager.confirm('提示', result.Message, function (result) {
+                 $.messager.confirm('提示', "密码修改失败.", function (result) {
                      if (result) {
                          closeModalWindow(getQueryString("cz_index"));
                      }
@@ -67,28 +73,16 @@
         }
 
         function Reject() {
-            //表单验证
-            if (!CheckValidate($(".content"))) return false;
+            closeModalWindow(getQueryString("cz_index"));
+        }
 
-
-            let jsonStr = GetParmsData();
-
-            AjaxPostAuthNew(config_service_url + "PrjEstablish/Reject/" + pguid + "/" + currentnode, jsonStr, function (result) {
-                $.messager.confirm('提示', result.Message, function (result) {
-                    if (result) {
-                        closeModalWindow(getQueryString("cz_index"));
-                    }
-                });
-            },
-            true,
-            ticket,
-             function (XMLHttpRequest, textStatus, errorThrown) {
-                 $.messager.confirm('提示', result.Message, function (result) {
-                     if (result) {
-                         closeModalWindow(getQueryString("cz_index"));
-                     }
-                 });
-             })
+        function CheckData() {
+            let msg;
+            if ($("#NewPWD").val() != $("#_NewPWD").val()) {
+                msg = '两次输入的新密码不一致.';
+                return msg;
+            }
+            return msg;
         }
 
         //  获取表单数据
@@ -98,33 +92,36 @@
 
             return jsonStr;
         }
+
+        
     </script>
 </head>
 <body>
+   
     <div class="container">
         <div class="content" style="margin-top:10px">
             <div class="form-horizontal">
                 <div class="form-group">
                     <label for="OldPWD" class="col-sm-3 control-label">原始密码 </label>
                     <div class="col-sm-6 formJson">
-                        <select id="OldPWD" name="OldPWD" isneed="true" validate-msg="请填写原始密码." class="form-control"></select>
+                        <input id="OldPWD" type="password" name="OldPWD" isneed="true" validate-msg="请填写原始密码." class="form-control" placeholder="-必填-">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="NewPWD" class="col-sm-3 control-label">新密码 </label>
                     <div class="col-sm-7 formJson">
-                        <select id="NewPWD" name="NewPWD" isneed="true" validate-msg="请填写新密码." class="form-control"></select>
+                        <input id="NewPWD" type="password" name="NewPWD" isneed="true" validate-msg="请填写新密码." class="form-control" placeholder="-必填-">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="_NewPWD" class="col-sm-3 control-label">确认新密码 </label>
                     <div class="col-sm-7 formJson">
-                        <select id="_NewPWD" name="_NewPWD" isneed="true" validate-msg="请填写确认新密码." class="form-control"></select>
+                        <input id="_NewPWD" type="password" name="_NewPWD" isneed="true" validate-msg="请填写确认新密码." class="form-control" placeholder="-必填-">
                     </div>
                 </div>
                 <div class="form-group" style="text-align:center">
-                    <button type="button" class="btn btn-success" onclick="Submit()">Approve</button>
-                    <button type="button" class="btn btn-warning" onclick="Reject()">Reject</button>
+                    <button type="button" class="btn btn-success" onclick="Submit()">确  定</button>
+                    <button type="button" class="btn btn-warning" onclick="Reject()">取  消</button>
                 </div>
             </div>
         </div>

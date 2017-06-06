@@ -51,6 +51,7 @@
             padding-right: 15px;
         }
          .lication {
+            margin-top:15px;
             height:30px;
             border-bottom:1px solid lightgray;
         }

@@ -23,14 +23,14 @@
         <div style="float: left;">
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-detail',plain:true"
                 onclick="PrjDetail()">项目详情</a>
+             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-active',plain:true"
+                onclick="ActivatePrj()">激活</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-unactive',plain:true"
+                onclick="CancelPrj()">作废</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-group',plain:true"
                 onclick="APQPGroup()">APQP小组</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-task-list',plain:true"
                 onclick="APQPTaskList()">APQP任务列表</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-active',plain:true"
-                onclick="ActivatePrj()">激活</a>
-            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-unactive',plain:true"
-                onclick="CancelPrj()">作废</a>
             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true"
                 onclick="reload()">刷新</a>
         </div>

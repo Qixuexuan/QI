@@ -55,7 +55,6 @@ function Submit() {
         }
 
         else {
-            console.log(rowData.CURRENTNODEDESC);
             if (rowData.CURRENTNODEDESC != "null" && rowData.CURRENTNODEDESC != null) {
                 $.messager.alert("提示：", "该任务已被审批，不可再次提交.", "info");
                 return;

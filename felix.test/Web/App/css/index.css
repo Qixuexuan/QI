@@ -63,3 +63,7 @@ body {
     padding-bottom: 15px;
     padding-left:10px;
 }
+
+.warnTime {
+    color:red;
+}
