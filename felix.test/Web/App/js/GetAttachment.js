@@ -23,7 +23,7 @@ function GetAttachMenat() {
         let index = 0;
         for(let data of result.Data) {
             index++;
-            let trhtml = `<tr class="sptr"><td>${index}</td><td><a href="${config_service_url}${data.FileURL}">${data.FileName}</a></td><td>${data.FileType}</td></tr>`;
+            let trhtml = `<tr class="sptr"><td>${index}</td><td><a target="_blank" href="${config_service_url}${data.FileURL}">${data.FileName}</a></td><td>${data.FileType}</td></tr>`;
             $("#attachmentTable").append(trhtml);
             
         }

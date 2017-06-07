@@ -118,6 +118,9 @@ function APQPTaskList() {
             if (rowData.Pstatus != "1") {
                 $.messager.alert("提示：", "该项目未激活，不可操作.", "info");
             }
+            else if (rowData.IsCanEditTask != "1") {
+                $.messager.alert("提示：", "请先组建APQP小组.", "info");
+            }
             else {
                 window.parent.parent.createTab("tab_info_apqptasklist" + PGuid, "APQP任务列表", "../Web/ProjectManagent/APQPTaskList.aspx?s=" + Math.random() + "&PGuid=" + PGuid + "&IsCanEditn=" + IsCanEditn);
             }
@@ -137,6 +140,10 @@ function ActivatePrj() {
         }
 
         else {
+            if (rowData.Pstatus == "1") {
+                $.messager.alert("提示：", "已是激活状态.", "info");
+                return;
+            }
 
             $.messager.confirm('提示', '确认激活该项目吗?', function (result) {
                 if (result) {

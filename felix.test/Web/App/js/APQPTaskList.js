@@ -96,6 +96,10 @@ function ChangePlanDate() {
         }
 
         else {
+            if (rowData.IsCanEdit != "1") {
+                $.messager.alert("提示：", "该项任务已被提交审批，不可修改.", "info");
+                return;
+            }
 
             let TGuid = rowData.TGUID;
             let FInstanceId = rowData.FINSTANCEID;
@@ -115,6 +119,10 @@ function AddAttachment() {
         }
 
         else {
+            if (rowData.IsCanEdit != "1") {
+                $.messager.alert("提示：", "该项任务已被提交审批，不可修改.", "info");
+                return;
+            }
 
             let TGuid = rowData.TGUID;
             showModalWindow("上传附件", 550, 230, "../Web/ProjectManagent/UploadAttachment.html?s=" + Math.random() + "&TGuid=" + TGuid);
